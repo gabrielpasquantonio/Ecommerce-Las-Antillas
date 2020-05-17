@@ -29,8 +29,8 @@ ___
 ___
 
 + ## ___Paginas Web Referentes___
-    - [___La casa del Habano___](https://http://www.lacasadelhabano.com.ar/)
-        ![index](C:/Users/pablo/Desktop/README/foto1.PNG) 
+    - [___La casa del Habano___](http://lacasadelhabano.com.ar/)
+        ![Captura](/README/foto1.png)
         ```
         Seleccionada por su diseño simple e intuitivo. Muy util, la forma en como se caracteriza cada producto.
     ___
