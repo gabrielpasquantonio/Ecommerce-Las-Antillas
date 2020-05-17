@@ -42,7 +42,7 @@ ___
     ___  
 
     - [___Becka Store___](https://becka-store-demo.myshopify.com/#header-topbar)
-        ![Captura](/README/foto3.png)
+        ![Captura](/README/foto3.jpg)
         ```
         El diseño y la forma en como esto organizado visualmente el sitio nos parecio muy elegante y practico.
     ___
