@@ -1,3 +1,66 @@
+# E-commerce project: Tobacco Shop - "Las Antillas"
++ ## ___About___
+    ```
+    The purpose of this work is to develop an e-commerce website for tobacco shop Las Antillas. Las Antillas is a company that sells cigarettes, tobacco products and accessories.
+___
++ ## ___Target Audience___
+    ```
+    People over 18 years old. Smokers who have a refined and sophisticated taste.  
+___
++ ## ___Main Feature___
+    ```
+    A- Visualization of all local products in a responsive, attractive and easy way in order meet the exact needs of the customer, taking into account the requirements for an exemplary User Experience.
+
+    B- Show all necessary information so that the customer can have enough data to decide on his own at the time of the purchase.
+
+    C- The website will have the necessary technology so that the user will be able to follow through all the purchase processes and shipment tracking of their product on his own.
+___
++ ## ___Members___
+    - __Gabriel Pasquantonio:__
+
+        ```
+        International tax attorney for IBM.
+    ___
+
+    - __Carlos Neme__
+
+        ```
+        Lawyer, works for Argentinian’s National Ministry of Education and also as a private lawyer in the civil and commercial business.
+___
+
++ ## ___Web references Pages___
+    - [___La casa del Habano___](http://lacasadelhabano.com.ar/)
+        ![Captura](/README/foto1.png)
+        ```
+        Selected due to its own simple and intuitive design. Very useful, in the way each product is characterized.
+    ___
+
+    - [___Luigi Bosca___](https://shop.luigibosca.com/?ref=tiendanube.com)
+        ![Captura](/README/foto2.png)
+        ```
+        The colors and style of the brand were like our customer's brand. We liked the display of your featured products. .
+    ___  
+
+    - [___Becka Store___](https://becka-store-demo.myshopify.com/#header-topbar)
+        ![Captura](/README/foto3.jpg)
+        ```
+        Its design and the way in which the page is visually displayed seemed very elegant and practical.
+    ___
+
+    - [___Plamen___](https://plamen.qodeinteractive.com/wide-home/)
+        ![Captura](/README/foto4.png)
+        ```
+        Its background images transitional effect seemed attractive to us.
+    ___
+
+    - [___Plamen2___](https://plamen.qodeinteractive.com/four-columns/)
+        ![Captura](/README/foto5.png)
+        ```
+        The aesthetics of the site is very pleasant, especially the way its products are arranged.  
+
+
+___
+
 # Proyecto de E-commerce: Tabaqueria -"Las Antillas"
 + ## ___Acerca de___
     ```
