@@ -1,19 +1,19 @@
 # E-commerce project: Tobacco Shop - "Las Antillas"
 + ## ___About___
     ```
-    The purpose of this work is to develop an e-commerce website for tobacco shop Las Antillas. Las Antillas is a company that sells cigarettes, tobacco products and accessories.
+    The purpose of this work is the development of an e-commerce website for a tobacco shop called 'Las Antillas'. This company sells cigarettes, tobacco products and accessories.
 ___
 + ## ___Target Audience___
     ```
     People over 18 years old. Smokers who have a refined and sophisticated taste.  
 ___
-+ ## ___Main Feature___
++ ## ___Main Features___
     ```
-    A- Visualization of all local products in a responsive, attractive and easy way in order meet the exact needs of the customer, taking into account the requirements for an exemplary User Experience.
+    A- Visualization of all local products in a responsive, attractive and easy way, in order meet the exact  customers needs , taking into account the requirements for an exemplary User Experience.
 
     B- Show all necessary information so that the customer can have enough data to decide on his own at the time of the purchase.
 
-    C- The website will have the necessary technology so that the user will be able to follow through all the purchase processes and shipment tracking of their product on his own.
+    C- The website will have the necessary technology so that the users will be able to follow through all the purchase processes and shipment tracking of their product on their own.
 ___
 + ## ___Members___
     - __Gabriel Pasquantonio:__
@@ -28,7 +28,7 @@ ___
         Lawyer, works for Argentinian’s National Ministry of Education and also as a private lawyer in the civil and commercial business.
 ___
 
-+ ## ___Web references Pages___
++ ## ___Reference Websites___
     - [___La casa del Habano___](http://lacasadelhabano.com.ar/)
         ![Captura](/README/foto1.png)
         ```
@@ -38,7 +38,7 @@ ___
     - [___Luigi Bosca___](https://shop.luigibosca.com/?ref=tiendanube.com)
         ![Captura](/README/foto2.png)
         ```
-        The colors and style of the brand were like our customer's brand. We liked the display of your featured products. .
+        The colors and style of the brand were like our customer's brand. We liked the display of their featured products. .
     ___  
 
     - [___Becka Store___](https://becka-store-demo.myshopify.com/#header-topbar)
