@@ -169,7 +169,8 @@
         position: relative;
     }
 .header-right .language a {
-        font-size: 16px;
+        
+       font-size: 16px;
         font-family: Bree Serif;
         color: #888;
         font-weight: 400;
@@ -319,4 +320,7 @@
         background: #9f4c3a;
     }
 
-  
+  .test{
+      font: outline;
+      color: #222;
+  }
