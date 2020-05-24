@@ -50,7 +50,7 @@ export default function navBar() {
                        
                         
                         <li className="nav-item">
-                            <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
                         </li>
 
                     </ul>

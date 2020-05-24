@@ -1,4 +1,11 @@
-.card-deck{
-margin: auto;
+* {
 font-weight: 700;
+color: black;
+font-family: sans-serif;
+}
+
+img{
+  height: 100px;
+  width: 25px;
+  align-self: center;
 }
