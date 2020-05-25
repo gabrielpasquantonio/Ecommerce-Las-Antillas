@@ -9,3 +9,18 @@ img{
   width: 25px;
   align-self: center;
 }
+
+.container-card-deck{
+  display:flex;
+
+}
+
+.custom-inner{
+  width: 80% !important;
+}
+
+.carousel-container{
+display: flex;
+justify-content: center;
+
+};
