@@ -25,7 +25,7 @@ ___
     - __Carlos Neme__
 
         ```
-        Lawyer, works for Argentinian’s National Ministry of Education and also as a private lawyer in the civil and commercial business.
+        Lawyer, at Argentina's National Education Ministry  and also as a private lawyer in the civil and commercial business.
 ___
 
 + ## ___Reference Websites___
