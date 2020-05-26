@@ -43,6 +43,7 @@
     border-radius: 50%;
     vertical-align: top;
     max-width: 159px;
+    font-family: sans-serif;
 }
 .position-relative {
     position: relative !important;
