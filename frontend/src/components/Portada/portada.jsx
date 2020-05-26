@@ -6,11 +6,13 @@ import FotoPortada from "./img/fotoPortada.jpeg";
 export default function Portada() {
   return (
   <div>
-    <div className="card mb-3">
-      <img src={FotoPortada} className="card-img-top2" alt="Foto de portada"></img>
-      <div className="card-body">
-        <h5 className="card-title">Bienvenido a tabaqueria Las Antillas</h5>
-        <p className="card-text">En nuestro sitio encontraran la mas variedad cantidad y calidad de productos vinculados al refinado mundo de la tabaquera.</p>
+    <div className="background-image">
+      
+      <div className="card-body col-12 col-sm-9 col-md-8 col-lg-5">
+        <h5 className="slogan"> Classe y Estilo</h5>
+        <h2 className="card-title h2portada">Tabaqueria Las Antillas</h2>
+        <h5 className="card-text h5portada">Toda la diversidad y sofisticación del mundo del tabacco en un solo sitio!</h5>
+        <a className="compre" href="#" tabindex="0">Compre Ahora!</a>
     </div>
     </div>
   </div>

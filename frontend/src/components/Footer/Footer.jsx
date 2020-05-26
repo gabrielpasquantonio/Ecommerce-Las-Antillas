@@ -21,7 +21,7 @@ export default function Footer(){
     </div>
   <div className ="col-md mb-4">
         <h5 className="Text">Contactános</h5>
-        <p>Mail: lasantillas.tabaqueria@gmail.com</p><br/>
+        <p>Mail: lasantillas.tabaqueria@gmail.com</p>
         <p>Tel: +54 11-6354-0045</p>
         </div>
         <div className ="col-md mb-4">
@@ -31,7 +31,6 @@ export default function Footer(){
       </div>
       </div>
       </div>
-      <div className="divider mb-5"></div>
       <div className ="container-fluid px-md-5">
       <div className ="row element-footer">
       <div className ="col-md-8">
