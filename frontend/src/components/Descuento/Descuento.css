@@ -34,16 +34,15 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
-    padding-bottom: 20px!important;
+    /*padding-bottom: 20px!important;*/
     padding-top: 20px!important;
     margin-top: 20px!important;
-    margin-bottom: 20px!important;
-    
-    
+    /*margin-bottom: 20px!important;*/
+    margin-block-start: 1em;    
 }
 
 
-.imagem{
+.imagemdescuento{
 margin-left: 0;
 width: 14.3646408839779%;
 display: block;
