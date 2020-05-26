@@ -70,11 +70,11 @@ export default function ThumbNail() {
                 </div>
                 <div className="card-deck">
                   <div className="card">
-                    <img src={Foto1} className="card-img-top" alt="..."></img>
+                    <img src={Foto2} className="card-img-top" alt="..."></img>
                     <div className="card-body">
                       <h5 className="card-title">Habano</h5>
                       <p className="card-text">
-                        Montecristo N°5.<br></br>$1.000
+                        Montecristo N°6.<br></br>$1.500
                       </p>
                     </div>
                     <div className="card-footer">
@@ -89,11 +89,11 @@ export default function ThumbNail() {
                 </div>
                 <div className="card-deck">
                   <div className="card">
-                    <img src={Foto1} className="card-img-top" alt="..."></img>
+                    <img src={Foto3} className="card-img-top" alt="..."></img>
                     <div className="card-body">
                       <h5 className="card-title">Habano</h5>
                       <p className="card-text">
-                        Montecristo N°5.<br></br>$1.000
+                        Montecristo N°7.<br></br>$2.000
                       </p>
                     </div>
                     <div className="card-footer">
@@ -132,11 +132,11 @@ export default function ThumbNail() {
                 </div>
                 <div className="card-deck">
                   <div className="card">
-                    <img src={Foto1} className="card-img-top" alt="..."></img>
+                    <img src={Foto2} className="card-img-top" alt="..."></img>
                     <div className="card-body">
                       <h5 className="card-title">Habano</h5>
                       <p className="card-text">
-                        Montecristo N°5.<br></br>$1.000
+                        Montecristo N°6.<br></br>$1.500
                       </p>
                     </div>
                     <div className="card-footer">
@@ -151,11 +151,11 @@ export default function ThumbNail() {
                 </div>
                 <div className="card-deck">
                   <div className="card">
-                    <img src={Foto1} className="card-img-top" alt="..."></img>
+                    <img src={Foto3} className="card-img-top" alt="..."></img>
                     <div className="card-body">
                       <h5 className="card-title">Habano</h5>
                       <p className="card-text">
-                        Montecristo N°5.<br></br>$1.000
+                        Montecristo N°7.<br></br>$2.000
                       </p>
                     </div>
                     <div className="card-footer">
@@ -212,11 +212,11 @@ export default function ThumbNail() {
                 </div>
                 <div className="card-deck">
                   <div className="card">
-                    <img src={Foto1} className="card-img-top" alt="..."></img>
+                    <img src={Foto2} className="card-img-top" alt="..."></img>
                     <div className="card-body">
                       <h5 className="card-title">Habano</h5>
                       <p className="card-text">
-                        Montecristo N°5.<br></br>$1.000
+                        Montecristo N°6.<br></br>$1.500
                       </p>
                     </div>
                     <div className="card-footer">
@@ -231,11 +231,11 @@ export default function ThumbNail() {
                 </div>
                 <div className="card-deck">
                   <div className="card">
-                    <img src={Foto1} className="card-img-top" alt="..."></img>
+                    <img src={Foto3} className="card-img-top" alt="..."></img>
                     <div className="card-body">
                       <h5 className="card-title">Habano</h5>
                       <p className="card-text">
-                        Montecristo N°5.<br></br>$1.000
+                        Montecristo N°7.<br></br>$2.000
                       </p>
                     </div>
                     <div className="card-footer">

@@ -1,0 +1,19 @@
+.card-body{
+  font-family: sans-serif;
+  
+}
+.card-title{
+font-weight: bold;
+
+}
+.card-text{
+  font-weight: normal;
+}
+
+.card-img-top2{
+  height: 450px;
+}
+.card-img-top{
+  height:250px;
+  };
+
