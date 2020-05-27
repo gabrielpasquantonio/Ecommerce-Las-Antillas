@@ -19,7 +19,7 @@ ___
     - __Gabriel Pasquantonio:__
 
         ```
-        International tax attorney for IBM.
+        International tax attorney working for IBM. 
     ___
 
     - __Carlos Neme__
