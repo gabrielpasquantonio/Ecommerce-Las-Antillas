@@ -75,12 +75,12 @@ font-weight: bold;
 }
 
 .slogan{
-  color: #9f4c3a;
+  color:#fff;
   opacity: 1;
     visibility: visible;
     transform: none;
     font-size: 18px !important;
-    font-family: Bree Serif;
+    font-family: sans-serif;
     font-weight: 400;
     line-height: 1.2;
     margin-top: 0;
