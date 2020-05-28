@@ -124,7 +124,7 @@ ___
 
 
 + ## ___Instrucciones para leer el proyecto___
-        ```
+        
 1-Archivo README.md: El mismo se encuetra elaborado en idioma inglés y castellano, teniendo en cuenta que luego este proyecto quedará registrado en nuestros respectivos repositorio para futuras oportunidades laborales.
 
 2- Diseño Gráfico del Sitio:
