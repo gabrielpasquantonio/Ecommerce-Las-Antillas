@@ -25,7 +25,9 @@ ___
     - __Carlos Neme__
 
         ```
-        Lawyer, at Argentina's National Education Ministry  and also as a private lawyer in the civil and commercial business.
+         
+          29 years old, Lawyer seeking for a professional reinvention and looking forward to dive into this exciting tech-world. 
+          
 ___
 
 + ## ___Reference Websites___
@@ -88,7 +90,7 @@ ___
     - __Carlos Neme__
 
         ```
-        Abogado , trabaja en el Ministerio de Educacion de la Nacion y de manera independiente en materias de Derecho Civil y Comercial.
+        29 años, Abogado en  búsqueda de una reinvención  profesional y entusiasmado por adentrarme en el mundo de la tecnología. 
 ___
 
 + ## ___Paginas Web Referentes___
