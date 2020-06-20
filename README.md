@@ -62,7 +62,8 @@ ___
 
 + ## ___Trello Link___
     ```
-    https://trello.com/b/9lrgI7dS/las-antillas
+    [Trello link](https://trello.com/b/9lrgI7dS/las-antillas "to Las Antillas task organization")
+    
 ___
 
 # Proyecto de E-commerce: Tabaqueria -"Las Antillas"
@@ -155,8 +156,7 @@ Los mismos estan en la carpeta IMG dentro de la carpeta de maquetación.
 
 + ## ___Link de Trello___
     ```
-    https://trello.com/b/9lrgI7dS/las-antillas
-
+    [Link de trello](https://trello.com/b/9lrgI7dS/las-antillas "Tablero de organizacion de tareas Las Antillas")
 
 
 ___
