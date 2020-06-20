@@ -60,7 +60,9 @@ ___
         ```
         The aesthetics of the site is very pleasant, especially the way its products are arranged.  
 
-
++ ## ___Trello Link___
+    ```
+    https://trello.com/b/9lrgI7dS/las-antillas
 ___
 
 # Proyecto de E-commerce: Tabaqueria -"Las Antillas"
@@ -149,7 +151,12 @@ D- Detalle de producto y  Carrito de Compra : A estas secciones las hicimos a ma
 +maquetaCarritoDeCompra
 +maquetaDetalleDeProducto
 
-Los mismos estan en la carpeta IMG dentro de la carpeta de maquetación. 
+Los mismos estan en la carpeta IMG dentro de la carpeta de maquetación.
+
++ ## ___Link de Trello___
+    ```
+    https://trello.com/b/9lrgI7dS/las-antillas
+
 
 
 ___
