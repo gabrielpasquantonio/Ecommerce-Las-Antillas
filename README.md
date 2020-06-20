@@ -62,7 +62,7 @@ ___
 
 + ## ___Trello Link___
     ```
-    [Trello link](https://trello.com/b/9lrgI7dS/las-antillas "to Las Antillas task organization")
+    [Trello link](https://trello.com/b/9lrgI7dS/las-antillas)
     
 ___
 
@@ -156,7 +156,7 @@ Los mismos estan en la carpeta IMG dentro de la carpeta de maquetación.
 
 + ## ___Link de Trello___
     ```
-    [Link de trello](https://trello.com/b/9lrgI7dS/las-antillas "Tablero de organizacion de tareas Las Antillas")
+    [Link de trello](https://trello.com/b/9lrgI7dS/las-antillas)
 
 
 ___
