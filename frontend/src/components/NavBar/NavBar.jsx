@@ -29,9 +29,18 @@ export default function navBar() {
                                             <li className="nav-item">
                                                 <a className="nav-link" href="#"><span> Habanos </span></a>
                                                 <div className="dropdown-menu1" >
-                                                    <a className="dropdown-item" href="#">Habano A</a>
-                                                    <a className="dropdown-item" href="#">Habano B</a>
-                                                    <a className="dropdown-item" href="#">Habano C</a>
+                                                    <a className="dropdown-item" href="#">Bolivar</a>
+                                                    <a className="dropdown-item" href="#">Cohiba</a>
+                                                    <a className="dropdown-item" href="#">Flor de Cano</a>
+                                                    <a className="dropdown-item" href="#">Hoyo de Monterrey</a>
+                                                    <a className="dropdown-item" href="#">J.L Piedra</a>
+                                                    <a className="dropdown-item" href="#">Montecristo</a>
+                                                    <a className="dropdown-item" href="#">Partagás</a>
+                                                    <a className="dropdown-item" href="#">Quintero</a>
+                                                    <a className="dropdown-item" href="#">Romeo y Julieta</a>
+                                                    <a className="dropdown-item" href="#">San Cristobal</a>
+                                                    
+                                                    
                                                 </div>
                                             </li>
                                             <li className="nav-item">
