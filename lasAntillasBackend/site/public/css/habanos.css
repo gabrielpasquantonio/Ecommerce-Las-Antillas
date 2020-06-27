@@ -55,6 +55,7 @@
     max-width: 50%;
 }
 
+
 .header-center .navbar {
     padding: 0 .5rem;
 }
@@ -1139,4 +1140,25 @@ a {
     height: 100%;
     width: auto;
     max-height: 300px;
+}
+
+.agregarcarrito{
+    color: white!important;
+}
+.categoria{
+    padding-top: 15px;
+}
+.card-group{
+    padding-bottom: 45px!important;
+}
+.cartinha{
+    padding-right: 15px;
+    padding-left: 15px;
+    
+}
+.card-img-top{
+    max-height: 200px;
+}
+.card{
+    text-align: center;
 }
