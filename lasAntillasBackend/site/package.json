@@ -14,5 +14,9 @@
     },
     "devDependencies": {
         "nodemon": "^2.0.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cneme23/grupo_1_lasAntillas.git"
     }
 }
