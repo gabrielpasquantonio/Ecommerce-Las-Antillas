@@ -4,7 +4,7 @@
     "description": "lasAntillasBackend",
     "main": "src/index.js",
     "scripts": {
-        "test": "nodemon src/index.js"
+        "test": "nodemon lasAntillasBackend/src/index.js"
     },
     "keywords": [],
     "author": "",
