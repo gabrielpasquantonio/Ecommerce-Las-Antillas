@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carga de Productos</title>
+    <title>Users Register</title>
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">  
 </head>
 <body>
-       <!-- NavBar-->
+  <!-- NavBar-->
   <div class="header-bottom js-fixed hd-fixed">
     <div class="container-fluid my-container">
         <div class="row js-compare">
@@ -190,48 +190,31 @@
 
     <form>
         <div class="form-group">
-            <label for="producto">NUEVO PRODUCTO</label>
-            <select class="form-control" name="producto" id="producto">
-              <option value="Habanos">Habanos</option>
-              <option value="Cigarros">Cigarros</option>
-              <option value="Pipas">Pipas</option>
-              <option value="Accesorios">Accesorios</option>
-            </select>
-
-        </div>
-        
-        <div class="form-group">
-            <label for="nombre">NOMBRE DEL PRODUCTO</label>
+            <label for="nombre">NOMBRE Y APELLIDO</label>
             <input type="text" class="form-control" id="nombre" name="nombre">
-          </div>
-                
-          <div class="form-group">
-            <label for="marca">MARCA DEL PRODUCTO</label>
-            <select class="form-control" name="marca" id="marca">
-              <option value="Marca 1">Marca 1</option>
-              <option value="Marca 2">Marca 2</option>
-              <option value="Marca 3">Marca 3</option>
-              <option value="Marca 4">Marca 4</option>
-              <option value="Marca 5">Marca 5</option>
-              <option value="Marca 6">Marca 6</option>
-              <option value="Marca 7">Marca 7</option>
-              <option value="Marca 8">Marca 8</option>
-              <option value="Marca 9">Marca 9</option>
-              
-            </select>
-
         </div>
-        <div class="form-group">
-            <label for="precio">PRECIO</label>
-            <input type="text" class="form-control" id="precio" name="precio">
-          </div>
-
-          <div class="form-group">
-            <label for="imagen">RUTA DE LA IMAGEN</label>
-            <input type="text" class="form-control" id="imagen" name="img">
-          </div>
         
-        <button type="submit" class="btn btn-dark btn-lg btn-block">CARGAR DATOS</button>
+        <div class="form-group">
+          <label for="exampleInputEmail1">EMAIL</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        
+        <div class="form-group">
+            <label for="tel">TELÉFONO(OPCIONAL)</label>
+            <input type="number" class="form-control" id="tel" name="tel">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">CONTRASEÑA</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleInputPassword1">CONFIRMAR CONTRASEÑA</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        
+        <button type="submit" class="btn btn-dark btn-lg btn-block">CREAR CUENTA</button>
       </form>
     </div>
 
@@ -240,21 +223,21 @@
         <div class="container-fluid px-md-5 box">
             <div class="row element-footer  ">
                 <div class="col-md mb-4 line1">
-                    <img class="imagemdescuento" src="../../../public/img/caminhao.png"></img>
+                    <img class="imagemdescuento" src="/img/caminhao.png"></img>
                     <div class="content">
                         <h5 class="Text">Envíos gratis</h5>
                         <p>Para compras superiores a $3.000</p>
                     </div>
                 </div>
                 <div class="col-md mb-4 line1">
-                    <img class="imagemdescuento" src="../../../public/img/money.png"></img>
+                    <img class="imagemdescuento" src="/img/money.png"></img>
                     <div class="content">
                         <h5 class="Text">10% Descuento</h5>
                         <p>Pagando con Débito o Efectivo</p>
                     </div>
                 </div>
                 <div class="col-md mb-4 line">
-                    <img class="imagemdescuento" src="../../../public/img/safe.png"></img>
+                    <img class="imagemdescuento" src="/img/safe.png"></img>
                     <div class="content">
                         <h5 class="Text">Sitio seguro</h5>
                         <p>Protegemos tus datos</p>
@@ -278,8 +261,8 @@
                 </div>
                 <div class ="col-md mb-4">
                 <h5 class="Text">Sigamos Conectados</h5>
-                <a  href="https://www.instagram.com/tabaqueria.lasantillas/"><img class = "Icon"   src="../../../public/img/instagram.png" alt="IG" /></a>
-                <a  href="https://www.facebook.com/Las-Antillas-Tabaqueria-679131215792588/"><img class = "Icon" src="../../../public/img/fb.png" alt="FB" /></a>
+                <a  href="https://www.instagram.com/tabaqueria.lasantillas/"><img class = "Icon"   src="/img/instagram.png" alt="IG" /></a>
+                <a  href="https://www.facebook.com/Las-Antillas-Tabaqueria-679131215792588/"><img class = "Icon" src="/img/fb.png" alt="FB" /></a>
               </div>
               </div>
               </div>
@@ -292,11 +275,11 @@
               <h5 class="Text">Medios de pago</h5>
               </div>
               <div class ="col mb-8">
-              <img class ="Payment-logos" src="../../../public/img/visa.png"></img>
-              <img class ="Payment-logos" src="../../../public/img/cabal.png"></img>
-              <img class ="Payment-logos" src="../../../public/img/maestro.png"></img>
-              <img class ="Payment-logos" src="../../../public/img/mastercard.png"></img>
-              <img class ="Payment-logos" src="../../../public/img/americanexpress.png"></img>
+              <img class ="Payment-logos" src="/img/visa.png"></img>
+              <img class ="Payment-logos" src="/img/cabal.png"></img>
+              <img class ="Payment-logos" src="/img/maestro.png"></img>
+              <img class ="Payment-logos" src="/img/mastercard.png"></img>
+              <img class ="Payment-logos" src="/img/americanexpress.png"></img>
             </div>  
           </div>
           </div>
@@ -312,10 +295,10 @@
         </div>
         </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -337,8 +320,6 @@
           });
         });
       </script>
-
-
 </body>
 
 </html>

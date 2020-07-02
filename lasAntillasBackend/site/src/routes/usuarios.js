@@ -9,4 +9,5 @@ const controllersUsuarios = require(path.resolve(__dirname, "..", "controllers",
 
 //Armo mis rutas
 router.get("/login", controllersUsuarios.login);
+router.get("/usersRegister", controllersUsuarios.usersRegister);
 module.exports = router;
