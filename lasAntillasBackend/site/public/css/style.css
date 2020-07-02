@@ -372,7 +372,7 @@ justify-content: center;
 
             
             .background-image {
-                background-image: url(../img/fotoPortada.jpeg);
+                background-image: url(../img/icons/fotoPortada.jpeg);
                 background-size: cover;
                 background-position: 70%;
                 min-height: 480px;
