@@ -4,7 +4,8 @@ const path = require("path");
 
 //Aca estoy vinculando los archivos css
 app.use(express.static(path.resolve(__dirname, "..", "public")));
-
+//Aca indicamos que estamos usando el motor de plantillas EJS
+app.set('view engine','ejs');
 
 const webRouter = require("./routes/web.js")
 const usuariosRouter = require("./routes/usuarios.js")
