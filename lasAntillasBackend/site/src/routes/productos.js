@@ -18,4 +18,5 @@ router.get("/cigarros", controllersProductos.cigarros);
 router.get("/cigarritos", controllersProductos.cigarritos);
 router.get("/tabacos", controllersProductos.tabacos);
 router.get("/allProducts", controllersProductos.allProducts);
+router.get("/carrito", controllersProductos.carrito);
 module.exports = router;
