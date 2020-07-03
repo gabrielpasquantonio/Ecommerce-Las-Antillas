@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cigarrito 1",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "mini_ white_filter.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Cigarrito 2",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "cigarrito2.jpeg"
+  },
+  {
+    "id": 3,
+    "nombre": "Cigarrito 3",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "cigarrito3.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Cigarrito 4",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "cigarrito4.jpg"
+  }
+  
+]

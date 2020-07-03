@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cigarro 1",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "vegafina_robusto.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Cigarro 2",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "cigarro2.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Cigarro 3",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "cigarro3.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Cigarro 4",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "cigarro4.jpeg"
+  }
+  
+]

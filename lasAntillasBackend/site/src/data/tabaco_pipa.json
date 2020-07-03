@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "nombre": "Tabaco Pipas 1",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "savinelli_cavendish.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Tabaco Pipas 2",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "tabaco_pipa2.jpeg"
+  },
+  {
+    "id": 3,
+    "nombre": "Tabaco Pipas 3",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "tabaco_pipa3.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Tabacos Pipas 4",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "imagen": "tabaco_pipa4.jpg"
+  }
+  
+]
