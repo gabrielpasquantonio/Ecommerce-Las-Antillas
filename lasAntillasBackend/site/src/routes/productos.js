@@ -8,8 +8,12 @@ const path = require("path");
 const controllersProductos = require(path.resolve(__dirname, "..", "controllers", "controllersProductos.js"))
 
 //Armo mis rutas
+
+router.get("/productDetailHabano", controllersProductos.productDetailHabano);
+router.get("/productDetailCigarro", controllersProductos.productDetailCigarro);
+router.get("/productDetailCigarrito", controllersProductos.productDetailCigarrito);
+router.get("/productDetailTabaco", controllersProductos.productDetailTabaco);
 router.get("/habanos", controllersProductos.habanos);
-router.get("/productDetail", controllersProductos.productDetail);
 router.get("/cigarros", controllersProductos.cigarros);
 router.get("/cigarritos", controllersProductos.cigarritos);
 router.get("/tabacos", controllersProductos.tabacos);

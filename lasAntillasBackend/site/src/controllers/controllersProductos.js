@@ -5,9 +5,24 @@ module.exports = {
         res.render(path.resolve(__dirname, "..", "views", "productos", "habanos.ejs"));
 
     },
-    productDetail: function(req, res) {
+    productDetailHabano: function(req, res) {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-        res.render(path.resolve(__dirname, "..", "views", "productos", "productDetail.ejs"));
+        res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailHabano.ejs"));
+
+    },
+    productDetailTabaco: function(req, res) {
+        //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
+        res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailTabaco.ejs"));
+
+    },
+    productDetailCigarro: function(req, res) {
+        //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
+        res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailCigarro.ejs"));
+
+    },
+    productDetailCigarrito: function(req, res) {
+        //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
+        res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailCigarrito.ejs"));
 
     },
     cigarritos: function(req, res) {
