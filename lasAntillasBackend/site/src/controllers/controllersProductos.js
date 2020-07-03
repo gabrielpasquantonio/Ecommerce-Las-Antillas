@@ -37,5 +37,8 @@ module.exports = {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "tabacos.ejs"));
 
-    }
+    },allProducts: function(req,res) {
+        //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
+        res.render(path.resolve(__dirname, "..", "views", "productos", "allProducts.ejs"));
+    } 
 }
