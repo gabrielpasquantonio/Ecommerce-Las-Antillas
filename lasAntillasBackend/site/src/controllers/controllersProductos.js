@@ -5,48 +5,48 @@ let productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "d
 
 
 module.exports = {
-    habanos: function(req, res) {
+    habanos: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "habanos.ejs"),{productoHabanos});
 
     },
-    productDetailHabano: function(req, res) {
+    productDetailHabano: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailHabano.ejs"));
 
     },
-    productDetailTabaco: function(req, res) {
+    productDetailTabaco: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailTabaco.ejs"));
 
     },
-    productDetailCigarro: function(req, res) {
+    productDetailCigarro: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailCigarro.ejs"));
 
     },
-    productDetailCigarrito: function(req, res) {
+    productDetailCigarrito: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailCigarrito.ejs"));
 
     },
-    cigarritos: function(req, res) {
+    cigarritos: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "cigarritos.ejs"));
 
-    },cigarros: function(req, res) {
+    },cigarros: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "cigarros.ejs"));
 
-    },tabacos: function(req, res) {
+    },tabacos: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "tabacos.ejs"));
 
-    },carrito: function(req, res) {
+    },carrito: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "carrito.ejs"));
-    }, allProducts: function(req,res) {
+    }, allProducts: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-        res.render(path.resolve(__dirname, "..", "views", "productos", "allProducts.ejs"));
+        res.render(path.resolve(__dirname, "..", "views", "productos", "allProducts.ejs"),{productoHabanos});
     } 
 }
