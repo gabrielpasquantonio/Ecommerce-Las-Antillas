@@ -10,11 +10,12 @@ app.set('view engine','ejs');
 const webRouter = require("./routes/web.js")
 const usuariosRouter = require("./routes/usuarios.js")
 const productosRouter = require("./routes/productos.js")
-
+const adminRouter = require("./routes/admin.js")
 
 app.use(webRouter);
 app.use(usuariosRouter);
 app.use(productosRouter);
+app.use(adminRouter);
 //Activar el servidor
 
 app.listen(4000, "localhost", () => console.log("Servidor corriendo en el puerto 4000"));
