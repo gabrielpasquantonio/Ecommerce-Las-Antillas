@@ -20,45 +20,23 @@
                                 </select>
     </div>
 </div>
+
 <div class="card-group container-wide span12 grid-row">
-    <div class="card cartinha ">
-      <a href="productDetailHabano"><img src="/img/habanos/habano1.png" class="card-img-top " alt="Habano X."></a>
+  <% for(let i = 0; i < productoHabanos.length; i++) { %>
+
+  <div class="card cartinha ">
+      <a href="productDetailHabano"><img src="/img/habanos/<%=productoHabanos[i].imagen%>" class="card-img-top " alt="Habano X."></a>
       <div class="card-body">
-        <a href="productDetailHabano"><h5 class="card-title">Habano X</h5></a>
-        <p class="card-text">$1.111,11</p>
+        <a href="productDetailHabano"><h5 class="card-title"><%=productoHabanos[i].nombre%></h5></a>
+        <p class="card-text"><%=productoHabanos[i].precio%></p>
       </div>
       <div class="card-footer">
         <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
       </div>
     </div>
-    <div class="card cartinha ">
-      <a href="/productDetailHabano"><img src="/img/habanos/habano2.png" class="card-img-top " alt="Habano Y."></a>
-        <div class="card-body">
-          <a href="/productDetailHabano"><h5 class="card-title">Habano Y</h5></a>
-          <p class="card-text">$3.111,11</p>
-        </div>
-        <div class="card-footer">
-          <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
-        </div>
-      </div>
-      <div class="card  cartinha">
-        <a href="/productDetailHabanos"><img src="img/habanos/habano1.png" class="card-img-top" alt="Habano Z."></a>
-        <div class="card-body">
-          <a href="/productDetailHabanos"><h5 class="card-title">Habano Z</h5></a>
-          <p class="card-text">$911,11</p>
-        </div>
-        <div class="card-footer">
-          <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
-        </div>
-      </div>
-      <div class="card cartinha ">
-        <a href="/productDetailHabano"><img src="img/habanos/habano2.png" class="card-img-top " alt="Habano A.">
-        <div class="card-body"></a>
-          <a href="/productDetailHabano"><h5 class="card-title">Habano A</h5></a>
-          <p class="card-text">$4.111,11</p>
-        </div>
-        <div class="card-footer">
-          <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
-        </div>
-      </div>
+    <% } %>
+  </div>
+
+
+    
   </div>
