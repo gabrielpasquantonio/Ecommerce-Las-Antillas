@@ -3,9 +3,9 @@
         <div class="m-bottom-half m-top-half">
     <a class="font-body-xs h6" href="/" title="La Casa del Habano">Inicio</a>
                         <span class="">/</span>
-                            <a class="" href="/cigarritos" title="HABANOS">CIGARRITOS</a>
+                            <a class="" href="/tabacosArmar" title="HABANOS">TABACOS ARMAR</a>
                                 <span class="">/</span>
-                                                <h1 class="active breadcrumb-crumb">Cigarrito</h1>
+                                                <h1 class="active breadcrumb-crumb">Tabaco</h1>
                                         </div>    </div>
     <div class="hidden-phone sort-by-container text-right">
         <label for="sort" class="d-inline">Ordenar por:</label>
@@ -21,13 +21,13 @@
     </div>
 </div>
 <div class="card-group container-wide span12 grid-row">
-  <% for(let i = 0; i < productoCigarritos.length; i++) { %>
+  <% for(let i = 0; i < productoTabacoArmar.length; i++) { %>
 
   <div class="card cartinha ">
-      <a href="productDetailCigarrito"><img src="/img/cigarritos/<%=productoCigarritos[i].imagen%>" class="card-img-top " alt="Cigarrito X."></a>
+      <a href="productDetailTabaco"><img src="/img/tabaco_cigarros/<%=productoTabacoArmar[i].imagen%>" class="card-img-top " alt="Habano X."></a>
       <div class="card-body">
-        <a href="productDetailCigarrito"><h5 class="card-title"><%=productoCigarritos[i].nombre%></h5></a>
-        <p class="card-text"><%=productoCigarritos[i].precio%></p>
+        <a href="productDetailTabaco"><h5 class="card-title"><%=productoTabacoArmar[i].nombre%></h5></a>
+        <p class="card-text"><%=productoTabacoArmar[i].precio%></p>
       </div>
       <div class="card-footer">
         <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>

@@ -21,44 +21,17 @@
     </div>
 </div>
 <div class="card-group container-wide span12 grid-row">
-    <div class="card cartinha ">
-      <a href="/productDetailCigarro"><img src="/img/cigarros/vegafina_robusto.jpg" class="card-img-top " alt="Cigarro X"></a>
-      <div class="card-body"></a>
-        <a href="/productDetailCigarro"><h5 class="card-title">Cigarro  X</h5></a>
-        <p class="card-text">$1.111,11</p>
+  <% for(let i = 0; i < productoCigarros.length; i++) { %>
+
+  <div class="card cartinha ">
+      <a href="productDetailCigarro"><img src="/img/cigarros/<%=productoCigarros[i].imagen%>" class="card-img-top " alt="Cigarro X."></a>
+      <div class="card-body">
+        <a href="productDetailCigarro"><h5 class="card-title"><%=productoCigarros[i].nombre%></h5></a>
+        <p class="card-text"><%=productoCigarros[i].precio%></p>
       </div>
       <div class="card-footer">
         <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
       </div>
     </div>
-    <div class="card cartinha ">
-      <a href="/productDetailCigarro"><img src="/img/cigarros/vegafina_robusto.jpg" class="card-img-top " alt="Cigarro Y."></a>
-        <div class="card-body">
-          <a href="/productDetailCigarro"> <h5 class="card-title">Cigarro  Y</h5></a>
-          <p class="card-text">$3.111,11</p>
-        </div>
-        <div class="card-footer">
-         <a href="/carrito"> <button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
-        </div>
-      </div>
-      <div class="card  cartinha">
-        <a href="productDetailCigarro"><img src="/img/cigarros/vegafina_robusto.jpg" class="card-img-top" alt="Cigarro  Z."></a>
-         <div class="card-body">
-            <a href="productDetailCigarro"><h5 class="card-title">Cigarro Z</h5></a>
-          <p class="card-text">$911,11</p>
-        </div>
-        <div class="card-footer">
-         <a href="/carrito"> <button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
-        </div>
-      </div>
-      <div class="card cartinha ">
-        <a href="productDetailCigarro"><img src="/img/cigarros/vegafina_robusto.jpg" class="card-img-top " alt="Cigarro A."></a>
-        <div class="card-body">
-          <a href="productDetailCigarro"></a><h5 class="card-title">Cigarro  A</h5></a>
-          <p class="card-text">$4.111,11</p>
-        </div>
-        <div class="card-footer">
-          <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
-        </div>
-      </div>
+    <% } %>
   </div>
