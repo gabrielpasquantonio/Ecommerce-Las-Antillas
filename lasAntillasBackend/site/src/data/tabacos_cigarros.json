@@ -3,28 +3,28 @@
     "id": 1,
     "nombre": "Tabaco Cigarros 1",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "precio": 500,
+    "precio": "$500",
     "imagen": "pueblo_blue.jpg"
   },
   {
     "id": 2,
     "nombre": "Tabaco cigarros 2",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "precio": 500,
+    "precio": "$500",
     "imagen": "tabaco_cigarro2.jpg"
   },
   {
     "id": 3,
     "nombre": "Tabaco cigarros 3",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "precio": 500,
+    "precio": "$500",
     "imagen": "tabaco_cigarro3.jpg"
   },
   {
     "id": 4,
     "nombre": "Tabacos cigarros 4",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "precio": 500,
+    "precio": "$500",
     "imagen": "tabaco_cigarro4.jpeg"
   }
   
