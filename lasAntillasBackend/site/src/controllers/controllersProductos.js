@@ -1,11 +1,11 @@
 const path = require("path");
 const fs = require('fs');
 //Aca pasamos los datos del archivo Json de Habanos a un Array
-let productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","habanos.json")));
-let productoCigarros = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","cigarros.json")));
-let productoCigarritos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","cigarritos.json")));
-let productoTabacoPipas = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","tabaco_pipa.json")));
-let productoTabacoArmar = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","tabacos_cigarros.json")));
+const productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","habanos.json")));
+const productoCigarros = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","cigarros.json")));
+const productoCigarritos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","cigarritos.json")));
+const productoTabacoPipas = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","tabaco_pipa.json")));
+const productoTabacoArmar = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","tabacos_cigarros.json")));
 
 
 
@@ -61,6 +61,7 @@ module.exports = {
         res.render(path.resolve(__dirname, "..", "views", "productos", "carrito.ejs"));
     }, allProducts: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-        res.render(path.resolve(__dirname, "..", "views", "productos", "allProducts.ejs"),{productoHabanos},{productoCigarros},{productoCigarritos},{productoTabacoArmar},{productoTabacoPipas});
+        res.render(path.resolve(__dirname, "..", "views", "productos", "allProducts.ejs"),{productoHabanos,productoCigarros,productoCigarritos,productoTabacoArmar,productoTabacoPipas});
+
     } 
 }
