@@ -60,7 +60,8 @@
                                             style="visibility: visible; height: auto;">
                                             <div class="bx-wrapper" style="max-width: 100%;">
                                                 <div>
-                                                    <img data-sizes="auto" src="/img/cigarritos/mini_ white_filter.jpg" style="width: 100%; overflow: hidden; position: relative;max-height:300px; height:auto;">
+                                                    <img data-sizes="auto" src="/img/cigarritos/mini_ white_filter.jpg"
+                                                        style="width: 100%; overflow: hidden; position: relative;max-height:300px; height:auto;">
                                                 </div>
                                             </div>
                                         </div>
@@ -229,7 +230,7 @@
                                                     <label class="variant-label" for="variation_1">
                                                         Presentación:
                                                     </label>
-                                                    <select>
+                                                    <select style="width: 100%;">
 
                                                         <option value="Unidad" selected="selected">Unidad</option>
                                                         <option value="Petaca x 5 unidades">Petaca x 5 unidades</option>
@@ -538,41 +539,42 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Footer-->
-        <%- include("../partials/footer.ejs") %>
+    <!-- Footer-->
+    <%- include("../partials/footer.ejs") %>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
 
-        <!-- Navbar Dropdown - dropright scrip -->
-        <script>
-            $(function () {
-                $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (event) {
-                    event.preventDefault();
-                    event.stopPropagation();
+    <!-- Navbar Dropdown - dropright scrip -->
+    <script>
+        $(function () {
+            $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (event) {
+                event.preventDefault();
+                event.stopPropagation();
 
-                    $(this).parents('.dropdown-submenu').siblings().find('.show').removeClass("show");
-                    $(this).siblings().toggleClass("show");
+                $(this).parents('.dropdown-submenu').siblings().find('.show').removeClass("show");
+                $(this).siblings().toggleClass("show");
 
-                    //collapse all after nav is closed
-                    $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
-                        $('.dropdown-submenu .show').removeClass("show");
-                    });
+                //collapse all after nav is closed
+                $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+                    $('.dropdown-submenu .show').removeClass("show");
                 });
             });
-        </script>
+        });
+    </script>
 </body>
 
 </html>

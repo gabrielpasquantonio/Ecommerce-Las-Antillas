@@ -14,6 +14,9 @@
     margin-right: auto;
     margin-left: auto;
 }
+.container{
+    max-width: 100%!important;
+}
 
 .row {
     display: flex;
@@ -692,7 +695,7 @@ a {
         margin-top: 10px!important;
     }
     .product-price {
-        font-size: 32px;
+        font-size: 22px;
         margin-top: 10px;
         position: relative;
         font-weight: bold!important;
@@ -1060,7 +1063,7 @@ top: 20px;}
     pointer-events: all;
 }
 input.input-shipping {
-    width: 200px;
+    width: auto;
 }
 .btn-secondary {
     background: transparent!important;
@@ -1069,7 +1072,7 @@ input.input-shipping {
 }
 input.form-control {
     height: 40px;
-    
+    width: 100%;
     padding: 10px;
     margin: 0;
     box-sizing: border-box;
@@ -1312,12 +1315,15 @@ h3 {
 
 @media screen and (max-width: 600px) {
     #principal  {
-      visibility: hidden;
-      clear: both;
-      float: left;
-      margin: 10px auto 5px 20px;
-      width: 28%;
-      display: none;
+     
+        
+            
+            top: 0;
+            left: 0;
+            min-width: 100%;
+     
+     
+     
     }
   }
   .custom-inner {
