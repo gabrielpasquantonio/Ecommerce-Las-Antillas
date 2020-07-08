@@ -14,43 +14,27 @@
      <!-- NavBar-->
      <%- include("../partials/navbar.ejs") %>
 
-<div class="container-fluid"></div>
-<section class="row">
-  <article class="col-12">
-    <h1 style="font-family: sans-serif;" class="display-4 text-center pt-5">Administrador de Productos</h1>
-  </article>
-  <article class="col-12">
-    <a href="/create"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
-  </article>
-  <article class="col-12" >
-  <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Ver</th>
-          <th scope="col">Editar</th>
-          <th scope="col">Borrar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% productoHabanos.forEach(productoHabano => { %>
-        <tr>
-          <td><%= productoHabano.id%> </td>
-          <td><%= productoHabano.nombre%> </td>
-          <td><a href="/detailHabano/<%= productoHabano.id%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
-          <td><a href="#"> <ion-icon name="pencil-outline"></ion-icon></a></td>
-          <td><a href="#"><ion-icon name="trash-outline"></ion-icon></a></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table> 
-  </article>       
-</section>
 
-        
-  <!-- Footer-->
-  <%- include("../partials/footer.ejs") %>
+     <!--Producto-->
+      <section class="row">
+            <article class="col-12 col-md-6 mx-auto mt-5">
+                <!--<figure >
+                  <img  src="img/<%= /*reloj.imagen*/%>" class="card-img-top w-100 d-block" alt="Reloj">
+                </figure> -->
+                <div class="card-body">
+                  <a href="productDetailHabano"><img src="/img/habanos/<%=miHabano.imagen%>" class="card-img-top " alt="Habano X."></a>
+                  <h5 class="card-title"><%= miHabano.nombre%></h5>
+                  <h5 class="card-title"><%= miHabano.precio %></h5>
+                  <p class="card-text"><%= miHabano.descripcion %></p>
+                  
+                </div>
+                <a href="/admin" class="btn btn-dark">Volver</a>
+            </article>
+      </section>
+    </main>
+
+
+    <%- include("../partials/footer.ejs") %>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
