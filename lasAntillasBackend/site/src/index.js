@@ -6,6 +6,10 @@ const path = require("path");
 app.use(express.static(path.resolve(__dirname, "..", "public")));
 //Aca indicamos que estamos usando el motor de plantillas EJS
 app.set('view engine','ejs');
+//URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
+app.use(express.urlencoded({ extended: false }));
+
+
 
 const webRouter = require("./routes/web.js")
 const usuariosRouter = require("./routes/usuarios.js")
