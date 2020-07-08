@@ -9,4 +9,8 @@ const controllersAdmin = require(path.resolve(__dirname, "..", "controllers", "c
 
 //Armo mis rutas
 router.get("/admin", controllersAdmin.index);
+//Esta es la ruta que carga el formulario
+router.get("/create", controllersAdmin.create);
+//Esta es la ruta que guarda el formulario
+router.post("/create", controllersAdmin.save);
 module.exports = router;
