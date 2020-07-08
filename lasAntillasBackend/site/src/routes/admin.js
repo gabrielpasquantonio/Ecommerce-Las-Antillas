@@ -13,4 +13,6 @@ router.get("/admin", controllersAdmin.index);
 router.get("/create", controllersAdmin.create);
 //Esta es la ruta que guarda el formulario
 router.post("/create", controllersAdmin.save);
+router.get("/detailHabano/:id", controllersAdmin.show);
+
 module.exports = router;

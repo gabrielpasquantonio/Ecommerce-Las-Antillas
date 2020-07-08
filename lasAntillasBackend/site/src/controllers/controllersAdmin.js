@@ -32,5 +32,20 @@ module.exports = {
             fs.writeFileSync(path.resolve(__dirname,'..','data','habanos.json'),nuevoHabanoGuardar);
             //Aqui redireccionamos los nuevos productos a la vista administrar
             res.redirect('/admin')
+    },
+
+    show: (req,res) =>{
+       //res.send(req.params.id);
+       //Aca declaro la variable que voy a mandar a la vista 
+       let miHabano;
+        productoHabanos.forEach(productoHabano => {
+           if(productoHabano.id == req.params.id){
+               miHabano = productoHabano;         
+            }
+        });
+        //Aca pongo lo que le voy a mandar a la vista 
+        res.render(path.resolve(__dirname, '..','views','admin','detailHabano.ejs'), {miHabano})
+    
     }
-}
+
+    }
