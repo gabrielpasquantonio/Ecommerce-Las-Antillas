@@ -22,6 +22,7 @@ module.exports = {
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             precio: req.body.precio,
+            imagen: req.file.filename
             
         };
             //Aquí se agrega al array el nuevo Producto
