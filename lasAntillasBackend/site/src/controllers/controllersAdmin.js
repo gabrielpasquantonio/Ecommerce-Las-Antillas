@@ -17,12 +17,13 @@ module.exports = {
     save: (req, res) => {
         //res.send(req.body);
         //Aqui indico el formato de como se va a guardar la informacion del producto
+        
         let nuevoHabano={
             id: productoHabanos.length + 1,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             precio: req.body.precio,
-            imagen: req.file.filename
+            imagen: req.files[0].filename
             
         };
             //Aquí se agrega al array el nuevo Producto

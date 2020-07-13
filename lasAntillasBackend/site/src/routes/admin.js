@@ -19,7 +19,6 @@ const upload = multer({ storage });
 //debo requerir el controlador:
 
 const controllersAdmin = require(path.resolve(__dirname, "..", "controllers", "controllersAdmin.js"))
-
 //Armo mis rutas
 router.get("/admin", controllersAdmin.index);
 //Esta es la ruta que carga el formulario
