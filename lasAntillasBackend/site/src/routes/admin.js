@@ -26,5 +26,7 @@ router.get("/create", controllersAdmin.create);
 //Esta es la ruta que guarda el formulario
 router.post("/create", upload.any('imagen'), controllersAdmin.save);
 router.get("/detailHabano/:id", controllersAdmin.show);
-
+router.get("/delete/:id", controllersAdmin.destroy);
+router.get("/edit/:id", controllersAdmin.edit);
+router.put("/edit/:id", upload.any('imagen'), controllersAdmin.updateHabanos);
 module.exports = router;

@@ -39,8 +39,8 @@
           <td><%= productoHabano.id%> </td>
           <td><%= productoHabano.nombre%> </td>
           <td><a href="/detailHabano/<%= productoHabano.id%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
-          <td><a href="#"> <ion-icon name="pencil-outline"></ion-icon></a></td>
-          <td><a href="#"><ion-icon name="trash-outline"></ion-icon></a></td>
+          <td><a href="/edit/<%= productoHabano.id%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
+          <td><a href="/delete/<%= productoHabano.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
         </tr>
         <% }); %>
       </tbody>
