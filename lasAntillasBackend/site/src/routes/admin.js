@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require('multer');
+const mantenimiento = require('../middlewares/mantenimiento.js');
 
 // Aqui dispongo lo referido al nombre del archivo y donde lo vamos a guardar:
 const storage = multer.diskStorage({

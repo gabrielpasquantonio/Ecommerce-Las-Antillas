@@ -92,7 +92,7 @@ module.exports = {
         //Aca usamos un if ternario, si la persona no coloco ninguna imagen nueva , es decir no la edito , tendria que volver la Oldimagen ( ver archivo edit). 
         //Si me esta llegando una migen nueva en el req.file entonces guardame el nombre de lo que me esta llegando. En caso de que no haya entrado una imagen nueva, y se mantiene la misma entonces guardame la imagen anterior. 
         req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
-        //Aca voy a contener el nuevo reloj que ya se actualizo
+        //Aca voy a contener el nuevo habano que ya se actualizo
         let habanoUpdate = productoHabanos.map(productoHabano => {
             if(productoHabano.id == req.body.id){
                 return productoHabano = req.body;
