@@ -3,6 +3,9 @@ const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
 
+//Aca debemos requerir el middleware de aplicacion de mantenimiento. Nota: No usamos el metodo path ya que estamos dentro de la raiz
+//const mantenimiento = require('./middlewares/mantenimiento.js');
+
 //Aca estoy vinculando los archivos css
 app.use(express.static(path.resolve(__dirname, "..", "public")));
 //Aca indicamos que estamos usando el motor de plantillas EJS
@@ -12,7 +15,8 @@ app.use(express.urlencoded({ extended: false }));
 //Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios
 app.use(methodOverride('_method'));
 
-
+//Aca llamo a mi middleware de aplicacion
+//app.use(mantenimiento);
 
 
 const webRouter = require("./routes/web.js")
