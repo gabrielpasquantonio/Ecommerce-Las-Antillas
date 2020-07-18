@@ -6,17 +6,17 @@ module.exports = {
         //Aca pasamos los datos del archivo Json de Habanos a un Array
     let productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","habanos.json")));
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-        res.render(path.resolve(__dirname, "..", "views", "admin", "admin.ejs"),{productoHabanos});
+        res.render(path.resolve(__dirname, "..", "views", "admin", "adminHabanos.ejs"),{productoHabanos});
 
     },
-    create: (req, res) => {
+    createHabanos: (req, res) => {
     //Aca pasamos los datos del archivo Json de Habanos a un Array
     let productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","habanos.json")));
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-        res.render(path.resolve(__dirname, "..", "views", "admin", "create.ejs"));
+        res.render(path.resolve(__dirname, "..", "views", "admin", "createHabanos.ejs"));
 
     },
-    save: (req, res) => {
+    saveHabanos: (req, res) => {
     //Aca pasamos los datos del archivo Json de Habanos a un Array
     let productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","habanos.json")));
         //res.send(req.body);
@@ -25,9 +25,10 @@ module.exports = {
         let nuevoHabano={
             id: productoHabanos.length + 1,
             nombre: req.body.nombre,
+            marca:req.body.marca,
             descripcion: req.body.descripcion,
             precio: req.body.precio,
-            imagen: req.files[0].filename
+            imagen: req.files.length>0?req.files[0].filename:"default.jpg"
             
         };
             //Aquí se agrega al array el nuevo Producto
@@ -37,7 +38,7 @@ module.exports = {
             //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
             fs.writeFileSync(path.resolve(__dirname,'..','data','habanos.json'),nuevoHabanoGuardar);
             //Aqui redireccionamos los nuevos productos a la vista administrar
-            res.redirect('/admin')
+            res.redirect('/adminHabanos')
     },
 
     show: (req,res) =>{
@@ -67,7 +68,7 @@ module.exports = {
         //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
         fs.writeFileSync(path.resolve(__dirname,'..','data','habanos.json'),habanosGuardar);
         //Aqui redireccionamos los nuevos productos a la vista administrar
-        res.redirect('/admin');
+        res.redirect('/adminHabanos');
     },
 
     edit: (req,res) => {
@@ -103,7 +104,7 @@ module.exports = {
         //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
         fs.writeFileSync(path.resolve(__dirname,'..','data','habanos.json'),habanosActualizar);
         //Aqui redireccionamos los nuevos productos a la vista administrar
-        res.redirect('/admin');        
+        res.redirect('/adminHabanos');        
     
 
     }

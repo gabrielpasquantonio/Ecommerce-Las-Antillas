@@ -21,11 +21,11 @@ const upload = multer({ storage });
 
 const controllersAdmin = require(path.resolve(__dirname, "..", "controllers", "controllersAdmin.js"))
 //Armo mis rutas
-router.get("/admin", controllersAdmin.index);
+router.get("/adminHabanos", controllersAdmin.index);
 //Esta es la ruta que carga el formulario
-router.get("/create", controllersAdmin.create);
+router.get("/createHabanos", controllersAdmin.createHabanos);
 //Esta es la ruta que guarda el formulario
-router.post("/create", upload.any('imagen'), controllersAdmin.save);
+router.post("/createHabanos", upload.any('imagen'), controllersAdmin.saveHabanos);
 router.get("/detailHabano/:id", controllersAdmin.show);
 router.get("/delete/:id", controllersAdmin.destroy);
 router.get("/edit/:id", controllersAdmin.edit);

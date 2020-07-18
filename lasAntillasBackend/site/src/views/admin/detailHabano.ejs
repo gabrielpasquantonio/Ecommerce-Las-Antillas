@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Detail Habanos</title>
     <link rel="stylesheet" href="/css/productDetail.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -23,12 +23,14 @@
                 </figure> -->
                 <div class="card-body">
                   <a href="productDetailHabano"><img src="/images/habanos/<%=miHabano.imagen%>" class="card-img-top " alt="Habano X."></a>
-                  <h5 class="card-title"><%= miHabano.nombre%></h5>
+                  <h4 class="card-title">Nombre:<%= miHabano.nombre%></h4>
+                  <h5 class="card-title">Marca:<%= miHabano.marca %></h5>
                   <h5 class="card-title">$<%= miHabano.precio %></h5>
+                  <h5 class="card-title">Descuento: <%= miHabano.descuento %></h5>
                   <p class="card-text"><%= miHabano.descripcion %></p>
                   
                 </div>
-                <a href="/admin" class="btn btn-dark">Volver</a>
+                <a href="/adminHabanos" class="btn btn-dark">Volver</a>
             </article>
       </section>
     </main>
