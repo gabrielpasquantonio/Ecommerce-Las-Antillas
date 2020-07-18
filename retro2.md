@@ -1,13 +1,24 @@
 # Starfish retrospective
 + ## ___Start Doing:___
     ```
-    For a better organization and more efective monitoring & task division, we decided to start using Trello as a task manager app.    
+   For a better organization and more efective monitoring & task division, we decided to start using Trello as a task manager app.   
+
+//
+    To keep the good organization and for a better follow up and tracking of our sprint activities, we starter to do weekly meetings, where we discuss and show our progresso. With that we keep everything alligned, and avoid and upcoming suprise. 
     
 ___
 + ## ___More of:___
     ```
     - Be  aware of deadlines and time administration.
-    - Make sure the repository update is done equally by team's members.   
+    - Make sure the repository update is done equally by team's members.  
+
+    //
+- Make
+ sure to create a new branch before starting to work in our project  
+
+
+
+
 ___
 + ## ___Keep doing:___
     ```
@@ -27,6 +38,10 @@ ___
     ```
         - We carry out the organization and layout process of the site very well. It made the coding task much easier for us.
         - We use other pages very wisely as guideline resources for our site.  
+        //
+
+        - After implementing the weekly meetings and start using more effectively trello, we could see a hugh increase in our productivity, stoping wasting time to prepare to work on our project.
+
 
 ___
 
