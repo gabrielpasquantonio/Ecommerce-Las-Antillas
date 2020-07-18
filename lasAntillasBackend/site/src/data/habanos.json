@@ -1,29 +1,39 @@
 [
   {
+    "id": 1,
     "nombre": "Habano 1",
+    "marca": "Habano X",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "precio": "500",
+    "precio": 500,
+    "descuento": 0,
     "imagen": "habano1.png"
   },
   {
     "id": 2,
     "nombre": "Habano 2",
+    "marca": "Habano Y",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
     "precio": 500,
+    "descuento": 0,
     "imagen": "habano2.png"
   },
   {
     "id": 3,
     "nombre": "Habano 3",
+    "marca": "Habano Z",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
     "precio": 500,
+    "descuento": 0,
     "imagen": "habano3.jpg"
   },
   {
     "id": 4,
     "nombre": "Habano 4",
+    "marca": "Habano A",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
     "precio": 500,
+    "descuento": 0,
     "imagen": "habano4.jpeg"
   }
+  
 ]
