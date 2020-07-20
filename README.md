@@ -128,32 +128,6 @@ ___
     ___
 
 
-+ ## ___Instrucciones para leer el proyecto___
-        
-1-Archivo README.md: El mismo se encuetra elaborado en idioma inglés y castellano, teniendo en cuenta que luego este proyecto quedará registrado en nuestros respectivos repositorio para futuras oportunidades laborales.
-
-2- Diseño Gráfico del Sitio:
-
-A- Home : Decidimos usar React para generar esta sección para empezar a  practicar el uso del mismo. Como todavía no aprendimos a hacer el ruteo el resto de las secciones fueron elaboradas usando Html y Css. 
-
-B-Formularios de registro: Los archivos  se denominan:
-
-+ login.html
-+ login 2.html
-
-C-Formulario de carga de producto (para el administrador): 
-
-+ fCargaDeProducto.html  
-
-Todos los archivos antes mencionados se encuentran guardados en la carpeta “maquetación”. La misma se ubica adentro de las-antillas. 
-
-D- Detalle de producto y  Carrito de Compra : A estas secciones las hicimos a mano ya que no llegamos con el tiempo.  Los nombres de los archivos son:
-
-+maquetaCarritoDeCompra
-+maquetaDetalleDeProducto
-
-Los mismos estan en la carpeta IMG dentro de la carpeta de maquetación.
-
 + ## ___Link de Trello___
     ```
     [Link de trello](https://trello.com/b/9lrgI7dS/las-antillas)
