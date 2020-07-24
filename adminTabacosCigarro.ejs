@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/productDetail.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+     <!-- NavBar-->
+     <%- include("../partials/navbar.ejs") %>
+
+<div class="container-fluid"></div>
+<section class="row">
+  <article class="col-12">
+    <h1 style="font-family: sans-serif;" class="display-4 text-center pt-5">Administrador de Productos Tabacos para Cigarro</h1>
+  </article>
+  <article class="col-12">
+    <a href="/createTabacosCigarro"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
+  </article>
+  <article class="col-12" >
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Ver</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Borrar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% productoTabacosCigarro.forEach(productoTabacosCigarro => { %>
+        <tr>
+          <td><%= productoTabacosCigarro.id%> </td>
+          <td><%= productoTabacosCigarro.nombre%> </td>
+          <td><%= productoTabacosCigarro.marca%> </td>
+          <td><a href="/detailTabacosCigarro/<%= productoTabacosCigarro.id%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
+          <td><a href="/editTabacosCigarro/<%= productoTabacosCigarro.id%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
+          <td><a href="/deleteTabacosCigarro/<%= productoTabacosCigarro.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table> 
+  </article>       
+</section>
+
+        
+  <!-- Footer-->
+  <%- include("../partials/footer.ejs") %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+      
+  <!-- Navbar Dropdown - dropright scrip --> 
+      <script>
+        $(function () {
+          $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+    
+            $(this).parents('.dropdown-submenu').siblings().find('.show').removeClass("show");
+            $(this).siblings().toggleClass("show");
+    
+            //collapse all after nav is closed
+            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+              $('.dropdown-submenu .show').removeClass("show");
+            });
+          });
+        });
+      </script>
+
+
+
+
+
+</body>
+
+</html>
