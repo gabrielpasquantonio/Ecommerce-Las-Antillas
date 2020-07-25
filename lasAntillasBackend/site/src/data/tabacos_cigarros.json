@@ -34,6 +34,12 @@
     "precio": 500,
     "descuento": 0,
     "imagen": "tabaco_cigarro4.jpeg"
+  },
+  {
+    "id": 5,
+    "nombre": "Tabaco",
+    "marca": "Montecristo",
+    "descripcion": "Grande",
+    "precio": "300"
   }
-  
 ]

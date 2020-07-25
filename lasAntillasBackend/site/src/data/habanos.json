@@ -34,6 +34,15 @@
     "precio": 500,
     "descuento": 0,
     "imagen": "habano4.jpeg"
+  },
+  {
+    "nombre": "Habano",
+    "marca": "Flor de Cano",
+    "descripcion": "nk",
+    "precio": "500",
+    "descuento": "10",
+    "oldImagen": "habano-1595624570717.jpg",
+    "id": "5",
+    "imagen": "habano-1595624570717.jpg"
   }
-  
 ]
