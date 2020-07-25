@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "name": "User 1",
+    "lastName": "LastName X",
+    "email": "juan@gmail.com",
+    "password": 12345,
+    "category": 0,
+    "image": "user1.png"
+  },
+  {
+    "id": 2,
+    "name": "User 2",
+    "lastName": "LastName Y",
+    "email": "juan2@gmail.com",
+    "password": 12345,
+    "category": 0,
+    "image": "user1.png"
+  },
+  {
+    "id": 3,
+    "name": "User 3",
+    "lastName": "LastName Z",
+    "email": "juan3@gmail.com",
+    "password": 12345,
+    "category": 0,
+    "image": "user1.png"
+  },
+  {
+    "id": 4,
+    "name": "User 4",
+    "lastName": "LastName Z",
+    "email": "juan@gmail.com",
+    "password": 12345,
+    "category": 0,
+    "image": "user1.png"
+  }
+
+]
