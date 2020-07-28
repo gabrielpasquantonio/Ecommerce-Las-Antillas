@@ -69,12 +69,16 @@ const uploadTabacosCigarro = multer({ storageTabacosCigarro });
 
 const controllersAdmin = require(path.resolve(__dirname, "..", "controllers", "controllersAdmin.js"))
 //Armo mis rutas
-router.get("/adminHabanos", controllersAdmin.index);
-router.get("/adminCigarros", controllersAdmin.indexCigarros);
-router.get("/adminCigarritos", controllersAdmin.indexCigarritos);
-router.get("/adminTabacosPipa", controllersAdmin.indexTabacosPipa);
-router.get("/adminTabacosCigarro", controllersAdmin.indexTabacosCigarro);
+router.get("/adminProductos", controllersAdmin.indexProductos);
+//router.get("/adminHabanos", controllersAdmin.index);
+//router.get("/adminCigarros", controllersAdmin.indexCigarros);
+//router.get("/adminCigarritos", controllersAdmin.indexCigarritos);
+//router.get("/adminTabacosPipa", controllersAdmin.indexTabacosPipa);
+//router.get("/adminTabacosCigarro", controllersAdmin.indexTabacosCigarro);
 //Esta es la ruta que carga el formulario
+router.get("/createProductos", controllersAdmin.createProductos);
+
+
 router.get("/createHabanos", controllersAdmin.createHabanos);
 router.get("/createCigarros", controllersAdmin.createCigarros);
 router.get("/createCigarritos", controllersAdmin.createCigarritos);

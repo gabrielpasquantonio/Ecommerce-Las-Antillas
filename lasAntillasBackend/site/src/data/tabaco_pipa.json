@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "tipo":"TabacoPipa",
     "nombre": "Tabaco Pipas 1",
     "marca": "Tabaco_pipa A",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -10,6 +11,7 @@
   },
   {
     "id": 2,
+    "tipo":"TabacoPipa",
     "nombre": "Tabaco Pipas 2",
     "marca": "Tabaco_pipa B",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -19,6 +21,7 @@
   },
   {
     "id": 3,
+    "tipo":"TabacoPipa",
     "nombre": "Tabaco Pipas 3",
     "marca": "Tabaco_pipa C",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -28,6 +31,7 @@
   },
   {
     "id": 4,
+    "tipo":"TabacoPipa",
     "nombre": "Tabaco Pipas 4",
     "marca": "Tabaco_pipa D",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",

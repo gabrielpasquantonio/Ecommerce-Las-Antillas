@@ -1,15 +1,18 @@
 [
   {
     "id": 1,
+    "tipo":"Cigarrito",
     "nombre": "Cigarrito 1",
     "marca": "Cigarrito X",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
     "precio": 500,
     "descuento": 0,
     "imagen": "mini_ white_filter.jpg"
+    
   },
   {
     "id": 2,
+    "tipo":"Cigarrito",
     "nombre": "Cigarrito 2",
     "marca": "Cigarrito Y",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -19,6 +22,7 @@
   },
   {
     "id": 3,
+    "tipo":"Cigarrito",
     "nombre": "Cigarrito 3",
     "marca": "Cigarrito Z",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -28,6 +32,7 @@
   },
   {
     "id": 4,
+    "tipo":"Cigarrito",
     "nombre": "Cigarrito 4",
     "marca": "Cigarrito A",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -37,6 +42,7 @@
   },
   {
     "id": 5,
+    "tipo":"Cigarrito",
     "nombre": "Cigarrito 5",
     "marca": "Partagás",
     "descripcion": "Grande",

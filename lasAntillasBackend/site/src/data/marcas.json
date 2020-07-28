@@ -1,0 +1,50 @@
+
+   [
+    {
+      "tipo": "Habano",
+      "marca": ['aca pongo los arrays']
+      
+    },
+    {
+      "id": 2,
+      "tipo":"Habanos",  
+      "nombre": "Habano 2",
+      "marca": "Habano Y",
+      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "precio": 500,
+      "descuento": 0,
+      "imagen": "habano2.png"
+    },
+    {
+      "id": 3,
+      "tipo":"Habanos",  
+      "nombre": "Habano 3",
+      "marca": "Habano Z",
+      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "precio": 500,
+      "descuento": 0,
+      "imagen": "habano3.jpg"
+    },
+    {
+      "id": 4,
+      "tipo":"Habanos",   
+      "nombre": "Habano 4",
+      "marca": "Habano A",
+      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "precio": 500,
+      "descuento": 0,
+      "imagen": "habano4.jpeg"
+    },
+    {
+      "nombre": "Habano",
+      "marca": "Flor de Cano",
+      "descripcion": "nk",
+      "precio": "500",
+      "descuento": "10",
+      "oldImagen": "habano-1595624570717.jpg",
+      "id": "5",
+      "tipo":"Habanos",
+      "imagen": "habano-1595624570717.jpg"
+    }
+  ]
+  

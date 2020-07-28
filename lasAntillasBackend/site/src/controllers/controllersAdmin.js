@@ -2,19 +2,28 @@ const path = require("path");
 const fs = require('fs');
 
 module.exports = {
-    index: (req, res) => {
-        //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","habanos.json")));
-        //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-        res.render(path.resolve(__dirname, "..", "views", "admin", "adminHabanos.ejs"),{productoHabanos});
+    indexProductos: (req, res) => {
+     //parametrizando para que la primera letra de files View sea mayuscula                
+    //const resto = req.query.type.slice(1)
+    //const upper = req.query.type[0]
+    //const uppercase = upper.toUpperCase();
+    //const name = uppercase + resto
+    //const fileViewName = `admin${name}.ejs`
+  
+//Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
+let indexProductos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
+    //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
+    res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{indexProductos});
 
-    },
+},
 
-    createHabanos: (req, res) => {
+
+
+    createProductos: (req, res) => {
     //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","habanos.json")));
+    let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-        res.render(path.resolve(__dirname, "..", "views", "admin", "createHabanos.ejs"));
+        res.render(path.resolve(__dirname, "..", "views", "admin", "createProductos.ejs"),{todosProductosJson});
 
     },
     
@@ -96,13 +105,17 @@ module.exports = {
         req.body.id = req.params.id;
         //Aca usamos un if ternario, si la persona no coloco ninguna imagen nueva , es decir no la edito , tendria que volver la Oldimagen ( ver archivo edit). 
         //Si me esta llegando una migen nueva en el req.file entonces guardame el nombre de lo que me esta llegando. En caso de que no haya entrado una imagen nueva, y se mantiene la misma entonces guardame la imagen anterior. 
-        req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
+       // req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
         //Aca voy a contener el nuevo habano que ya se actualizo
         let habanoUpdate = productoHabanos.map(productoHabano => {
             if(productoHabano.id == req.body.id){
+           
+                req.body.imagen = req.files.length > 0 ? req.files[0].filename:productoHabano.imagen
                 return productoHabano = req.body;
             }
+    
             return productoHabano;
+    
         });
         let habanosActualizar = JSON.stringify(habanoUpdate,null,2)
         //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos

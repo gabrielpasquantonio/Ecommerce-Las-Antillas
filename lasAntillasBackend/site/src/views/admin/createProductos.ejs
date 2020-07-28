@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Habanos</title>
+    <title>Admin Create <%= todosProductosJson[0].tipo%></title>
     <link rel="stylesheet" href="/css/productDetail.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -18,7 +18,7 @@
      <section class="row">
       <article class="col-12  card pt-5" >
               <div class="card-body">
-                <h1 class="card-title text-center">Editar Productos Habanos</h1>
+                <h1 class="card-title text-center">Crear un Producto <%= todosProductosJson[0].tipo%></h1>
               </div>
       </article>
   </section>
@@ -28,49 +28,40 @@
             <div class="row" >
                 <div class="col-8 mx-auto bg-light ">
                     <div class="create-form">
-                        <form action="/edit/<%= habanoEditar.id%>?_method=PUT
-                          " method="POST" enctype="multipart/form-data" >
+                        <form action="/createProductos" method="POST" enctype="multipart/form-data" >
                             <div class="form-group">
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto" required="required" value="<%= habanoEditar.nombre%>">
+                                <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto" required="required" value="">
                             </div>
                             <div class="form-group">
-                              <input type="text" class="form-control" name="marca" placeholder="Marca" required="required" value="<%= habanoEditar.marca%>">
+                              <select  name="marca"  class="custom-select" data-toggle="dropdown" id="validationCustom04" placeholder="Marca" required>
+                                <option selected disabled value="#">Elija su marca</option>
+                                <% marcas.forEach(marca => { %>
+                                <option   value="<%=marca%>"><%=marca%></option>  
+                                <% }); %>
+                              </select>
                           </div>
-                          <div class="form-group">
-                            <input type="hidden" class="form-control" name="tipo" placeholder="Tipo" required="required" value="<%= habanoEditar.tipo%>">
-                        </div>		
+                            	
                             <div class="form-group">
-                                <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" required="required" value="<%= habanoEditar.descripcion%>">
+                                <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" required="required" value="">
                             </div>
                             <div class="form-group">
-                                <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required" value="<%=habanoEditar.precio%>">
-
+                                <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required" value="">
                             </div>
                             <div class="form-group">
-                                
                                 <select  name="descuento" class="custom-select" id="validationCustom04" required>
-                                  <option disabled value="#">Seleccione un descuento"</option>
-                                  <option value="0" <%= habanoEditar.descuento == 0 ? "selected" : null %>
-                                    >Sin descuento</option>
-                                  <option value="10" <%= habanoEditar.descuento == 10 ? "selected" : null %>>10%</option>
-                                  
+                                  <option selected disabled value="#">Elija su descuento</option>
+                                  <option value="0">Sin descuento</option>
+                                  <option value="10">10%</option>
                                 </select>
                             </div>
                         <!--Aqui solicito la imagen al usuario-->
                         <div class="custom-file">
-                          <figure class="form-group">
-                            <img class="w-100" src="/images/habanos/<%= habanoEditar.imagen %> " alt="habano <%= habanoEditar.nombre %>">
-
-                          </figure>
-                          <input type="hidden"  name="oldImagen"  value="<%= habanoEditar.imagen%>">
-                                    <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
-
-                          <input type="file" name="imagen"  multiple>
+                          <input type="file" name="imagen" multiple>
                           <!--<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="imagen" required value=" ">
                           <label class="custom-file-label" for="inputGroupFile01">Seleccione una imagen</label>-->
                         </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn btn-dark">Actualizar</button>
+                                <button type="submit" class="btn btn btn-dark">Guardar</button>
                                 <a href="/adminHabanos" class="btn btn-dark">Volver</a>
                             </div>
                             
