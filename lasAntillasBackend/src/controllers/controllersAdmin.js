@@ -11,9 +11,9 @@ module.exports = {
     //const fileViewName = `admin${name}.ejs`
   
 //Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
-let indexProductos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
+let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
     //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-    res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{indexProductos});
+    res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{todosProductosJson});
 
 },
 
@@ -22,20 +22,26 @@ let indexProductos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "da
     createProductos: (req, res) => {
     //Aca pasamos los datos del archivo Json de Habanos a un Array
     let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
+    
+    let marcas = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`marcas.json`)));
+
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-        res.render(path.resolve(__dirname, "..", "views", "admin", "createProductos.ejs"),{todosProductosJson});
+        res.render(path.resolve(__dirname, "..", "views", "admin", "createProductos.ejs"),{todosProductosJson},{marcas});
+    
+    
 
     },
     
-    saveHabanos: (req, res) => {
+    saveProductos: (req, res) => {
     //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","habanos.json")));
+    let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
         //res.send(req.body);
         //Aqui indico el formato de como se va a guardar la informacion del producto
         
-        let nuevoHabano={
-            id: productoHabanos.length + 1,
+        let nuevoProducto={
+            id: todosProductosJson.length + 1,
             nombre: req.body.nombre,
+            tipo:req.body.tipo,
             marca:req.body.marca,
             descripcion: req.body.descripcion,
             precio: req.body.precio,
@@ -43,45 +49,45 @@ let indexProductos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "da
             
         };
             //Aquí se agrega al array el nuevo Producto
-            productoHabanos.push(nuevoHabano);
+            todosProductosJson.push(nuevoProducto);
             //Aqui convierto el Array en un string y le indico que un producto se guarde abajo del otro gracias a null,2 espacios
-            let nuevoHabanoGuardar = JSON.stringify(productoHabanos,null,2)
+            let nuevoProductoGuardar = JSON.stringify(todosProductosJson,null,2)
             //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
-            fs.writeFileSync(path.resolve(__dirname,'..','data','habanos.json'),nuevoHabanoGuardar);
+            fs.writeFileSync(path.resolve(__dirname,'..','data',`${req.query.type}.json`),nuevoProductoGuardar);
             //Aqui redireccionamos los nuevos productos a la vista administrar
-            res.redirect('/adminHabanos')
+            res.redirect('/adminProductos')
     },
     
 
-    show: (req,res) =>{
+    showProductos: (req,res) =>{
     //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","habanos.json")));
+    let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
         //res.send(req.params.id);
        //Aca declaro la variable que voy a mandar a la vista 
-       let miHabano;
-        productoHabanos.forEach(productoHabano => {
-           if(productoHabano.id == req.params.id){
-               miHabano = productoHabano;         
+       let miProducto;
+       todosProductosJson.forEach(todoProductoJson => {
+           if(todoProductoJson.id == req.params.id){
+            miProducto = todoProductoJson;         
             }
         });
         
         //Aca pongo lo que le voy a mandar a la vista 
-        res.render(path.resolve(__dirname, '..','views','admin','detailHabano.ejs'), {miHabano})
+        res.render(path.resolve(__dirname, '..','views','admin','detailProductos.ejs'), {miProducto})
     
     },
-    destroy:(req, res) => {
+    destroyProductos:(req, res) => {
     //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let productoHabanos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","habanos.json")));
+    let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
         //Esta variable va a guardar el habano que se va a borrar
-        const habanoDeleteId = req.params.id;
+        const productoDeleteId = req.params.id;
         //Aca recorre el array y hago un filtro con los productos que fueron borrados deacuerdo a su id, una vez filtrado ,tengo que generar un nuevo array, que contenga los productos filtrados, osea todos los productos excepto los que se borraron
-        const habanosFinal = productoHabanos.filter(productoHabano => productoHabano.id != habanoDeleteId);
+        const productosFinal = todosProductosJson.filter(todoProductoJson => todoProductoJson.id != productoDeleteId);
         //Aqui convierto el Array en un string y le indico que un producto se guarde abajo del otro gracias a null,2 espacios
-        let habanosGuardar = JSON.stringify(habanosFinal,null,2)
+        let productosGuardar = JSON.stringify(productosFinal,null,2)
         //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
-        fs.writeFileSync(path.resolve(__dirname,'..','data','habanos.json'),habanosGuardar);
+        fs.writeFileSync(path.resolve(__dirname,'..','data',`${req.query.type}.json`),productosGuardar);
         //Aqui redireccionamos los nuevos productos a la vista administrar
-        res.redirect('/adminHabanos');
+        res.redirect(`/adminProductos/${req.query.type}`);
     },
 
     edit: (req,res) => {

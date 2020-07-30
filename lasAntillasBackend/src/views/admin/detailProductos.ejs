@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Detail Cigarritos</title>
     <link rel="stylesheet" href="/css/productDetail.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -15,46 +15,28 @@
      <%- include("../partials/navbar.ejs") %>
 
 
+     <!--Producto-->
+      <section class="row">
+            <article class="col-12 col-md-6 mx-auto mt-5">
+                <!--<figure >
+                  <img  src="img/<%= /*reloj.imagen*/%>" class="card-img-top w-100 d-block" alt="Reloj">
+                </figure> -->
+                <div class="card-body">
+                  <a href="productDetailCigarrito"><img src="/images/cigarritos/<%=miCigarrito.imagen%>" class="card-img-top " alt="Habano X."></a>
+                  <h4 class="card-title">Nombre:<%= miCigarrito.nombre%></h4>
+                  <h5 class="card-title">Marca:<%= miCigarrito.marca %></h5>
+                  <h5 class="card-title">$<%= miCigarrito.precio %></h5>
+                  <h5 class="card-title">Descuento: <%= miCigarrito.descuento %></h5>
+                  <p class="card-text"><%= miCigarrito.descripcion %></p>
+                  
+                </div>
+                <a href="/adminCigarritos" class="btn btn-dark">Volver</a>
+            </article>
+      </section>
+    </main>
 
-<div class="container-fluid"></div>
-<section class="row">
-  <article class="col-12">
-    <h1 style="font-family: sans-serif;" class="display-4 text-center pt-5">Administrador de <%= todosProductosJson[1].tipo%> </h1>
-  </article>
-  <article class="col-12">
-    <a href="/createProductos/?type=<%= todosProductosJson[0].tipo%>"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
-  </article>
-  <article class="col-12" >
-  <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Marca</th>
-          <th scope="col">Ver</th>
-          <th scope="col">Editar</th>
-          <th scope="col">Borrar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% todosProductosJson.forEach(todoProductoJson => { %>
-        <tr>
-          <td><%= todoProductoJson.id%> </td>
-          <td><%= todoProductoJson.nombre%> </td>
-          <td><%= todoProductoJson.marca%> </td>
-          <td><a href="/detailProductos/<%= todoProductoJson.id%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
-          <td><a href="/edit/<%= todoProductoJson.id%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
-          <td><a href="/delete/<%= todoProductoJson.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table> 
-  </article>       
-</section>
 
-        
-  <!-- Footer-->
-  <%- include("../partials/footer.ejs") %>
+    <%- include("../partials/footer.ejs") %>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>

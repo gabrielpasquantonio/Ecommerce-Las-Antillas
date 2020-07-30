@@ -1,50 +1,25 @@
 
    [
     {
-      "tipo": "Habano",
-      "marca": ['aca pongo los arrays']
+      "tipo": "Habanos",
+      "marca": ["Cohiba","Flor de Cano","Hoyo de Monterrey","J.L Piedra","Montecristo","Partagás","Quintero","Romeo y Julieta","San Cristobal"]
       
     },
     {
-      "id": 2,
-      "tipo":"Habanos",  
-      "nombre": "Habano 2",
-      "marca": "Habano Y",
-      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      "precio": 500,
-      "descuento": 0,
-      "imagen": "habano2.png"
+      "tipo": "Cigarros",
+      "marca": ["Flor de Copan","Francisco de Miranda","Placeres","Santa Clara 1830","Sol de Cuba","Te amo","Toscano","Vegafina"]
     },
     {
-      "id": 3,
-      "tipo":"Habanos",  
-      "nombre": "Habano 3",
-      "marca": "Habano Z",
-      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      "precio": 500,
-      "descuento": 0,
-      "imagen": "habano3.jpg"
+      "tipo": "Cigarritos",
+      "marca": ["Cafe Creme","Cubanos","Neos","Panter","Villiger"]
     },
     {
-      "id": 4,
-      "tipo":"Habanos",   
-      "nombre": "Habano 4",
-      "marca": "Habano A",
-      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-      "precio": 500,
-      "descuento": 0,
-      "imagen": "habano4.jpeg"
+      "tipo": "TabacosParaPipas",
+      "marca": ["Amphora","Argento","Black Vanilla","Brigg","Cellini","Golden Vanilla","Holger Danske","Blacj Vanilla","Jacaranda","Mac Baren","Mac Lintokc","Pergamon","Peterson","Presbyterian","Samuel Gawith","Savinelli"]
     },
-    {
-      "nombre": "Habano",
-      "marca": "Flor de Cano",
-      "descripcion": "nk",
-      "precio": "500",
-      "descuento": "10",
-      "oldImagen": "habano-1595624570717.jpg",
-      "id": "5",
-      "tipo":"Habanos",
-      "imagen": "habano-1595624570717.jpg"
+    {"tipo": "TabacosParaCigarros",
+      "marca": ["Apache","Argento","Black Devil","Cerrito","Cheetah","Flandria","Las Hojas","Look Out","Mac Baren","Mac Baren Choice","Manitou","Moro","Pachamama","Pepe","Pueblo","Puro Argentino","Red Field","Sayri","Stanley","Unitas","Van Haasen","Van Kiff"]
     }
+    
   ]
   

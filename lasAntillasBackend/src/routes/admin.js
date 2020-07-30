@@ -79,28 +79,34 @@ router.get("/adminProductos", controllersAdmin.indexProductos);
 router.get("/createProductos", controllersAdmin.createProductos);
 
 
-router.get("/createHabanos", controllersAdmin.createHabanos);
-router.get("/createCigarros", controllersAdmin.createCigarros);
-router.get("/createCigarritos", controllersAdmin.createCigarritos);
-router.get("/createTabacosPipa", controllersAdmin.createTabacosPipa);
-router.get("/createTabacosCigarro", controllersAdmin.createTabacosCigarro);
+// router.get("/createHabanos", controllersAdmin.createHabanos);
+// router.get("/createCigarros", controllersAdmin.createCigarros);
+// router.get("/createCigarritos", controllersAdmin.createCigarritos);
+// router.get("/createTabacosPipa", controllersAdmin.createTabacosPipa);
+// router.get("/createTabacosCigarro", controllersAdmin.createTabacosCigarro);
 //Esta es la ruta que guarda el formulario
-router.post("/createHabanos", upload.any('imagen'), controllersAdmin.saveHabanos);
-router.post("/createCigarros", uploadCigarro.any('imagen2'), controllersAdmin.saveCigarros);
-router.post("/createCigarritos", uploadCigarrito.any('imagen3'), controllersAdmin.saveCigarritos);
-router.post("/createTabacosPipa", uploadTabacosPipa.any('imagen4'), controllersAdmin.saveTabacosPipa);
-router.post("/createTabacosCigarro", uploadTabacosCigarro.any('imagen5'), controllersAdmin.saveTabacosCigarro);
+router.post("/createProductos", upload.any('imagen'), controllersAdmin.saveProductos);
 
-router.get("/detailHabano/:id", controllersAdmin.show);
-router.get("/detailCigarro/:id", controllersAdmin.showCigarro);
-router.get("/detailCigarrito/:id", controllersAdmin.showCigarrito);
-router.get("/detailTabacosPipa/:id", controllersAdmin.showTabacosPipa);
-router.get("/detailTabacosCigarro/:id", controllersAdmin.showTabacosCigarro);
-router.get("/delete/:id", controllersAdmin.destroy);
-router.get("/deleteCigarro/:id", controllersAdmin.destroyCigarro);
-router.get("/deleteCigarrito/:id", controllersAdmin.destroyCigarrito);
-router.get("/deleteTabacosPipa/:id", controllersAdmin.destroyTabacosPipa);
-router.get("/deleteTabacosCigarro/:id", controllersAdmin.destroyTabacosCigarro);
+
+// router.post("/createHabanos", upload.any('imagen'), controllersAdmin.saveHabanos);
+// router.post("/createCigarros", uploadCigarro.any('imagen2'), controllersAdmin.saveCigarros);
+// router.post("/createCigarritos", uploadCigarrito.any('imagen3'), controllersAdmin.saveCigarritos);
+// router.post("/createTabacosPipa", uploadTabacosPipa.any('imagen4'), controllersAdmin.saveTabacosPipa);
+// router.post("/createTabacosCigarro", uploadTabacosCigarro.any('imagen5'), controllersAdmin.saveTabacosCigarro);
+router.get("/detailProductos/:id", controllersAdmin.showProductos);
+
+// router.get("/detailHabano/:id", controllersAdmin.show);
+// router.get("/detailCigarro/:id", controllersAdmin.showCigarro);
+// router.get("/detailCigarrito/:id", controllersAdmin.showCigarrito);
+// router.get("/detailTabacosPipa/:id", controllersAdmin.showTabacosPipa);
+// router.get("/detailTabacosCigarro/:id", controllersAdmin.showTabacosCigarro);
+router.get("/deleteProductos/:id", controllersAdmin.destroyProductos);
+
+// router.get("/delete/:id", controllersAdmin.destroy);
+// router.get("/deleteCigarro/:id", controllersAdmin.destroyCigarro);
+// router.get("/deleteCigarrito/:id", controllersAdmin.destroyCigarrito);
+// router.get("/deleteTabacosPipa/:id", controllersAdmin.destroyTabacosPipa);
+// router.get("/deleteTabacosCigarro/:id", controllersAdmin.destroyTabacosCigarro);
 router.get("/edit/:id", controllersAdmin.edit);
 router.put("/edit/:id", upload.any('imagen'), controllersAdmin.updateHabanos);
 router.get("/editCigarros/:id", controllersAdmin.editCigarros);
