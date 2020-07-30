@@ -1,5 +1,7 @@
 const path = require("path");
 const fs = require('fs');
+const db = require('../database/models');
+
 
 module.exports = {
     index: (req, res) => {
