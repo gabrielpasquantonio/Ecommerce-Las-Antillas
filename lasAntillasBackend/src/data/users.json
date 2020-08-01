@@ -1,0 +1,40 @@
+[
+
+  {
+    "id": 1,
+    "nombre": "firstName A",
+    "apellido": "lastName A",
+    "email": "user@gmail.com",
+    "contraseña": "123456",
+    "categoria": 0,
+    "imagen": "users1.png"
+  },
+  {
+    "id": 2,
+    "nombre": "firstName B",
+    "apellido": "lastName B",
+    "email": "user2@gmail.com",
+    "contraseña": "123456",
+    "categoria": 0,
+    "imagen": "users1.png"
+  },
+  {
+    "id": 3,
+    "nombre": "firstName C",
+    "apellido": "lastName C",
+    "email": "user3@gmail.com",
+    "contraseña": "123456",
+    "categoria": 0,
+    "imagen": "users1.png"
+  },
+  {
+    "id": 4,
+    "nombre": "firstName B",
+    "apellido": "lastName B",
+    "email": "user2@gmail.com",
+    "contraseña": "123456",
+    "categoria": 0,
+    "imagen": "users1.png"
+  }
+  
+]
