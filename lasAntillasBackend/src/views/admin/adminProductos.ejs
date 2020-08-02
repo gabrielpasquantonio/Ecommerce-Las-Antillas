@@ -42,9 +42,9 @@
           <td><%= todoProductoJson.id%> </td>
           <td><%= todoProductoJson.nombre%> </td>
           <td><%= todoProductoJson.marca%> </td>
-          <td><a href="/detailProductos/<%= todoProductoJson.id%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
-          <td><a href="/edit/<%= todoProductoJson.id%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
-          <td><a href="/delete/<%= todoProductoJson.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
+          <td><a href="/detailProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
+          <td><a href="/editProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
+          <td><a href="/deleteProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo%>"><ion-icon name="trash-outline"></ion-icon></a></td>
         </tr>
         <% }); %>
       </tbody>

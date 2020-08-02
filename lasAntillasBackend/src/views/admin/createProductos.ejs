@@ -33,6 +33,9 @@
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto" required="required" value="">
                             </div>
                             <div class="form-group">
+                              <input type="hidden" class="form-control" name="tipo" placeholder="Tipo del Producto" required="required"  value="<%= todosProductosJson[0].tipo%>">
+                          </div>
+                            <div class="form-group ">
                               <select  name="marca"  class="custom-select" data-toggle="dropdown" id="validationCustom04" placeholder="Elija su Marca" required>
                                 <option selected disabled value="#">Elija su marca</option>
                                 <% marcas.forEach(marca => { %>

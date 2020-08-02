@@ -2,17 +2,17 @@
   {
     "nombre": "Habano 11",
     "marca": "Habano X",
+    "tipo": "Habanos",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
     "precio": "500",
     "descuento": "0",
-    "oldImagen": "habano1.png",
+    "oldImagen": "habano-1595894007569.jpg",
     "id": "1",
-    "tipo":"Habanos",
-    "imagen": "habano-1595894007569.jpg"
+    "imagen": "Habanos-1596332409097.png"
   },
   {
     "id": 2,
-    "tipo":"Habanos",  
+    "tipo": "Habanos",
     "nombre": "Habano 2",
     "marca": "Habano Y",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -22,7 +22,7 @@
   },
   {
     "id": 3,
-    "tipo":"Habanos",  
+    "tipo": "Habanos",
     "nombre": "Habano 3",
     "marca": "Habano Z",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -32,23 +32,12 @@
   },
   {
     "id": 4,
-    "tipo":"Habanos",   
+    "tipo": "Habanos",
     "nombre": "Habano 4",
     "marca": "Habano A",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
     "precio": 500,
     "descuento": 0,
     "imagen": "habano4.jpeg"
-  },
-  {
-    "nombre": "Habano",
-    "marca": "Flor de Cano",
-    "descripcion": "nk",
-    "precio": "500",
-    "descuento": "10",
-    "oldImagen": "habano-1595624570717.jpg",
-    "id": "5",
-    "tipo":"Habanos",
-    "imagen": "habano-1595624570717.jpg"
   }
 ]

@@ -1,17 +1,18 @@
 [
   {
-    "id": 1,
-    "tipo":"TabacoCigarro",
     "nombre": "Tabaco Cigarro 1",
     "marca": "Tabaco Cigarro A",
+    "tipo": "TabacoCigarro",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "precio": 500,
-    "descuento": 0,
-    "imagen": "pueblo_blue.jpg"
+    "precio": "500",
+    "descuento": "0",
+    "oldImagen": "pueblo_blue.jpg",
+    "id": "1",
+    "imagen": "TabacoCigarro-1596332381064.png"
   },
   {
     "id": 2,
-    "tipo":"TabacoCigarro",
+    "tipo": "TabacoCigarro",
     "nombre": "Tabaco Cigarro 2",
     "marca": "Tabaco Cigarro B",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -21,7 +22,7 @@
   },
   {
     "id": 3,
-    "tipo":"TabacoCigarro",
+    "tipo": "TabacoCigarro",
     "nombre": "Tabaco Cigarro 3",
     "marca": "Tabaco Cigarro C",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -31,20 +32,12 @@
   },
   {
     "id": 4,
-    "tipo":"TabacoCigarro",
+    "tipo": "TabacoCigarro",
     "nombre": "Tabaco Cigarro 4",
     "marca": "Tabaco Cigarro D",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
     "precio": 500,
     "descuento": 0,
     "imagen": "tabaco_cigarro4.jpeg"
-  },
-  {
-    "id": 5,
-    "tipo":"TabacoCigarro",
-    "nombre": "Tabaco",
-    "marca": "Montecristo",
-    "descripcion": "Grande",
-    "precio": "300"
   }
 ]

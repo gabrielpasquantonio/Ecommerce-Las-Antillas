@@ -1,18 +1,18 @@
 [
   {
-    "id": 1,
-    "tipo":"Cigarros",
-    
     "nombre": "Cigarro 1",
     "marca": "Cigarro A",
+    "tipo": "Cigarros",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "precio": 500,
-    "descuento": 0,
-    "imagen": "vegafina_robusto.jpg"
+    "precio": "500",
+    "descuento": "0",
+    "oldImagen": "vegafina_robusto.jpg",
+    "id": "1",
+    "imagen": "Cigarros-1596332307934.png"
   },
   {
     "id": 2,
-    "tipo":"Cigarros",
+    "tipo": "Cigarros",
     "nombre": "Cigarro 2",
     "marca": "Cigarro B",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -22,7 +22,7 @@
   },
   {
     "id": 3,
-    "tipo":"Cigarros",
+    "tipo": "Cigarros",
     "nombre": "Cigarro 3",
     "marca": "Cigarro C",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -32,7 +32,7 @@
   },
   {
     "id": 4,
-    "tipo":"Cigarros",
+    "tipo": "Cigarros",
     "nombre": "Cigarro D",
     "marca": "Flor de Cano",
     "descripcion": "Gran habano",
