@@ -4,8 +4,8 @@ module.exports = {
         res.render(path.resolve(__dirname, "..", "views", "usuarios", "login.ejs"));
 
     },
-    usersRegister: (req, res) => {
-        res.render(path.resolve(__dirname, "..", "views", "usuarios", "usersRegister.ejs"));
+    registro: (req, res) => {
+        res.render(path.resolve(__dirname, "..", "views", "usuarios", "registro.ejs"));
 
         }
     
