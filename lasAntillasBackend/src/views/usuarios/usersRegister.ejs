@@ -10,36 +10,68 @@
 <body>
   <!-- NavBar-->
   <%- include("../partials/navbar.ejs") %>
-    <div id="form">
+  
+  <section class="row">
+    <article class="col-12  card pt-5" >
+            <div class="card-body container-fluid">
+              <h2 class="card-title text-white  bg-dark  text-center display-4 " style="font-family: sans-serif;">Registrate</h2>
+              <h4 class="text-center display-6" style="font-family: sans-serif;" >Crea tu cuenta, sólo te tomara unos minutos.</h4>
+            </div>
+    </article>
+</section>
 
-    <form>
-        <div class="form-group">
-            <label for="nombre">NOMBRE Y APELLIDO</label>
-            <input type="text" class="form-control" id="nombre" name="nombre">
-        </div>
-        
-        <div class="form-group">
-          <label for="exampleInputEmail1">EMAIL</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        
-        <div class="form-group">
-            <label for="tel">TELÉFONO(OPCIONAL)</label>
-            <input type="number" class="form-control" id="tel" name="tel">
-        </div>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1">CONTRASEÑA</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        
-        <div class="form-group">
-            <label for="exampleInputPassword1">CONFIRMAR CONTRASEÑA</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        
-        <button type="submit" class="btn btn-dark btn-lg btn-block">CREAR CUENTA</button>
-      </form>
+
+
+<section class="bg-home pt-4">
+  <div class="container">
+      <div class="row" >
+          <div class="col-8 mx-auto bg-light ">
+              <!-- Aquí muestro los errores. Es decir que si el usuario no pasa las validaciones le muestro al usuario cuales serian los errores --->
+              <% if(typeof(errors) != 'undefined'){%>
+                 <ul class="alert alert-danger">
+                    <% errors.forEach(error => { %>
+                       <li><%= error.msg%></li>
+                    <%});%>
+                  </ul>
+              <%}%>    
+              <!----Fin mostrar errores--------->
+              
+              <div class="signup-form">
+                <!----Aca como tenemos que subir archivos como imagenes  en el formulario es necesario poner el "enctype="multipart/form-data" en caso de no mandar imagenes no es necesario mandar esto--------->
+                  <form action="/registro" method="post" enctype="multipart/form-data">
+                      <div class="form-group">
+                          <!--Noten aqui en los input estoy persistiendo los datos si el usuario coloca algunos datos  buenos, pero otros no. Esto quiere decir que si el usuario escribio su nombre pero no el apellido y el formulario le pidio que escriba de nuevo el apellido , el formulario conservara el dato del nombre ya escrito. Aca estamos usando un if ternario . Las variables estan definidos en el controlador. "old" son los datos que el usuario tipeo-->                                  
+                          <input type="text" class="form-control" name="first_name" placeholder="Nombre" value="<%= typeof old != 'undefined' ? old.first_name : '' %>">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="last_name" placeholder="Apellido" value="<%= typeof old != 'undefined' ? old.last_name : '' %>">
+                      </div>	
+                      <div class="form-group">
+                          <input type="email" class="form-control" name="email" placeholder="Email" value="<%= typeof old != 'undefined' ? old.email : '' %>">
+                      </div>
+                      <div class="form-group">
+                          <input type="password" class="form-control" name="password" placeholder="Contraseña"  >
+                      </div>
+                      <div class="form-group">
+                          <input type="password" class="form-control" name="confirm_password" placeholder="Confirma Contraseña" >
+                      </div>        
+                      <div class="custom-file">
+                        <input type="file"   name="avatar"  placeholder="Debes eligir tu avatar...">
+                    </div>                                
+                    <div class="form-group">
+                        <button type="submit" class="btn btn btn-dark">Registrarse</button>
+                    </div>
+                  </form>
+                  <div class="text-center my-3">Ya tengo una cuenta? <a href="/login">Inicia sesión</a></div>
+              </div>
+          </div>                        
+          </div>
+      </div>
+  </div>
+</section>
+
+ 
     </div>
 
 
