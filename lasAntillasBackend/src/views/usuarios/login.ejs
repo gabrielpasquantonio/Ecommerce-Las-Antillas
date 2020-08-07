@@ -13,30 +13,53 @@
    <!-- NavBar-->
    <%- include("../partials/navbar.ejs") %>
   
-    <div id="form">
+   <section class="row">
+    <article class="col-12  card pt-5" >
+            <div class="card-body container-fluid">
+              <h2 class="card-title card-title text-white bg-dark text-center display-4 " style="font-family: sans-serif;">Iniciar Sesión</h2>
+              <h4 class="card-title text-center display-6 " style="font-family: sans-serif;" >Introduzca su correo y contraseña.</h4>
 
-        <form>
-
-            <div class="form-group">
-                <label for="exampleInputEmail1">EMAIL</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
+    </article>
+</section>
 
+<section class="bg-home pt-15">
+      <div class="container">
+          <div class="row">
+              <div class="col-8 mx-auto bg-light pt-2 ">
+                  <div class="signup-form">
+                    <!-- Aca hay que llamar a la ruta login que va a viajar por el metodo  post-->
+                      <form action="/login" method="post">
+                          <div class="form-group">
+                              <input type="email" class="form-control" name="email" placeholder="Email" value="<%= typeof old != 'undefined' ? old.email : '' %>" >
+                              <% if(typeof(errors) != 'undefined' && errors.email){%>
+                                <span class="text-danger">
+                                  <%= errors.email.msg %>
+                                </span>
+                             <%}%>
+                          </div>
+                          <div class="form-group">
+                              <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                              <% if(typeof(errors) != 'undefined' && errors.password){%>
+                                <span class="text-danger">
+                                  <%= errors.password.msg %>
+                                </span>
+                             <%}%>
 
-            <div class="form-group">
-                <label for="exampleInputPassword1">CONTRASEÑA</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-                <small class="forgot-password">
-            <a href=" " > ¿Olvidaste tu contraseña? </a>
-            </small>
-            </div>
-
-
-
-            <button type="submit" class="btn btn-dark btn-lg btn-block">INICIAR CESIÓN</button>
-        </form>
-    </div>
-
+                          </div>
+                          <div class="form-group ">
+                            <input type="checkbox" name="recordarme"><label class="checkbox-inline" style="font-family: sans-serif;">Recordarme</label>
+                          </div>
+                          <div class="form-group ">
+                              <button type="submit" class="btn btn btn-dark" style="font-family: sans-serif;">Ingresar</button>
+                          </div>
+                      </form>
+                      <div class="text-center mb-3"><a href="/registro">Aun no poseo una cuenta</a></div>
+                  </div>
+              </div>                        
+          </div> 
+      </div>
+</section>
 
    <!-- Footer-->
    <%- include("../partials/footer.ejs") %>

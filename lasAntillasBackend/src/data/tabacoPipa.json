@@ -8,7 +8,7 @@
     "descuento": "10",
     "oldImagen": "habano-1596331841925.png",
     "id": "1",
-    "imagen": "TabacoPipa-1596332486154.png"
+    "imagen": "tabaco_pipa2.jpeg"
   },
   {
     "id": 2,
@@ -21,14 +21,22 @@
     "imagen": "tabaco_pipa2.jpeg"
   },
   {
-    "nombre": "Tabaco Pipas 31",
-    "marca": "Tabaco_pipa C",
+    "id": 3,
     "tipo": "TabacoPipa",
+    "nombre": "Tabaco Pipas 2",
+    "marca": "Tabaco_pipa B",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "precio": "500",
-    "descuento": "0",
-    "oldImagen": "tabaco_pipa3.jpg",
-    "id": "3",
-    "imagen": "TabacoPipa-1596332509707.png"
+    "precio": 500,
+    "descuento": 10,
+    "imagen": "tabaco_pipa2.jpeg"
+  },
+  {"id": 4,
+    "tipo": "TabacoPipa",
+    "nombre": "Tabaco Pipas 2",
+    "marca": "Tabaco_pipa B",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 500,
+    "descuento": 10,
+    "imagen": "tabaco_pipa2.jpeg"
   }
-]
+  ]

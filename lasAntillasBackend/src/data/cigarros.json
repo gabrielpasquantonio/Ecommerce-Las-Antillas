@@ -8,7 +8,7 @@
     "descuento": "0",
     "oldImagen": "vegafina_robusto.jpg",
     "id": "1",
-    "imagen": "Cigarros-1596332307934.png"
+    "imagen": "vegafina_robusto.jpg"
   },
   {
     "id": 2,
@@ -37,6 +37,6 @@
     "marca": "Flor de Cano",
     "descripcion": "Gran habano",
     "precio": "200",
-    "imagen": "default.jpg"
+    "imagen": "vegafina_robusto.jpg"
   }
 ]

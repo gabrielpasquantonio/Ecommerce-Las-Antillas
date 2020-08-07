@@ -2,11 +2,22 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
+//Requerir Sessión Cookies----------------
+const session = require('express-session');
+const cookies = require('cookie-parser');
+//----------------------------------------
+// Aca requiero el middleware de aplicacion
+
+const acceso = require('./middlewares/acceso');
+
 
 //Aca debemos requerir el middleware de aplicacion de mantenimiento. Nota: No usamos el metodo path ya que estamos dentro de la raiz
 //const mantenimiento = require('./middlewares/mantenimiento.js');
 
-//Aca estoy vinculando los archivos css
+//--------------- ESTA ES LA SESION DE MIDDLEWARES-----------------------------
+
+
+//Aca estoy indicando a express la carpeta donde se encuentran los archivos estaticos.
 app.use(express.static(path.resolve(__dirname, "..", "public")));
 //Aca indicamos que estamos usando el motor de plantillas EJS
 app.set('view engine','ejs');
@@ -14,6 +25,22 @@ app.set('view engine','ejs');
 app.use(express.urlencoded({ extended: false }));
 //Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios
 app.use(methodOverride('_method'));
+
+//Aca uso el Midddleware de session 
+app.use(session({
+  //Aca le pasamos un objeto literal que va a tener los siguientes elementos que son indispensables para que el middleware pueda trabajar:
+  secret : 'TopSecret',//----> Este valor puede ser cualquiera. Actua como una especie de token unico que identifica la sesion en la que estamos trabajando 
+  resave : true,//---> Cada vez que entramos a una pag se crea un espacio nuevo que seria una sesion .
+  saveUninitialized : true 
+}));
+
+//Aqui coloco el Middleware para activar lo referido a las cookies. Aca se podria agregar dentro del parentesis se puede indicar el tiempo que va a durar la sesion de la cookie 
+app.use(cookies());
+
+
+//Aquí requiero el Middleware que controla si el usuario está o no Logueado
+app.use(acceso);
+
 
 //Aca llamo a mi middleware de aplicacion
 //app.use(mantenimiento);

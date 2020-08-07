@@ -18,7 +18,7 @@
     "descuento": "0",
     "oldImagen": "cigarrito2.jpeg",
     "id": "2",
-    "imagen": "habano-1596331816768.png"
+    "imagen": "cigarrito2.jpeg"
   },
   {
     "id": 3,
@@ -39,13 +39,6 @@
     "precio": 500,
     "descuento": 0,
     "imagen": "cigarrito4.jpg"
-  },
-  {
-    "id": 5,
-    "tipo": "Cigarritos",
-    "nombre": "Cigarrito 5",
-    "marca": "Partagás",
-    "descripcion": "Grande",
-    "precio": "200"
   }
+  
 ]
