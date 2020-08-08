@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Register</title>
+    <link rel="stylesheet" href="/css/productDetail.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">  
+</head>
+<body>
+  <!-- NavBar-->
+  <%- include("../partials/navbar.ejs") %>
+  
+  <section class="row">
+    <article class="col-12  card pt-5" >
+            <div class="card-body container-fluid">
+              <h2 class="card-title text-white  bg-dark  text-center display-4 ">Registrate</h2>
+              <h4 class="text-center display-6" >Crea tu cuenta, sólo te tomara unos minutos.</h4>
+            </div>
+    </article>
+</section>
+
+  
+  
+  <div id="form">
+
+      <section class="bg-home pt-4">
+        <div class="container">
+            <div class="row" >
+                <div class="col-8 mx-auto bg-grey ">
+                    <!-- Aquí muestro los errores. Es decir que si el usuario no pasa las validaciones le muestro al usuario cuales serian los errores. Si el tipo de dato que esta llegando a traves de errors es distinto a indefinido, singifica que aca vienen erorres, mostrame a traves de 'uls' el resto de los  mensajes ---> 
+                    
+                    
+                    <% if(typeof(errors) != 'undefined'){%>
+                       <ul class="alert alert-danger">
+                          <% errors.forEach(error => { %>
+                             <li><%= error.msg%></li>
+                          <%});%>
+                        </ul>
+                    <%}%>    
+                    <!----Fin mostrar errores--------->
+                    
+                    <div class="signup-form">
+                      <!----Aca como tenemos que subir archivos como imagenes  en el formulario es necesario poner el "enctype="multipart/form-data" en caso de no mandar imagenes no es necesario mandar esto--------->
+                        <form action="/registro" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <!--Noten aqui en los input estoy persistiendo los datos si el usuario coloca algunos datos  buenos, pero otros no. Esto quiere decir que si el usuario escribio su nombre pero no el apellido y el formulario le pidio que escriba de nuevo el apellido , el formulario conservara el dato del nombre ya escrito. Aca estamos usando un if ternario . Las variables estan definidos en el controlador. "old" son los datos que el usuario tipeo-->                                  
+                                <input type="text" class="form-control" name="first_name" placeholder="Nombre" value="<%= typeof old != 'undefined' ? old.first_name : '' %>">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="last_name" placeholder="Apellido" value="<%= typeof old != 'undefined' ? old.last_name : '' %>">
+                            </div>  
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="Email" value="<%= typeof old != 'undefined' ? old.email : '' %>">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Contraseña"  >
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="confirm_password" placeholder="Confirma Contraseña" >
+                            </div>        
+                            <div class="custom-file">
+                              <input type="file"   name="avatar"  placeholder="Debes eligir tu avatar...">
+                          </div>                                
+                          <div class="form-group">
+                              <button type="submit" class="btn btn btn-dark">Registrarse</button>
+                          </div>
+                        </form>
+                        <div class="text-center my-3">Ya tengo una cuenta? <a href="/login">Inicia sesión</a></div>
+                    </div>
+                </div>                        
+                </div>
+            </div>
+        </div>
+      </section>
+       
+       
+          </div>
+       
+      
+
+  <!-- Footer-->
+  <%- include("../partials/footer.ejs") %>
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+      
+  <!-- Navbar Dropdown - dropright scrip --> 
+      <script>
+        $(function () {
+          $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+    
+            $(this).parents('.dropdown-submenu').siblings().find('.show').removeClass("show");
+            $(this).siblings().toggleClass("show");
+    
+            //collapse all after nav is closed
+            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+              $('.dropdown-submenu .show').removeClass("show");
+            });
+          });
+        });
+      </script>
+</body>
+
+</html>
+

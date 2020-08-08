@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "nombre": "Habano 11",
     "marca": "Habano X",
     "tipo": "Habanos",
@@ -7,8 +8,7 @@
     "precio": "500",
     "descuento": "0",
     "oldImagen": "habano-1595894007569.jpg",
-    "id": "1",
-    "imagen": "Habanos-1596332409097.png"
+    "imagen": "habano1.png"
   },
   {
     "id": 2,
