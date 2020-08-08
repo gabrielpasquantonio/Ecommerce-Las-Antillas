@@ -74,13 +74,6 @@
     "password": "$2a$10$U51SOUP9qYiZgN3M4vK1QONYZ31HSuPKaCfj53KFlh1mvfmI956J2",
     "avatar": "foto-1596830633280.jpg",
     "role": 1
-  },
-  {
-    "nombre": "Pablo",
-    "apellido": "neme",
-    "email": "p@gmail.com",
-    "password": "$2a$10$wRhpDswuTdii8xmnm0F4gOXxL77npkjEdtTYJWdavmMq5FIV7Brwy",
-    "avatar": "foto-1596837030789.png",
-    "role": 1
   }
+  
 ]
