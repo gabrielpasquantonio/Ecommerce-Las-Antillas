@@ -2,23 +2,23 @@
    [
     {
       "tipo": "Habanos",
-      "marca": ["Cohiba","Flor de Cano","Hoyo de Monterrey","J.L Piedra","Montecristo","Partagás","Quintero","Romeo y Julieta","San Cristobal"]
+      "marca": ["Cohiba","Montecristo","Partagás"]
       
     },
     {
       "tipo": "Cigarros",
-      "marca": ["Flor de Copan","Francisco de Miranda","Placeres","Santa Clara 1830","Sol de Cuba","Te amo","Toscano","Vegafina"]
+      "marca": ["Casa de Garcia","Placeres","Te amo","Vegafina"]
     },
     {
       "tipo": "Cigarrito",
-      "marca": ["Cafe Creme","Cubanos","Neos","Panter","Villiger"]
+      "marca": ["Cohiba","Montecristo","Partagás"]
     },
     {
       "tipo": "TabacoPipa",
-      "marca": ["Amphora","Argento","Black Vanilla","Brigg","Cellini","Golden Vanilla","Holger Danske","Blacj Vanilla","Jacaranda","Mac Baren","Mac Lintokc","Pergamon","Peterson","Presbyterian","Samuel Gawith","Savinelli"]
+      "marca": ["Amphora","Holger Danske","Mac Baren"]
     },
     {"tipo": "TabacoCigarro",
-      "marca": ["Apache","Argento","Black Devil","Cerrito","Cheetah","Flandria","Las Hojas","Look Out","Mac Baren","Mac Baren Choice","Manitou","Moro","Pachamama","Pepe","Pueblo","Puro Argentino","Red Field","Sayri","Stanley","Unitas","Van Haasen","Van Kiff"]
+      "marca": ["Cheetah","Flandria","Moro","Red Field"]
     }
     
   ]

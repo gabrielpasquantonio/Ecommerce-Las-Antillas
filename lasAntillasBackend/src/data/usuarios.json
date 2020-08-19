@@ -1,21 +1,12 @@
 [
   {
-    "id": 1,
-    "nombre": "firstName A",
-    "apellido": "lastName A",
+    "nombre": "Sandra",
+    "apellido": "Perez",
     "email": "user@gmail.com",
-    "contraseña": 123456,
-    "role": 0,
-    "avatar": "users1.png"
-  },
-  {
-    "id": 2,
-    "nombre": "firstName B",
-    "apellido": "lastName B",
-    "email": "user2@gmail.com",
-    "contraseña": "123456",
-    "role": 0,
-    "avatar": "users1.png"
+    "password": "123456",
+    "role": "1",
+    "oldImagen": "",
+    "id": "1"
   },
   {
     "id": 3,
@@ -27,15 +18,17 @@
     "avatar": "users1.png"
   },
   {
-    "id": 4,
     "nombre": "firstName B",
     "apellido": "lastName B",
     "email": "user2@gmail.com",
-    "contraseña": "123456",
-    "role": 0,
+    "password": "123456",
+    "role": "1",
+    "oldImagen": "users1.png",
+    "id": "4",
     "avatar": "users1.png"
   },
   {
+    "id": 5,
     "nombre": "Carlos ",
     "apellido": "Neme",
     "email": "carlosneme23@gmail.com",
@@ -44,14 +37,7 @@
     "role": 9
   },
   {
-    "nombre": "Pablo",
-    "apellido": "Neme",
-    "email": "pablo@gmail.com",
-    "password": "$2a$10$b.g0bdHU6fjvi2BO3o1RDu8djnaTAv09y1H3nMlu.RxvROIHx8bVO",
-    "avatar": "foto-1596693859115.png",
-    "role": 1
-  },
-  {
+    "id": 7,
     "nombre": "Gabriel ",
     "apellido": "Pasquantonio",
     "email": "pasquantonioo@gmail.com",
@@ -60,20 +46,28 @@
     "role": 9
   },
   {
-    "nombre": "Pablo",
-    "apellido": "Neme",
-    "email": "pablo_neme@hotmail.com",
-    "password": "$2a$10$oEp8B4YjIQdLfGFWhl46ZuP8pV6hYmmG6iq3brbCNUJZVa9ioS7.2",
-    "avatar": "foto-1596830429515.jpg",
+    "id": 10,
+    "nombre": "Juan ",
+    "apellido": "Perez",
+    "email": "carlosneme52@hotmail.com",
+    "password": "123456",
+    "role": "0"
+  },
+  {
+    "id": 11,
+    "nombre": "Sonia",
+    "apellido": "Alamo",
+    "email": "carlosneme27@gmail.com",
+    "password": "$2a$10$k1jitB02dKG4LrfXgAMlQeqQXBmRZqnnvwsgum2DQdtu00jb7UWES",
+    "avatar": "foto-1597787891128.png",
     "role": 1
   },
   {
-    "nombre": "jime ",
-    "apellido": "avila",
-    "email": "avila@gmail.com",
-    "password": "$2a$10$U51SOUP9qYiZgN3M4vK1QONYZ31HSuPKaCfj53KFlh1mvfmI956J2",
-    "avatar": "foto-1596830633280.jpg",
-    "role": 1
+    "id": 11,
+    "nombre": "Jime",
+    "apellido": "v",
+    "email": "vega@gmail.com",
+    "password": "$2a$10$JnBvY4FCMqU.3sciZmfy1uGhGsLzuSqRwwUoQP1jTVkeJON5yVY32",
+    "role": "9"
   }
-  
 ]

@@ -10,6 +10,9 @@ const fs = require('fs');
 //Requiero Multer, ya que voy a permitir que el usuario que se registre suba su avatar
 const multer = require('multer');
 
+
+
+
 //Requiero el paquete express-validator que ya habiamos instalado. Como a esta constante le vamos a pasar mas de un parametro lo hacemos dentro de un objeto literal
 const {
     check,//-> Este parametro nos va a indicar si nuestros campos tienen o no tienen algun tipo de deatlle.
@@ -145,5 +148,32 @@ body('password').custom((value, {req}) =>{
 }).withMessage('El password no coincide con el de nuestros registros. Por favor intentelo nuevamente...') ] , controllersUsuarios.ingresar );
 
 router.get('/logout', controllersUsuarios.logout);
+
+//-----------------A pertir de aca vamos a hacer las rutas para el CRUD de usuarios------------------------------------
+
+// Aqui dispongo lo referido al nombre del archivo y donde lo vamos a guardar:
+const storage2 = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.resolve(__dirname,'..','..','public','images','usuarios'));
+  },
+  filename: function (req, file, cb) {
+    cb(null, "usuario" + "-" + Date.now() + path.extname(file.originalname));
+  }
+})
+ 
+const upload2 = multer({ storage2 });
+
+
+
+
+//Armo mis rutas
+router.get("/adminUsers", controllersUsuarios.indexUsers);
+router.get("/createUser", controllersUsuarios.createUser);
+router.post("/createUser", upload2.any("avatar"),controllersUsuarios.saveUsers);
+router.get("/detailUsers/:id", controllersUsuarios.showUsers);
+router.get("/deleteUsers/:id", controllersUsuarios.destroyUsers);
+router.get("/editUsers/:id", controllersUsuarios.editUsers);
+router.put("/editUsers/:id",upload2.any("avatar"),controllersUsuarios.updateUsers);
+
 
 module.exports = router;

@@ -1,12 +1,13 @@
 [
   {
-    "id": 1,
-    "tipo": "Cigarritos",
     "nombre": "Cigarrito 1",
     "marca": "Cigarrito X",
+    "tipo": "Cigarritos",
     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    "precio": 500,
-    "descuento": 0,
+    "precio": "500",
+    "descuento": "0",
+    "oldImagen": "mini_ white_filter.jpg",
+    "id": "1",
     "imagen": "mini_ white_filter.jpg"
   },
   {
@@ -40,5 +41,4 @@
     "descuento": 0,
     "imagen": "cigarrito4.jpg"
   }
-  
 ]
