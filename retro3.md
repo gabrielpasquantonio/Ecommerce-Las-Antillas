@@ -1,7 +1,7 @@
 # Starfish retrospective
 + ## ___Start Doing:___
     ```
-   For a better organization we should start finishing all our previous tasks, and recycling our repetetive codes.    
+   As we preivously settled in the past retros, f or a better organization we shouldwe need to mainting our goal of  start finishing all our previous tasks, and recycling our repetetive codes.    
 
 //
     
@@ -9,11 +9,10 @@
 ___
 + ## ___More of:___
     ```
-    - Be  aware of the complexity of each task development in order to planify better the production process.   
+    - implement as a habit, every time entering in visual code, use git pull and then move to a branch.   
     - Make sure the repository update is done equally by team's members.  
 
     //
-
 
 
 
@@ -24,18 +23,21 @@ ___
 ___
 + ## ___Less of:___
     ```
- -
+ - 
     
 ___
 
 + ## ___Stop doing___
     ```
     Using the same coding for similar tasks.
+    
 ___
     
 + ## ___Positive aspects:___
     ```
-        - We had a fluent communication during the working process. And started organizing better the task division. 
+      
+
+        -Once the thing got tough, the team members did not back down or give up. Consistency is the key word
           
         //
 
@@ -78,3 +80,4 @@ ___
 
         
 ___
+
