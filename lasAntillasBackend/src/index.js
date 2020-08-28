@@ -10,7 +10,91 @@ const cookies = require('cookie-parser');
 
 const acceso = require('./middlewares/acceso');
 
+const db = require('./database/models')
+const rols = db.Rol;
+const users = db.User;
+const products = db.Product;
+const categories = db.Category;
+const brands = db.Brand;
+const atributes = db.Atribute;
+const atributeProduct = db.AtributeProduct;
+//Aca esta el codigo que nos va a servir para los usuarios
+// users.findAll(
+//   {
+//     raw: true,
+//     include: rols
+//   },
+// )
+// .then(tati => { 
+//   console.log('Traigo todos los registros de users', tati);
+// })     
+// .catch(error => console.log('error', error)) 
+//----------------------------------------------------------
 
+//Aca esta el codigo que nos va a servir para traer todos los productos con sus categorias brands y atributos
+products.findAll(
+  {
+    // include: [categories, brands, atributes],
+    include: [
+      {
+        model: categories,
+        attributes: ['name']
+      },
+      {
+        model: brands,
+        attributes: ['name']
+      },
+      {
+        model: atributes,
+        attributes: ['name'],
+        through: {
+          // This block of code allows you to retrieve the properties of the join table
+        model: atributeProduct,
+        attributes: ['value'],
+        }
+      }    
+    ],
+    attributes: ['id', 'image'],
+    limit: 1,
+    where: {
+      category_id: 3
+    },
+  }
+)
+.then(obj => { 
+  console.log('logging products', JSON.stringify(obj, null, 4));
+})     
+.catch(error => console.log('error', error)) 
+
+// products.findAll(
+//   {
+//     // include: [categories, brands, atributes],
+//     include: [categories],
+//     limit: 1
+//   }
+// )
+// .then(obj => { 
+  
+//   console.log('logging products', JSON.stringify(obj, null, 4));
+//   const objeto = {
+//     tipo: obj[0].Category.name,
+//     id: obj[0].id,
+//   }
+//   console.log(objeto);
+// }
+// )     
+// .catch(error => console.log('error', error)) 
+
+// {
+//     "id": 3,
+//     "tipo": "Habanos",
+//     "nombre": "Habano 3",
+//     "marca": "Habano Z",
+//     "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+//     "precio": 500,
+//     "descuento": 0,
+//     "imagen": "habano3.jpg"
+//   },
 //Aca debemos requerir el middleware de aplicacion de mantenimiento. Nota: No usamos el metodo path ya que estamos dentro de la raiz
 //const mantenimiento = require('./middlewares/mantenimiento.js');
 

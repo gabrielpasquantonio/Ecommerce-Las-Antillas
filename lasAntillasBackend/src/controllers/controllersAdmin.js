@@ -12,7 +12,9 @@ module.exports = {
   
 //Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
 let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
-    //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
+//let todosProductosFromDb = getAllProductsFromDb()  
+
+//res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
     res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{todosProductosJson});
 
 },
@@ -66,7 +68,7 @@ let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..",
     showProductos: (req,res) =>{
     //Aca pasamos los datos del archivo Json de Habanos a un Array
     let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
-    console.log(req.query.type)
+    // console.log(req.query.type)
         //res.send(req.params.id);
        //Aca declaro la variable que voy a mandar a la vista 
        let miProducto;

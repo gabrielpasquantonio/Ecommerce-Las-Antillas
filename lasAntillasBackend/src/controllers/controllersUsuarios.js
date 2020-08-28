@@ -147,8 +147,7 @@ module.exports = {
 
   indexUsers: (req, res) => {
     //Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
-    let todosUsuariosJson = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "..", "data", "usuarios.json"))
+    let todosUsuariosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "usuarios.json"))
     );
 
     res.render(
