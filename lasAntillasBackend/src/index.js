@@ -35,6 +35,7 @@ const atributeProduct = db.AtributeProduct;
 products.findAll(
   {
     // include: [categories, brands, atributes],
+    // raw: true,
     include: [
       {
         model: categories,
@@ -57,14 +58,29 @@ products.findAll(
     attributes: ['id', 'image'],
     limit: 1,
     where: {
-      category_id: 3
+      category_id: 1
     },
   }
 )
-.then(obj => { 
-  console.log('logging products', JSON.stringify(obj, null, 4));
+.then(products => { 
+  const newObject = products.map(product => {
+    const precio = product.Atributes.find(atribute => atribute.name === "UnitPrice" || atribute.name === "PricePerBox").atributeProduct.value
+    const mapProduct = {
+      id: product.id,
+      marca: product.Brand.name,
+      nombre: 'VITOLA',
+      tipo: product.Category.name,
+      description: "DESCRIPTION",
+      precio,
+      descuento: '20%',
+      oldImagen: product.image,
+      imagen: product.image
+    }
+  })
 })     
 .catch(error => console.log('error', error)) 
+
+
 
 // products.findAll(
 //   {

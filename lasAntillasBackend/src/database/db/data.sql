@@ -460,7 +460,7 @@ SELECT * FROM lasantillas.rols;
 INSERT INTO rols VALUES
     (1,9,'administrador'),
     (2,1,'user'),
-     (3,0,'visitor')
+     (3,0,'visitor');
 
 SELECT * FROM lasantillas.users;
 INSERT INTO users VALUES

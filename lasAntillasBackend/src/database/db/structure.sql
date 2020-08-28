@@ -78,6 +78,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 CREATE TABLE IF NOT EXISTS `rols` (
    `id` INT AUTO_INCREMENT,
+   `value` INT NOT NULL,
    `label` VARCHAR(100),
    PRIMARY KEY (`id`)
 );

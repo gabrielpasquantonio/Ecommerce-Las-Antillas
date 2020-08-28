@@ -1,8 +1,18 @@
 const path = require("path");
 const fs = require('fs');
 
+
+const db = require('../database/models')
+const rols = db.Rol;
+const users = db.User;
+const products = db.Product;
+const categories = db.Category;
+const brands = db.Brand;
+const atributes = db.Atribute;
+const atributeProduct = db.AtributeProduct;
+
 module.exports = {
-    indexProductos: (req, res) => {
+    indexProductos: async (req, res) => {
      //parametrizando para que la primera letra de files View sea mayuscula                
     //const resto = req.query.type.slice(1)
     //const upper = req.query.type[0]
@@ -10,14 +20,67 @@ module.exports = {
     //const name = uppercase + resto
     //const fileViewName = `admin${name}.ejs`
   
-//Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
-let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
-//let todosProductosFromDb = getAllProductsFromDb()  
+    //Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
+    console.log(req.query.type)
 
-//res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-    res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{todosProductosJson});
+    const todosProductosFromDBByType = await (async (type) => await products.findAll(
+        {
+            include: [
+                {
+                model: categories,
+                attributes: ['name']
+                },
+                {
+                model: brands,
+                attributes: ['name']
+                },
+                {
+                model: atributes,
+                attributes: ['name'],
+                through: {
+                    // This block of code allows you to retrieve the properties of the join table
+                model: atributeProduct,
+                attributes: ['value'],
+                }
+                }    
+            ],
+            attributes: ['id', 'image'],
+            where: {
+                category_id: type
+            }
+        }
+    ))(req.query.type)
+    console.log(JSON.stringify(todosProductosFromDBByType, null, 4));
 
-},
+    const nameAttribute = ["VitolaDeGalera", "Vitola", "Taste"]
+    const priceAttribute = ["UnitPrice", "PricePerBox"]
+    const mapProduct = todosProductosFromDBByType.map(product => {
+        // const precio = product.Atributes.find(atribute => priceAttribute.includes(atribute.name)).atributeProduct.value
+        // const nombre = product.Atributes.find(atribute => nameAttribute.includes(atribute.name)).atributeProduct.value
+        const precioFirst = product.Atributes.find(atribute => priceAttribute.includes(atribute.name))
+        const precio = (precioFirst && precioFirst.atributeProduct && precioFirst.atributeProduct.value) || "PONER PRECIO"
+        const nombreFirst = product.Atributes.find(atribute => nameAttribute.includes(atribute.name))
+        const nombre = (nombreFirst && nombreFirst.atributeProduct && nombreFirst.atributeProduct.value) || "PONER PRECIO"
+        return {
+            id: product.id,
+            // marca: product.Brand.name,
+            marca: (product.Brand && product.Brand.name) || "AGREGAR",
+            nombre,
+            tipo: product.Category.name,
+            description: "DESCRIPTION",
+            precio,
+            descuento: '20%',
+            oldImagen: product.image,
+            imagen: product.image
+        }
+    })
+
+    console.log({mapProduct});
+
+    //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
+    res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{todosProductosJson: mapProduct});
+
+    },
 
 
 
