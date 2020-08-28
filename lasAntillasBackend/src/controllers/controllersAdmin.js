@@ -11,7 +11,7 @@ const brands = db.Brand;
 const atributes = db.Atribute;
 const atributeProduct = db.AtributeProduct;
 
-const ProductDao = require('../data/productoDao')
+const ProductoDao = require('../data/productoDao')
 
 module.exports = {
     indexProductos: async (req, res) => {
@@ -77,10 +77,10 @@ module.exports = {
     //     }
     // })
 
-    console.log({mapProduct});
+    // console.log({mapProduct});
 
     //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-    res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{todosProductosJson: mapProduct});
+    res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{todosProductosJson: todosProductosFromDBByType});
 
     },
 
