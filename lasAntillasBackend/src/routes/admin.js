@@ -8,10 +8,10 @@ const mantenimiento = require('../middlewares/mantenimiento.js');
 // Aqui dispongo lo referido al nombre del archivo y donde lo vamos a guardar:
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.resolve(__dirname,'..','..','public','images',`${req.body.tipo}`));
+    cb(null, path.resolve(__dirname,'..','..','public','images',`${JSON.parse(req.body.tipo).name}`));
   },
   filename: function (req, file, cb) {
-    cb(null, `${req.body.tipo}-`+ Date.now() + path.extname(file.originalname));
+    cb(null, `${JSON.parse(req.body.tipo).name}-`+ Date.now() + path.extname(file.originalname));
   }
 })
  

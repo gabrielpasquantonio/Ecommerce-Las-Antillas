@@ -59,8 +59,8 @@ module.exports = (sequelize, DataTypes) => {
       // as: "atributes",
       through: "atributeProduct",
       foreignKey: "product_id",
-      otherKey: "atribute_id"
-
+      otherKey: "atribute_id",
+      onDelete: 'CASCADE'
     });
   }
   return Product;

@@ -59,7 +59,8 @@ module.exports = {
     carrito: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "carrito.ejs"));
-    }, allProducts: (req, res) => {
+    }, 
+    allProducts: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "allProducts.ejs"),{productoHabanos,productoCigarros,productoCigarritos,productoTabacoArmar,productoTabacoPipas});
     } 

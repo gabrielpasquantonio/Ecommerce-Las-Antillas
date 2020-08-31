@@ -33,10 +33,9 @@ module.exports = (sequelize,DataTypes) => {
       Atribute.belongsToMany(models.Product, 
         {
         // as: "products",
-        through: "atributeProduct",
-        foreignKey: "atribute_id",
-        otherKey: "product_id"
-
+          through: "atributeProduct",
+          foreignKey: "atribute_id",
+          otherKey: "product_id"
       });
     }
     return Atribute;

@@ -19,10 +19,10 @@
 <div class="container-fluid"></div>
 <section class="row">
   <article class="col-12">
-    <h1 style="font-family: sans-serif;" class="display-4 text-center pt-5">Administrador de <%= todosProductosJson[0].tipo%> </h1>
+    <h1 style="font-family: sans-serif;" class="display-4 text-center pt-5">Administrador de <%= todosProductosJson[0].tipo.name%> </h1>
   </article>
   <article class="col-12">
-    <a href="/createProductos/?type=<%= todosProductosJson[0].tipo%>"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
+    <a href="/createProductos/?type=<%= JSON.stringify(todosProductosJson[0].tipo) %>"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
   </article>
   <article class="col-12" >
   <table class="table">
@@ -40,11 +40,11 @@
         <% todosProductosJson.forEach(todoProductoJson => { %>
         <tr>
           <td><%= todoProductoJson.id%> </td>
-          <td><%= todoProductoJson.nombre%> </td>
+          <td><%= todoProductoJson.nombre.value%> </td>
           <td><%= todoProductoJson.marca%> </td>
-          <td><a href="/detailProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
-          <td><a href="/editProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
-          <td><a href="/deleteProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo%>"><ion-icon name="trash-outline"></ion-icon></a></td>
+          <td><a href="/detailProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo.id%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
+          <td><a href="/editProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo.id%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
+          <td><a href="/deleteProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
         </tr>
         <% }); %>
       </tbody>

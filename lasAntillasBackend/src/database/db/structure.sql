@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `rols` (
 ALTER TABLE `products` ADD CONSTRAINT `products_fk_0_brand_id` FOREIGN KEY (brand_id) REFERENCES `brands`(`id`) ;
 ALTER TABLE `products` ADD CONSTRAINT `products_fk_0_category_id` FOREIGN KEY (category_id) REFERENCES `categories`(`id`) ;
 ALTER TABLE `atributeProduct` ADD CONSTRAINT `atributeProduct_fk_0_atribute_id` FOREIGN KEY (atribute_id) REFERENCES `atributes`(`id`) ;
-ALTER TABLE `atributeProduct` ADD CONSTRAINT `atributeProduct_fk_0_product_id` FOREIGN KEY (product_id) REFERENCES `products`(`id`) ;
+ALTER TABLE `atributeProduct` add FOREIGN KEY (product_id) REFERENCES `products`(`id`) on DELETE CASCADE;
 ALTER TABLE `brandCategory` ADD CONSTRAINT `brandCategory_fk_0_brand_id` FOREIGN KEY (brand_id) REFERENCES `brands`(`id`) ;
 ALTER TABLE `brandCategory` ADD CONSTRAINT `brandCategory_fk_0_category_id` FOREIGN KEY (category_id) REFERENCES `categories`(`id`) ;
 ALTER TABLE `users` ADD CONSTRAINT `users_fk_0_rol_id` FOREIGN KEY (rol_id) REFERENCES `rols`(`id`) ;

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Create <%= todosProductosJson[0].tipo%></title>
+    <title>Admin Create <%= productType.name%></title>
     <link rel="stylesheet" href="/css/productDetail.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -18,7 +18,7 @@
      <section class="row">
       <article class="col-12  card pt-5" >
               <div class="card-body">
-                <h1 class="card-title text-center">Crear un Producto <%= todosProductosJson[0].tipo%></h1>
+                <h1 class="card-title text-center">Crear un Producto <%= productType.name%></h1>
               </div>
       </article>
   </section>
@@ -33,13 +33,13 @@
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto" required="required" value="">
                             </div>
                             <div class="form-group">
-                              <input type="hidden" class="form-control" name="tipo" placeholder="Tipo del Producto" required="required"  value="<%= todosProductosJson[0].tipo%>">
+                              <input type="hidden" class="form-control" name="tipo" placeholder="Tipo del Producto" required="required"  value="<%= JSON.stringify(productType)%>">
                           </div>
                             <div class="form-group ">
                               <select  name="marca"  class="custom-select" data-toggle="dropdown" id="validationCustom04" placeholder="Elija su Marca" required>
                                 <option selected disabled value="#">Elija su marca</option>
                                 <% marcas.forEach(marca => { %>
-                                <option   value="<%=marca%>"><%=marca%></option>  
+                                <option value="<%=marca.id%>"><%=marca.name%></option>  
                                 <% }); %>
                               </select>
                           </div>
@@ -65,7 +65,7 @@
                         </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn btn-dark">Guardar</button>
-                                <a href="/adminProductos/<%= todosProductosJson[0].tipo%>" class="btn btn-dark">Volver</a>
+                                <a href="/adminProductos/<%= productType.id%>" class="btn btn-dark">Volver</a>
                             </div>
                             
                         </form>

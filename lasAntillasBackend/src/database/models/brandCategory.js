@@ -28,14 +28,11 @@ module.exports = (sequelize,DataTypes) => {
 },
     }
   //Dentro del config, se coloca toda la informacion que queremos poner si no cumplimos los estandares para crear los modelos. Esto se usa cuando nosotros no seguimos los estandares. 
-  /*  let config = {
-      tableName : 'products',
-      timestamps: false, 
-   
-    } ,
-    */
+  let config = {
+    freezeTableName: true
+  }
     ///Aca estamos definiendo el modelo. El alias es el nombre, el cols es el nombre de las diferentes columnas. Y el config, es la configuracion que va a tener el modelo. 
-    const BrandCategory = sequelize.define(alias, cols,/*config*/ )
+    const BrandCategory = sequelize.define(alias, cols, config )
     return BrandCategory;
   };
   
