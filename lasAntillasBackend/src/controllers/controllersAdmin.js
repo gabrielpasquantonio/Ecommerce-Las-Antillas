@@ -65,6 +65,14 @@ module.exports = {
         product_id: newProductFromDb.id,
         value: req.body.nombre
       })
+      
+      atribute = await atributeDao.getAtributeByName("Description")
+      await atributeProduct.create({
+        atribute_id: atribute.id,
+        product_id: newProductFromDb.id,
+        value: req.body.descripcion
+      })
+
       res.redirect(`/adminProductos/?type=${productType.id}`)
     },
 
@@ -109,6 +117,17 @@ module.exports = {
           where: {
             id: req.body.precioId
           }
+        }
+      )
+
+      //Upsert the product description
+      atribute = await atributeDao.getAtributeByName("Description")
+      await atributeProduct.upsert(
+        {
+          id: req.body.descripcionId,
+          value: req.body.descripcion,
+          atribute_id: atribute.id,
+          product_id: req.params.id
         }
       )
 

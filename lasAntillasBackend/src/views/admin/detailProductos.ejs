@@ -27,7 +27,7 @@
                   <h5 class="card-title">Marca:<%= miProducto.marca %></h5>
                   <h5 class="card-title">$<%= miProducto.precio.value %></h5>
                   <h5 class="card-title">Descuento: <%= miProducto.descuento %></h5>
-                  <p class="card-text"><%= miProducto.descripcion %></p>
+                  <p class="card-text"><%= miProducto.descripcion.value %></p>
                   
                 </div>
                 <a href="/adminProductos/?type=<%= miProducto.tipo.id%>" class="btn btn-dark">Volver</a>

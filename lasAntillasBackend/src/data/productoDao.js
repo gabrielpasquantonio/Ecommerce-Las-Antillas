@@ -45,10 +45,17 @@ const mapProductWithAssociations = (product) => {
   
   const nombre =
     (nombreFirst &&
-      nombreFirst.atributeProduct &&
       nombreFirst.atributeProduct) ||
     { value: "PONER nombre", id:'999999' }
+  
+  const descripcionFirst = product.Atributes.find((atribute) =>
+    atribute.name === "Description")
 
+  const descripcion =
+    (descripcionFirst &&
+      descripcionFirst.atributeProduct) ||
+    { value: "PONER nombre", id:'999999' }
+  
   return {
     id: product.id,
     // marca: product.Brand.name,
@@ -58,7 +65,7 @@ const mapProductWithAssociations = (product) => {
       name: product.Category.name,
       id: product.Category.id
     },
-    description: "DESCRIPTION",
+    descripcion,
     precio,
     descuento: "20%",
     oldImagen: product.image,

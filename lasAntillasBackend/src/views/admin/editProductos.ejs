@@ -41,7 +41,8 @@
                             <input type="hidden" class="form-control" name="tipo" placeholder="Tipo" required="required" value="<%= JSON.stringify(productoEditar.tipo) %>">
                         </div>		
                             <div class="form-group">
-                                <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" value="<%= productoEditar.descripcion%>">
+                                <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" required value="<%= productoEditar.descripcion.value%>">
+                                <input type="hidden" class="form-control" name="descripcionId" placeholder="Descripción del producto" value="<%= productoEditar.descripcion.id%>">
                             </div>
                             <div class="form-group">
                                 <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required" value="<%=productoEditar.precio.value%>">
