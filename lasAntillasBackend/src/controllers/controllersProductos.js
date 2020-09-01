@@ -7,14 +7,10 @@ const productoCigarritos = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..
 const productoTabacoPipas = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","tabacoPipa.json")));
 const productoTabacoArmar = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data","tabacoCigarro.json")));
 
-
-
-
 module.exports = {
     habanos: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
         res.render(path.resolve(__dirname, "..", "views", "productos", "habanos.ejs"),{productoHabanos});
-
     },
 
     cigarros: (req, res) => {

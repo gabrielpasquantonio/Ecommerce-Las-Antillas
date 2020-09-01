@@ -48,13 +48,73 @@ const mapProductWithAssociations = (product) => {
       nombreFirst.atributeProduct) ||
     { value: "PONER nombre", id:'999999' }
   
-  const descripcionFirst = product.Atributes.find((atribute) =>
-    atribute.name === "Description")
 
-  const descripcion =
-    (descripcionFirst &&
-      descripcionFirst.atributeProduct) ||
-    { value: "PONER nombre", id:'999999' }
+
+  const getDescription = () => {
+    if(product.Category.id === 1) {
+      const lenghtAtribute = product.Atributes.find((atribute) =>
+        atribute.name === "Length")
+      const ringAtribute = product.Atributes.find((atribute) =>
+        atribute.name === "Ring")
+      const tasteAtribute = product.Atributes.find((atribute) =>
+        atribute.name === "Taste")
+      
+      return {
+        value: `Length: ${lenghtAtribute.atributeProduct.value} - Ring: ${ringAtribute.atributeProduct.value} - Taste: ${tasteAtribute.atributeProduct.value}`,
+        id: {
+          length: lenghtAtribute.atributeProduct.id,
+          ring: ringAtribute.atributeProduct.id,
+          taste: tasteAtribute.atributeProduct.id
+        }
+      }
+    }
+    if(product.Category.id === 2 || product.Category.id === 3) {
+      const lenghtAtribute = product.Atributes.find((atribute) =>
+        atribute.name === "Length")
+      const ringAtribute = product.Atributes.find((atribute) =>
+        atribute.name === "Ring")
+      const tasteAtribute = product.Atributes.find((atribute) =>
+        atribute.name === "Taste")
+      const originAtribute = product.Atributes.find((atribute) =>
+        atribute.name === "Origin")
+
+      return {
+        value: `Length: ${lenghtAtribute.atributeProduct.value} - Ring: ${ringAtribute.atributeProduct.value} - Taste: ${tasteAtribute.atributeProduct.value} - Origin: ${originAtribute.atributeProduct.value}`,
+        id: {
+          length: lenghtAtribute.atributeProduct.id,
+          ring: ringAtribute.atributeProduct.id,
+          taste: tasteAtribute.atributeProduct.id,
+          origin: originAtribute.atributeProduct.id
+        }
+      }
+    }
+    if(product.Category.id === 4) {
+      console.log(product.id)
+      const description = product.Atributes.find((atribute) =>
+        atribute.name === "Description")
+      return {
+        value: description.atributeProduct.value,
+        id: {
+          description: description.atributeProduct.id
+        }
+      }
+    }
+    if(product.Category.id === 5) {
+      const quantityAtribute = product.Atributes.find((atribute) =>
+        atribute.name === "Quantity")
+      const originAtribute = product.Atributes.find((atribute) =>
+        atribute.name === "Origin")
+
+      return {
+        value: `Quantity: ${quantityAtribute.atributeProduct.value} - Origin: ${originAtribute.atributeProduct.value}`,
+        id: {
+          quantity: quantityAtribute.atributeProduct.id,
+          origin: originAtribute.atributeProduct.id
+        }
+      }
+    }
+
+  }
   
   return {
     id: product.id,
@@ -65,7 +125,7 @@ const mapProductWithAssociations = (product) => {
       name: product.Category.name,
       id: product.Category.id
     },
-    descripcion,
+    descripcion: getDescription(),
     precio,
     descuento: "20%",
     oldImagen: product.image,
