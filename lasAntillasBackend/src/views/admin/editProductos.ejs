@@ -28,28 +28,63 @@
             <div class="row" >
                 <div class="col-8 mx-auto bg-light ">
                     <div class="create-form">
-                        <form action="/editProductos/<%= productoEditar.id%>?_method=PUT
+                        <form action="/editProductos/<%= productoEditar.id %>?_method=PUT
                           " method="POST" enctype="multipart/form-data" >
-                            <div class="form-group">
+                            
+                          
+                          <!--    Aca vamos a hacer un if para que muestre una vista distinta deacuerdo al producto en cuestion      -->
+                                                    
+                          <div class="form-group" >
+                                <label >Vitola de Galera</label>
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto" required="required" value="<%= productoEditar.nombre.value%>">
                                 <input type="hidden" class="form-control" name="nombreId" placeholder="Nombre del producto" value="<%= productoEditar.nombre.id%>">
-                              </div>
-                            <div class="form-group">
-                              <input type="text" class="form-control" name="marca" placeholder="Marca" required="required" value="<%= productoEditar.marca%>">
                           </div>
+
+                          <div class="form-group">
+                            <label >Marca</label>  
+                            <input type="text" class="form-control" name="marca" placeholder="Marca" required="required" value="<%= productoEditar.marca%>">
+                          </div>
+
+                          <div class="form-group">
+                                <label >Largo</label>
+                                <input type="text" class="form-control" name="descripcion" placeholder="Indique el Largo" required="required" value="<%=productoEditar.descripcion.value1%>">
+                                <input type="hidden" class="form-control" name="precioId" placeholder="Indique el precio" required="required" value="<%=productoEditar.precio.id%>">
+                          </div>
+
+                          <div class="form-group">
+                                <label >Ancho</label>
+                                <input type="text" class="form-control" name="precio" placeholder="Indique el Ancho" required="required" value="<%=productoEditar.descripcion.value2%>">
+                                <input type="hidden" class="form-control" name="precioId" placeholder="Indique el precio" required="required" value="<%=productoEditar.precio.id%>">
+                          </div>
+                          
+                          <div class="form-group">
+                                <label >Sabor</label>
+                                <input type="text" class="form-control" name="precio" placeholder="Indique el Largo" required="required" value="<%=productoEditar.descripcion.value3%>">
+                                <input type="hidden" class="form-control" name="precioId" placeholder="Indique el precio" required="required" value="<%=productoEditar.precio.id%>">
+                          </div>
+
+
+
                           <div class="form-group">
                             <input type="hidden" class="form-control" name="tipo" placeholder="Tipo" required="required" value="<%= JSON.stringify(productoEditar.tipo) %>">
-                        </div>		
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" required value="<%= productoEditar.descripcion.value%>">
+                          </div>
+
+                          <% if (productoEditar.tipo.id === 4 || productoEditar.tipo.id === 5  ) { %>
+                          <div class="form-group">
+                            <label >Descripcion</label>
+                                <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" required value="<%= productoEditar.descripcion.value1%>">
                                 <input type="hidden" class="form-control" name="descripcionId" placeholder="Descripción del producto" value="<%= productoEditar.descripcion.id.descripcion%>">
-                            </div>
-                            <div class="form-group">
+                          </div>
+                        <% }  %>
+                                      
+
+                          <div class="form-group">
+                                <label >Precio</label>
                                 <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required" value="<%=productoEditar.precio.value%>">
                                 <input type="hidden" class="form-control" name="precioId" placeholder="Indique el precio" required="required" value="<%=productoEditar.precio.id%>">
-                            </div>
-                            <div class="form-group">
-                                
+                          </div>
+                          <div class="form-group">
+                                <label >Descuento</label>
                                 <select  name="descuento" class="custom-select" id="validationCustom04" required>
                                   <option disabled value="#">Seleccione un descuento"</option>
                                   <option value="0" <%= productoEditar.descuento == 0 ? "selected" : null %>
@@ -57,8 +92,9 @@
                                   <option value="10" <%= productoEditar.descuento == 10 ? "selected" : null %>>10%</option>
                                   
                                 </select>
-                            </div>
+                          </div>
                         <!--Aqui solicito la imagen al usuario-->
+                        
                         <div class="custom-file">
                           <figure class="form-group">
                             <img class="w-100" src="/images/<%= productoEditar.tipo.name.toLowerCase() %>/<%= productoEditar.imagen %> " alt="habano <%= productoEditar.nombre.value %>">
@@ -68,15 +104,18 @@
                                     <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
 
                           <input type="file" name="imagen"  multiple>
-                          <!--<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="imagen" required value=" ">
-                          <label class="custom-file-label" for="inputGroupFile01">Seleccione una imagen</label>-->
-                        </div>
-                            <div class="form-group">
+                          </div>
+                        
+                        <div class="form-group">
                                 <button type="submit" class="btn btn btn-dark">Actualizar</button>
                                 <a href="/adminProductos/?type=<%= productoEditar.tipo.id%>" class="btn btn-dark">Volver</a>
-                            </div>
+                        </div>
                             
                         </form>
+                        
+                        
+                        <!--  A partir de aca empieza el formulario para cigarros  -->
+                        
                 </div>                        
                 </div>
             </div>
