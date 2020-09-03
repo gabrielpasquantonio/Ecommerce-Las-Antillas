@@ -91,48 +91,41 @@ module.exports = {
     editProductos: async (req,res) => {
       //Aca pasamos los datos del archivo Json de Habanos a un Array
       const productoEditar = await ProductDao.getProductById(req.params.id);
-      //Aca pongo lo que le voy c mandar a la vista 
-      res.render(path.resolve(__dirname, '..','views','admin','editProductos.ejs'), {productoEditar});
+      //Aca pongo lo que le voy c mandar a la vista
+      const marcasFromDb = await categories.findOne({
+        include: [
+          {
+            model: brands,
+            attributes: ["name", "id"]
+          },
+        ],
+        where: {
+          id: productoEditar.tipo.id,
+        },
+      });
+      const marcas = marcasFromDb.Brands.map(marca => marca)
+      res.render(path.resolve(__dirname, '..','views','admin','editProductos.ejs'), {productoEditar, marcas});
     },
 
     updateProductos: async (req,res) => {
-      //Update the product name
-      await atributeProduct.update(
-        {
-          value: req.body.nombre
-        },
-        {
-          where: {
-            id: req.body.nombreId
-          }
+      const atributeList = ['largo', 'ancho', 'sabor', 'origen', 'cantidad', 'descripcion', 'nombre', 'precio']
+      Object.keys(req.body).forEach(async key => {
+        if(atributeList.includes(key)) {
+          await atributeProduct.update(
+            {
+              value: req.body[key]
+            },
+            {
+              where: {
+                id: req.body[`${key}Id`]
+              }
+            }
+          )    
         }
-      )
-
-      //Update the product price
-      await atributeProduct.update(
-        {
-          value: req.body.precio
-        },
-        {
-          where: {
-            id: req.body.precioId
-          }
-        }
-      )
-
-      //Upsert the product description
-      atribute = await atributeDao.getAtributeByName("Description")
-      await atributeProduct.upsert(
-        {
-          id: req.body.descripcionId,
-          value: req.body.descripcion,
-          atribute_id: atribute.id,
-          product_id: req.params.id
-        }
-      )
-
+      })
       const updatedFields = {
-        image: req.files.length > 0 ? req.files[0].filename: req.body.oldimagen
+        image: req.files.length > 0 ? req.files[0].filename: req.body.oldimagen,
+        brand_id: req.body.marca
       }
 
       await ProductDao.updateById(req.params.id, updatedFields)

@@ -48,11 +48,9 @@ const mapProductWithAssociations = (product) => {
       nombreFirst.atributeProduct) ||
     { value: "PONER nombre", id:'999999' }
   
-
-
-  const getDescription = () => {
+  const getAttributes = () => {
     if(product.Category.id === 1) {
-      const lenghtAtribute = product.Atributes.find((atribute) =>
+      const lengthAtribute = product.Atributes.find((atribute) =>
         atribute.name === "Length")
       const ringAtribute = product.Atributes.find((atribute) =>
         atribute.name === "Ring")
@@ -60,16 +58,22 @@ const mapProductWithAssociations = (product) => {
         atribute.name === "Taste")
       
       return {
-        value: `Length: ${lenghtAtribute.atributeProduct.value} - Ring: ${ringAtribute.atributeProduct.value} - Taste: ${tasteAtribute.atributeProduct.value}`,
-        id: {
-          length: lenghtAtribute.atributeProduct.id,
-          ring: ringAtribute.atributeProduct.id,
-          taste: tasteAtribute.atributeProduct.id
+        largo: {
+          value: lengthAtribute.atributeProduct.value,
+          id: lengthAtribute.atributeProduct.id
+        },
+        ancho: {
+          value: ringAtribute.atributeProduct.value,
+          id: ringAtribute.atributeProduct.id
+        },
+        sabor: {
+          value: tasteAtribute.atributeProduct.value,
+          id: tasteAtribute.atributeProduct.id
         }
       }
     }
     if(product.Category.id === 2 || product.Category.id === 3) {
-      const lenghtAtribute = product.Atributes.find((atribute) =>
+      const lengthAtribute = product.Atributes.find((atribute) =>
         atribute.name === "Length")
       const ringAtribute = product.Atributes.find((atribute) =>
         atribute.name === "Ring")
@@ -79,23 +83,31 @@ const mapProductWithAssociations = (product) => {
         atribute.name === "Origin")
 
       return {
-        value: `Length: ${lenghtAtribute.atributeProduct.value} - Ring: ${ringAtribute.atributeProduct.value} - Taste: ${tasteAtribute.atributeProduct.value} - Origin: ${originAtribute.atributeProduct.value}`,
-        id: {
-          length: lenghtAtribute.atributeProduct.id,
-          ring: ringAtribute.atributeProduct.id,
-          taste: tasteAtribute.atributeProduct.id,
-          origin: originAtribute.atributeProduct.id
+        largo: {
+          value: lengthAtribute.atributeProduct.value,
+          id: lengthAtribute.atributeProduct.id
+        },
+        ancho: {
+          value: ringAtribute.atributeProduct.value,
+          id: ringAtribute.atributeProduct.id
+        },
+        sabor: {
+          value: tasteAtribute.atributeProduct.value,
+          id: tasteAtribute.atributeProduct.id
+        },
+        origen: {
+          value: originAtribute.atributeProduct.value,
+          id: originAtribute.atributeProduct.id
         }
       }
     }
     if(product.Category.id === 4) {
-      console.log(product.id)
-      const description = product.Atributes.find((atribute) =>
+      const descriptionAtribute = product.Atributes.find((atribute) =>
         atribute.name === "Description")
       return {
-        value: description.atributeProduct.value,
-        id: {
-          description: description.atributeProduct.id
+        descripcion: {
+          value: descriptionAtribute.atributeProduct.value,
+          id: descriptionAtribute.atributeProduct.id
         }
       }
     }
@@ -106,26 +118,34 @@ const mapProductWithAssociations = (product) => {
         atribute.name === "Origin")
 
       return {
-        value: `Quantity: ${quantityAtribute.atributeProduct.value} - Origin: ${originAtribute.atributeProduct.value}`,
-        id: {
-          quantity: quantityAtribute.atributeProduct.id,
-          origin: originAtribute.atributeProduct.id
+        cantidad: {
+          value: quantityAtribute.atributeProduct.value,
+          id: quantityAtribute.atributeProduct.id
+        },
+        origen: {
+          value: originAtribute.atributeProduct.value,
+          id: originAtribute.atributeProduct.id
         }
       }
     }
 
   }
+
+  const attributes = getAttributes();
   
   return {
     id: product.id,
     // marca: product.Brand.name,
-    marca: (product.Brand && product.Brand.name) || "AGREGAR",
+    marca: {
+      value: (product.Brand && product.Brand.name) || "AGREGAR",
+      id: (product.Brand && product.Brand.id) || "99999" 
+    },
     nombre,
     tipo: {
       name: product.Category.name,
       id: product.Category.id
     },
-    descripcion: getDescription(),
+    ...attributes,
     precio,
     descuento: "20%",
     oldImagen: product.image,

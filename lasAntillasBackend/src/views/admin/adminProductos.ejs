@@ -41,7 +41,7 @@
         <tr>
           <td><%= todoProductoJson.id%> </td>
           <td><%= todoProductoJson.nombre.value%> </td>
-          <td><%= todoProductoJson.marca%> </td>
+          <td><%= todoProductoJson.marca.value%> </td>
           <td><a href="/detailProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo.id%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
           <td><a href="/editProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo.id%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
           <td><a href="/deleteProductos/<%= todoProductoJson.id%>/?type=<%= todoProductoJson.tipo.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
