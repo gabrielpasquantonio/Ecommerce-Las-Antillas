@@ -120,6 +120,10 @@ a {
     
     max-width: 10%;
 }
+.cart-envios {
+    
+padding-top: 3%;
+padding-bottom: 2%!important;}
 .cart-item-col {
     float: left;
 }
@@ -324,6 +328,7 @@ h6, .h6 {
 .p-bottom-quarter {
     padding-bottom: 5px!important;
 }
+
 .m-bottom-half {
     margin-bottom: 10px!important;
 }
@@ -461,7 +466,10 @@ input.form-control {
     border: none;
 }
 .link-module {
-    padding: 15px 0;
+    padding: 3% 0;
+}
+.p-top-half-cart{
+    padding-top: 8%!important;
 }
 .svg-inline--fa.fa-lg {
     vertical-align: -.225em;
@@ -575,6 +583,15 @@ b, strong {
 .m-top-half {
     margin-top: 10px!important;
 }
+.cart-btn-link {
+    position: relative;
+    font-size: 60%;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: #6c1c24;
+    fill: #6c1c24;
+    box-sizing: border-box;
+}
 .btn-link {
     position: relative;
     font-size: 14px;
@@ -648,12 +665,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 @media screen and (max-width: 600px) {
     .hiden-phone  {
-     
-        
-           display: none;
-     
-     
-     
+           display: none;     
+    }
+    .cart-item-image-col {
+        max-width: 20%;
     }
 
 }
