@@ -66,6 +66,7 @@ element.style {
     overflow: visible;
     vertical-align: -.125em;
 }
+
 .hidden-desktop, .visible-phone, .visible-tablet {
     display: none!important;
 }
@@ -83,12 +84,12 @@ a {
     vertical-align: -.125em;
 }
 
-.ajax-cart-container .ajax-cart-table-header {
+.ajax-cart-container .cart-header {
     font-family: "Montserrat", Sans-serif;
     border-top: 1px solid rgba(2, 0, 0, 0.1);
     border-bottom: 1px solid rgba(2, 0, 0, 0.1);
 }
-.ajax-cart-table-header {
+.cart-header {
     padding: 10px 0;
     overflow: hidden;
     font-weight: normal;
@@ -105,27 +106,27 @@ a {
     text-align: right!important;
 }
 
-.ajax-cart-container .ajax-cart-item {
+.ajax-cart-container .cart-item {
     border-bottom: 1px solid rgba(2, 0, 0, 0.1);
 }
-.ajax-cart-item {
+.cart-item {
     position: relative;
     float: left;
     width: 100%;
     padding: 10px 0;
     clear: both;
 }
-.ajax-cart-item-image-col {
-    width: 12%;
+.cart-item-image-col {
+    
+    max-width: 10%;
 }
-.ajax-cart-item-col {
+.cart-item-col {
     float: left;
 }
-.ajax-cart-item-desc-col {
-    width: 53%;
-    padding-left: 10px;
+.cart-item-desc-col {
+        padding-left: 2%;
 }
-.ajax-cart-item-col {
+.cart-item-col {
     float: left;
 }
 .border-box {
@@ -135,10 +136,10 @@ img {
     height: auto;
     max-width: 100%;
 }
-.ajax-cart-item-unit-price {
+.cart-item-unit-price {
     float: left;
-    width: 100%;
-    margin: 5px 0 2px 0;
+    width: 80%;
+    margin: 1% 0 1% 0;
 }
 .m-top-quarter {
     margin-top: 5px!important;
@@ -149,7 +150,7 @@ img {
 }
 .cart-quantity-btn, .cart-btn-delete {
     
-    padding: 6px;
+    padding: 2%;
     
     background: transparent;
     font-size: 16px;
@@ -203,7 +204,7 @@ input.cart-quantity-input {
 }
 .cart-quantity-btn, .cart-btn-delete {
     float: left;
-    padding: 6px;
+    padding: 1%;
     
     background: transparent;
     font-size: 16px;
@@ -225,28 +226,23 @@ svg:not(:root) {
 .pull-right {
     float: right;
 }
-.ajax-cart-item-subtotal {
+.cart-item-subtotal {
     width: 25%;
+    float: right;
 }
-.ajax-cart-item-col {
-    float: left;
-}
+
 .text-right {
     text-align: right!important;
 }
-.ajax-cart-item-delete-col {
-    width: 10%;
-}
-.ajax-cart-item-col {
-    float: left;
-}
+
+
 .cart-btn-delete {
     float: right;
     border: 0;
 }
 .cart-quantity-btn, .cart-btn-delete {
     
-    padding: 6px;
+    padding: 1%;
     display: inline-block;
     background: transparent;
     font-size: 16px;
@@ -508,7 +504,7 @@ dd, dt, li {
 }
 button, input, label, select, textarea {
     font-size: 12px;
-    font-weight: 300;
+    font-weight: 300px;
     line-height: 20px;
 }
 .radio-button-container .radio-button-item:last-of-type .radio-button-content {
@@ -548,14 +544,14 @@ button, input, label, select, textarea {
 
 
 .text-primary {
-    color: #a6946a;
+    color: #020000;
 }
 
 b, strong {
     font-weight: bold;
 }
 .cart-total {
-    color: #a6946a;
+    color: #020000;
 }
 
 .text-left {
@@ -650,4 +646,49 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     border: 1px solid #020000;
 }
 
+@media screen and (max-width: 600px) {
+    .hiden-phone  {
+     
+        
+           display: none;
+     
+     
+     
+    }
 
+}
+
+#myform {
+    text-align: center;
+    padding: 5px;
+    border: 1px dotted  #020000;;
+    margin: 2%;
+}
+.qty {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+}
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}
+
+.btn-cart {
+    
+    line-height: 20px!important;
+    
+    font-family: sans-serif!important;
+    
+    font-weight: 300!important;
+    font-size: 18px!important;
+    text-shadow: none!important;
+    background-image: none!important;
+    color: #002000!important;
+    
+    -webkit-appearance: none!important;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none!important;
+    box-sizing: border-box!important;
+    border: 1px solid rgba(2, 0, 0, 0.3)!important;
+    border-radius: .25rem;
+}
