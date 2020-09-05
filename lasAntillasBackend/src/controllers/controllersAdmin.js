@@ -17,6 +17,7 @@ module.exports = {
     indexProductos: async (req, res) => {
       //parametrizando para que la primera letra de files View sea mayuscula                
       //Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
+      console.log('index,', req.query.type)
       const todosProductosFromDBByType = await ProductDao.getProductsByCategory(req.query.type)
       res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{todosProductosJson: todosProductosFromDBByType});
     },
@@ -36,12 +37,22 @@ module.exports = {
           id: parseType.id,
         },
       });
+
+      const nombreId = parseType.id === 1 ? 1 
+      : parseType.id === 2 || parseType.id === 3 ? 11
+      : 4
+      
+      const priceId = parseType.id === 1 ? 5 
+      : parseType.id === 2 || parseType.id === 3 ? 5
+      : 5
+
       const marcas = marcasFromDb.Brands.map(marca => marca)
-      res.render(path.resolve(__dirname, "..", "views", "admin", "createProductos.ejs"),{productType: parseType, marcas});
+      res.render(path.resolve(__dirname, "..", "views", "admin", "createProductos.ejs"),{productType: parseType, marcas, nameAttributeId: nombreId, priceAttributeId: priceId});
     },
     
     saveProductos: async (req, res) => {
       //Aca pasamos los datos del archivo Json de Habanos a un Array
+      const atributeList = ['largo', 'ancho', 'sabor', 'origen', 'cantidad', 'descripcion', 'nombre', 'precio']
       const productType = JSON.parse(req.body.tipo) 
       const newProduct = {
         brand_id: req.body.marca,
@@ -52,27 +63,22 @@ module.exports = {
       const newProductFromDb = await ProductDao.createProduct(newProduct);
       const productAtributeType = await ProductDao.getAtributesTypeByCategory(productType.id)
 
-      let atribute = await atributeDao.getAtributeByName(productAtributeType.priceType)
-      await atributeProduct.create({
-        atribute_id: atribute.id,
-        product_id: newProductFromDb.id,
-        value: req.body.precio
-      })
+      console.log('body', req.body)
+      console.log('new product', JSON.stringify(newProduct))
 
-      atribute = await atributeDao.getAtributeByName(productAtributeType.nameType)
-      await atributeProduct.create({
-        atribute_id: atribute.id,
-        product_id: newProductFromDb.id,
-        value: req.body.nombre
-      })
-      
-      atribute = await atributeDao.getAtributeByName("Description")
-      await atributeProduct.create({
-        atribute_id: atribute.id,
-        product_id: newProductFromDb.id,
-        value: req.body.descripcion
-      })
+      const attributesKeys =  Object.keys(req.body);
 
+      for (const key of attributesKeys) {
+        if(atributeList.includes(key)) {
+          await atributeProduct.create({
+            atribute_id: req.body[`${key}Id`],
+            product_id: newProductFromDb.id,
+            value: req.body[key]
+          })
+        }
+      }
+
+      console.log('here')
       res.redirect(`/adminProductos/?type=${productType.id}`)
     },
 

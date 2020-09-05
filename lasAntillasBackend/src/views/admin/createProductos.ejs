@@ -31,6 +31,7 @@
                         <form action="/createProductos" method="POST" enctype="multipart/form-data" >
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto" required="required" value="">
+                                <input type="hidden" class="form-control" name="nombreId" value="<%=nameAttributeId%>">
                             </div>
                             <div class="form-group">
                               <input type="hidden" class="form-control" name="tipo" placeholder="Tipo del Producto" required="required"  value="<%= JSON.stringify(productType)%>">
@@ -44,19 +45,63 @@
                               </select>
                           </div>
                             	
+
+                          <% if (productType.id === 1 || productType.id === 2 || productType.id === 3 ) { %>
+
                             <div class="form-group">
-                                <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" required="required" value="">
+                                  <input type="text" class="form-control" name="largo" placeholder="Indique el Largo" required="required" value="">
+                                  <input type="hidden" class="form-control" name="largoId" value="2">
                             </div>
+
                             <div class="form-group">
-                                <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required" value="">
+                                  <input type="text" class="form-control" name="ancho" placeholder="Indique el Ancho" required="required" value="">
+                                  <input type="hidden" class="form-control" name="anchoId" value="3">
                             </div>
+                            
                             <div class="form-group">
-                                <select  name="descuento" class="custom-select" id="validationCustom04" required>
-                                  <option selected disabled value="#">Elija su descuento</option>
-                                  <option value="0">Sin descuento</option>
-                                  <option value="10">10%</option>
-                                </select>
+                                  <input type="text" class="form-control" name="sabor" placeholder="Indique el Sabor" required="required" value="">
+                                  <input type="hidden" class="form-control" name="saborId" value="4">
                             </div>
+
+                          <% }  %>
+
+                              
+                          <% if (productType.id === 2 || productType.id === 3 || productType.id === 5 ) { %>
+
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="origen" placeholder="Indique el Origen" required="required" value="">
+                              <input type="hidden" class="form-control" name="origenId" placeholder="Indique el Origen"  value="8">
+                            </div>
+
+                          <% }  %>
+
+                          <% if (productType.id === 4) { %>
+                          
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" required value="">
+                              <input type="hidden" class="form-control" name="descripcionId" value="10">
+                            </div>                        
+                          
+                          <% }  %>
+
+                          <% if (productType.id === 5) { %>                          
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="cantidad" placeholder="Indique la cantidad" required value="">
+                              <input type="hidden" class="form-control" name="cantidad" value="9">
+                            </div>                        
+                          <% }  %>
+
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required" value="">
+                            <input type="hidden" class="form-control" name="precioId" value="<%=priceAttributeId%>">
+                        </div>
+                        <div class="form-group">
+                            <select  name="descuento" class="custom-select" id="validationCustom04" required>
+                              <option selected disabled value="#">Elija su descuento</option>
+                              <option value="0">Sin descuento</option>
+                              <option value="10">10%</option>
+                            </select>
+                        </div>
                         <!--Aqui solicito la imagen al usuario-->
                         <div class="custom-file">
                           <input type="file" name="imagen" multiple>

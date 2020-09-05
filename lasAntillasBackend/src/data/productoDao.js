@@ -72,6 +72,7 @@ const mapProductWithAssociations = (product) => {
         }
       }
     }
+    
     if(product.Category.id === 2 || product.Category.id === 3) {
       const lengthAtribute = product.Atributes.find((atribute) =>
         atribute.name === "Length")
@@ -101,6 +102,7 @@ const mapProductWithAssociations = (product) => {
         }
       }
     }
+
     if(product.Category.id === 4) {
       const descriptionAtribute = product.Atributes.find((atribute) =>
         atribute.name === "Description")
@@ -111,6 +113,7 @@ const mapProductWithAssociations = (product) => {
         }
       }
     }
+
     if(product.Category.id === 5) {
       const quantityAtribute = product.Atributes.find((atribute) =>
         atribute.name === "Quantity")
@@ -160,8 +163,9 @@ module.exports = {
       attributes: ["id", "image"],
       where: {
         category_id: type,
-      },
+      }
     });
+    console.log(JSON.stringify(productsFromDB, null, 4))
     const mapProduct = productsFromDB.map((product) => mapProductWithAssociations(product))
     return mapProduct
   },
