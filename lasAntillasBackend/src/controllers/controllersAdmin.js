@@ -17,7 +17,7 @@ module.exports = {
     indexProductos: async (req, res) => {
       //parametrizando para que la primera letra de files View sea mayuscula                
       //Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
-      console.log('index,', req.query.type)
+      // console.log('index,', req.query.type)
       const todosProductosFromDBByType = await ProductDao.getProductsByCategory(req.query.type)
       res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{todosProductosJson: todosProductosFromDBByType});
     },
@@ -35,19 +35,19 @@ module.exports = {
         ],
         where: {
           id: parseType.id,
-        },
+        }
       });
 
       const nombreId = parseType.id === 1 ? 1 
       : parseType.id === 2 || parseType.id === 3 ? 11
       : 4
       
-      const priceId = parseType.id === 1 ? 5 
-      : parseType.id === 2 || parseType.id === 3 ? 5
-      : 5
+      const priceId = parseType.id === 3 ? 12 : 5 // Solo cigarritos tiene priceperbox
+
+      const cantidadId = parseType.id === 3 ? 7 : 9
 
       const marcas = marcasFromDb.Brands.map(marca => marca)
-      res.render(path.resolve(__dirname, "..", "views", "admin", "createProductos.ejs"),{productType: parseType, marcas, nameAttributeId: nombreId, priceAttributeId: priceId});
+      res.render(path.resolve(__dirname, "..", "views", "admin", "createProductos.ejs"),{productType: parseType, marcas, nameAttributeId: nombreId, priceAttributeId: priceId, cantidadAttributeId: cantidadId, });
     },
     
     saveProductos: async (req, res) => {
@@ -63,8 +63,8 @@ module.exports = {
       const newProductFromDb = await ProductDao.createProduct(newProduct);
       const productAtributeType = await ProductDao.getAtributesTypeByCategory(productType.id)
 
-      console.log('body', req.body)
-      console.log('new product', JSON.stringify(newProduct))
+      // console.log('body', req.body)
+      // console.log('new product', JSON.stringify(newProduct))
 
       const attributesKeys =  Object.keys(req.body);
 
@@ -78,7 +78,6 @@ module.exports = {
         }
       }
 
-      console.log('here')
       res.redirect(`/adminProductos/?type=${productType.id}`)
     },
 

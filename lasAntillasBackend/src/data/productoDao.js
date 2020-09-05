@@ -104,12 +104,18 @@ const mapProductWithAssociations = (product) => {
     }
 
     if(product.Category.id === 4) {
+      const originAtribute = product.Atributes.find((atribute) =>
+      atribute.name === "Origin")
       const descriptionAtribute = product.Atributes.find((atribute) =>
         atribute.name === "Description")
       return {
         descripcion: {
           value: descriptionAtribute.atributeProduct.value,
           id: descriptionAtribute.atributeProduct.id
+        },
+        origen: {
+          value: originAtribute.atributeProduct.value,
+          id: originAtribute.atributeProduct.id
         }
       }
     }
@@ -165,7 +171,7 @@ module.exports = {
         category_id: type,
       }
     });
-    console.log(JSON.stringify(productsFromDB, null, 4))
+    // console.log(JSON.stringify(productsFromDB, null, 4))
     const mapProduct = productsFromDB.map((product) => mapProductWithAssociations(product))
     return mapProduct
   },
