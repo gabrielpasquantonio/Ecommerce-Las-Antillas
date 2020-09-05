@@ -1,7 +1,8 @@
   module.exports = {
     development: {
       username: "root",
-      password: 'admin',
+      // password: 'admin',
+      password: null,
       database: "lasantillas",
       host: "localhost",
       dialect: "mysql",
