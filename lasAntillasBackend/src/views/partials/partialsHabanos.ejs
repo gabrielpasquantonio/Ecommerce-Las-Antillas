@@ -26,16 +26,15 @@
 
 <div class="card-group container-wide span12 grid-row">
   <% for(let i = 0; i < productoHabanos.length; i++) { %>
-
   <div class="card cartinha">
-    <a href="productDetailHabano"
+    <a href="/productDetailHabano/?productId=<%= productoHabanos[i].id%>"
       ><img
         src="/images/habanos/<%=productoHabanos[i].imagen%>"
         class="card-img-top"
         alt="Habano X."
     /></a>
     <div class="card-body">
-      <a href="productDetailHabano"
+      <a href="/productDetailHabano/?productId=<%= productoHabanos[i].id%>"
         ><h5 class="card-title"><%=productoHabanos[i].nombre.value%></h5></a
       >
       <p class="card-text">$<%=productoHabanos[i].precio.value%></p>

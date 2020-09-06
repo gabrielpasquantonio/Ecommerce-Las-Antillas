@@ -56,6 +56,7 @@ module.exports = {
                 const name = productoEncontrado.Atributes.find(atribute => atribute.name === "VitolaDeGalera").atributeProduct.value;
                 const price = productoEncontrado.Atributes.find(atribute => atribute.name === "UnitPrice").atributeProduct.value;
                 const imagen = productoEncontrado.image;
+                const productId = productoEncontrado.id;
                 productoHabanos.push(
                     // REPRESENTA EL MODELO DEL RESULTADO AL QUE QUEREMOS LLEGAR (EL QUE LA VISTA ESPERA RECIBIR)
                     {
@@ -66,7 +67,8 @@ module.exports = {
                         precio: {
                             value: price
                         },
-                        imagen: imagen
+                        imagen: imagen,
+                        id: productId
                     }
                 )
             })
@@ -335,7 +337,31 @@ module.exports = {
     },
     productDetailHabano: (req, res) => {
         //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-        res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailHabano.ejs"));
+        console.log('este es el id', req.query.productId)
+        products.findByPk(req.query.productId, 
+          {
+            include: [
+              {
+                  model: atributes,
+                  through: {
+                      model: atributeProduct
+                  }
+              }
+           ]
+          }
+        )
+        .then(productoEncontrado => {
+          const name = productoEncontrado.Atributes.find(atribute => atribute.name === "VitolaDeGalera").atributeProduct.value;
+          const price = productoEncontrado.Atributes.find(atribute => atribute.name === "UnitPrice").atributeProduct.value;
+ 
+          const productoHabano = {
+            precio: {
+              value: price
+            }
+          } 
+          res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailHabano.ejs"), {productoHabano});
+        })
+
 
     },
     productDetailTabaco: (req, res) => {
