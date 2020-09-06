@@ -866,7 +866,7 @@ option {
 h5, .h5 {
     font-size: 18px!important;
 }
-.text-primary {
+.text-primaryy {
     color: #a6946a!important;
 }
 .modal, .modal-xs-dialog {
@@ -1032,7 +1032,10 @@ input[type=text], input[type=password], input[type=number], input[type=email], i
     
 }
 .casinha{position: relative;
-top: 20px;}
+
+top: 70px;
+padding-bottom: 20%;
+}
 .carrinho{position: relative;
     top: 10px;}
     .envios{position: relative;
@@ -1126,6 +1129,7 @@ a {
 .hidden {
     display: none;
 }
+
 .product-fixed-info {
     display: none;
 }
@@ -1153,8 +1157,16 @@ a {
     .ipad{height: 150px!important;}
     .card-img-top
 {
+    
     width: auto!important;
-} 
+} .link-module-text{
+    
+        
+    margin-left: 9%;
+  
+    margin-top: -7%;
+
+}
 .nav-item {
     padding: 2px 0;
     margin-right: 2px;
@@ -1173,7 +1185,13 @@ a {
 .btn-block {
     display: block;
    width: fit-content;
-} }
+} 
+.casinha{position: relative;
+
+    top: 45px;
+    padding-bottom: 20%;
+    }
+}
 .card-img-top
 {
        
@@ -1332,6 +1350,24 @@ h3 {
         font-size: 18px!important;
         margin-bottom: 1%!important;
     }
+    .form-control {
+        height: auto;
+        width: 80%!important;
+        padding: 5px!important;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .link-module-text{
+    
+    margin-left: 15%;
+    margin-bottom: 15%;
+    margin-top: -13%;
+    }
+    .casinha{position: relative;
+
+        top: 45px;
+        padding-bottom: 20%;
+        }
   }
   .custom-inner {
     width: 80% !important;
