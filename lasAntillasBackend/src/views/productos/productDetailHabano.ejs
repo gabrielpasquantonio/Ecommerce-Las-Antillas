@@ -125,26 +125,16 @@
                              
                             </div>
                         </div>
-                        <form id="product_form"
-                            class="js-product-form display-when-content-ready product-form clear-both" method="post"
-                            action="/comprar/">
-
-                         
-                        
-                          
-                            <form action="/carrito/adicionarAlCarrito" method="post" class="form-inline js-product-quantity-container row-fluid quantity-container border-bottom-none-xs m-bottom-none">
+                           <form action="/carrito/adicionarAlCarrito" method="post" class="form-inline js-product-quantity-container row-fluid quantity-container border-bottom-none-xs m-bottom-none">
                                 <div class="quantity span3">
-                                    <label for="quantity" class="quantity-label">
+                                    <label for="cantidad" class="quantity-label">
                                         Cantidad
                                     </label>
                                     <input id="quantity"
                                         class=" " style="width: 100%;"  value="1"
-                                        type="number" name="quantity">
+                                        type="number" name="cantidad">
                                 </div>
-                            </form>
-
-                           
-                            
+                                <input type="hidden"  name="productId" value="1">
                                 <div class="row-fluid">
                                     <div class="product-buy-container span12"> 
                                                <input type="submit"
@@ -152,6 +142,8 @@
                                             value="Agregar al carrito">
                                     </div>
                                 </div>
+                            </form> 
+                            <form>
                             <div id="product-shipping-container"
                                 class="row-fluid"
                                 data-shipping-url="/envio/">
