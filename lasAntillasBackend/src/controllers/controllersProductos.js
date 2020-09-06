@@ -232,10 +232,7 @@ module.exports = {
     // EL WHERE ES EL METODO QUE UTILIZAMOS DENTRO DEL FINDALL PARA HACER EL FILTRO (IGUAL QUE SQL)
     // CATEGORY_ID REPRESENTA UNA COLUMNA DEL MODELO PRODUCTS
     // EL REQ.QUERY.TYPE ES LA INFO QUE VIENE DESDE LA VISTA DE NAVBAR (QUE USAMOS QUERY PARA MANDAR LOS DATOS)
-    console.log(
-      'valor/es que viene del front (nav bar "/tabacoArmar/?type=X&brand=X") por query',
-      req.query
-    );
+    console.log('valor/es que viene del front (nav bar "/tabacoPipa/?type=X&brand=X") por query',req.query);
     products
       .findAll({
         where: {
@@ -272,6 +269,7 @@ module.exports = {
             (atribute) => atribute.name === "UnitPrice"
           ).atributeProduct.value;
           const imagen = productoEncontrado5.image;
+          const productId5 = productoEncontrado5.id;
           productoTabacoArmar.push(
             // REPRESENTA EL MODELO DEL RESULTADO AL QUE QUEREMOS LLEGAR (EL QUE LA VISTA ESPERA RECIBIR)
             {
@@ -283,23 +281,21 @@ module.exports = {
                 value: price,
               },
               imagen: imagen,
+              id: productId5,
             }
           );
         });
         // EL RENDER VA DENTRO DEL .THEN() PARA QUE SE EJECUTE DE MANERA SINCRONICA
         // EL RENDER CONSTA DE DOS PARTES: LA RUTA DE A VISTA A RENDERIZAR Y SEGUNDO LOS DATOS QUE RECIBIRA.
         res.render(
-          path.resolve(
-            __dirname,
-            "..",
-            "views",
-            "productos",
-            "tabacosArmar.ejs"
-          ),
+          path.resolve(__dirname, "..", "views", "productos", "tabacosArmar.ejs"),
           { productoTabacoArmar }
         );
       })
-      .catch((error) => res.send(error));
+      .catch((error) => {
+        console.log('Error in tabaco_Armar', error)
+        res.send(error) // AGREGAR UNA PAGINA PARA ERROR (error.ejs)
+      })
   },
   cigarritos: (req, res) => {
     // PRODUCTS REPRESENTA AL MODELO.
@@ -644,7 +640,62 @@ module.exports = {
   //tabacos: (req, res) => {
   //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
   // res.render(path.resolve(__dirname, "..", "views", "productos", "tabacos.ejs"));
+  productDetailTabacoParaArmar: (req, res) => {
+    //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
+    console.log("este es el id", req.query.productId);
+    products
+      .findByPk(req.query.productId, {
+        include: [
+          {
+            model: atributes,
+            through: {
+              model: atributeProduct,
+            },
+          },
+        ],
+      })
+      .then((productoEncontrado5) => {
+        const name = productoEncontrado5.Atributes.find((atribute) => atribute.name === "Taste").atributeProduct.value;
+        const price = productoEncontrado5.Atributes.find((atribute) => atribute.name === "UnitPrice").atributeProduct.value;
+        const taste = productoEncontrado5.Atributes.find((atribute) => atribute.name === "Taste").atributeProduct.value;
+        const quantity = productoEncontrado5.Atributes.find((atribute) => atribute.name === "Quantity").atributeProduct.value;
+        const origin = productoEncontrado5.Atributes.find((atribute) => atribute.name === "Origin").atributeProduct.value;
+        const description = productoEncontrado5.Atributes.find((atribute) => atribute.name === "Quantity").atributeProduct.value;
+        const image = productoEncontrado5.image;
 
+        const productoTabacoParaArmar = {
+          precio: {
+            value: price,
+          },
+
+          cantidad: {
+            value: quantity,
+          },
+
+          nombre: {
+            value: name,
+          },
+
+          sabor: {
+            value: taste,
+          },
+          descripcion: {
+           value: description,
+          },
+          origen: {
+            value: origin,
+          },
+
+          imagen: image,
+        };
+
+        res.render(path.resolve(__dirname,"..","views","productos","productDetailTabacoParaArmar.ejs"),{ productoTabacoParaArmar });
+      });
+  },
+
+  //tabacos: (req, res) => {
+  //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
+  // res.render(path.resolve(__dirname, "..", "views", "productos", "tabacos.ejs"));
   carrito: (req, res) => {
     //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
     res.render(
