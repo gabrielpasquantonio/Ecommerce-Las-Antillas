@@ -23,9 +23,9 @@
                 </figure> -->
                 <div class="card-body">
                   <a href="productDetail/<%= miProducto.tipo.name%>"><img src="/images/<%= miProducto.tipo.name.toLowerCase()%>/<%=miProducto.imagen%>" class="card-img-top " alt="Habano X."></a>
-                  <h4 class="card-title">Nombre: <%= miProducto.nombre.value%></h4>
+                  <h4 class="card-title">Nombre: <%=miProducto.nombre.value%></h4>
                   <h5 class="card-title">Marca: <%= miProducto.marca.value %></h5>
-                  <h5 class="card-title">$<%= miProducto.precio.value %></h5>
+                  <h5 class="card-title">Precio:$<%= miProducto.precio.value %> </h5>
                   <h5 class="card-title">Descuento: <%= miProducto.descuento %></h5>
                   
                   <% if (miProducto.tipo.id === 1 || miProducto.tipo.id === 2 || miProducto.tipo.id === 3 ) { %>
@@ -38,11 +38,11 @@
                     <p class="card-text">Descripcion: <%= miProducto.descripcion.value %></p>
                   <% }  %>
                   
-                  <% if (miProducto.tipo.id === 3 || miProducto.tipo.id === 5 ) { %>
+                  <% if (miProducto.tipo.id === 3 || miProducto.tipo.id === 2 || miProducto.tipo.id === 5 ) { %>
                     <p class="card-text">Origen: <%= miProducto.origen.value %></p>
                   <% }  %>
 
-                  <% if (miProducto.tipo.id === 5) { %>
+                  <% if (miProducto.tipo.id === 5 ) { %>
                     <p class="card-text">Cantidad: <%= miProducto.cantidad.value %></p>
                   <% }  %>
 

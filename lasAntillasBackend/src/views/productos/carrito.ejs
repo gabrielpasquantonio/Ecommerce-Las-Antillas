@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
     <link rel="stylesheet" href="/css/car.css" type="text/css">
+    <link rel="stylesheet" href="/css/productDetail.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class=" container-fluid">
-        <form class="modal-right ">
+
+    <%- include("../partials/navbar.ejs") %>   
+    <div class=" ">
+        <form class=" ">
 
 
 
@@ -22,48 +25,31 @@
                     <div class="span8">
                         <h4 class="text-uppercase">Carrito de compras</h4>
                     </div>
-                    <div class="span4">
-                        <a href="/" class="btn-floating pull-right m-top-quarter m-right-half"><svg
-                                class="svg-inline--fa" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                                <path
-                                    d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z">
-                                </path>
-                            </svg></a>
-                    </div>
+                    
                 </div>
-                <a class="modal-xs-header" href="/">
-                    <svg class="svg-inline--fa fa-2x modal-xs-header-icon modal-xs-right-header-icon"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
-                        <path
-                            d="M4.2 247.5L151 99.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17L69.3 256l118.5 119.7c4.7 4.7 4.7 12.3 0 17L168 412.5c-4.7 4.7-12.3 4.7-17 0L4.2 264.5c-4.7-4.7-4.7-12.3 0-17z">
-                        </path>
-                    </svg> <span class="modal-xs-header-text modal-xs-right-header-text h5">
-                        Volver
-                    </span>
-                </a>
 
                 <div class="modal-content">
 
                     <div class="modal-right-body">
-                        <div class="ajax-cart-table-header hidden-phone m-top">
+                        <div class="cart-header hidden-phone m-top">
                             <div class="pull-left">
-                                <p>Producto</p>
+                                <p>Productos</p>
                             </div>
-                            <div class="text-right pull-right cart-subtotal-header">
+                            <div class="text-right pull-right ">
                                 <p>Subtotal</p>
                             </div>
                         </div>
 
-                        <div class="js-ajax-cart-list ajax-cart-table pull-left">
-                            <div class="js-cart-item reebotbox  ajax-cart-item" data-item-id="237990895">
+                       
+                            <div class="cart-item" data-item-id="237990895">
 
 
-                                <div class="ajax-cart-item-image-col ajax-cart-item-col">
+                                <div class="cart-item-image-col cart-item-col">
                                     <img src="/images/habanos/habano1.png">
                                 </div>
-                                <div class="ajax-cart-item-desc-col border-box ajax-cart-item-col">
+                                <div class="cart-item-desc-col border-box cart-item-col">
 
-                                    <div class="ajax-cart-item-link cart-item-name ">
+                                    <div class="cart-item-name ">
                                         <a class="h6-xs" href="/productDetailHabano">
                                             Habano x.
                                             <small>(Unidad)</small>
@@ -71,62 +57,30 @@
 
                                     </div>
 
-                                    <div class="ajax-cart-item-unit-price hidden-phone">
+                                    <div class="cart-item-unit-price hiden-phone">
                                         $1.322,22
                                     </div>
 
                                     <div class="pull-left m-top-quarter erro ">
-                                        <button type="button" class="cart-quantity-btn"
-                                            onclick="LS.minusQuantity(237990895, true)">
-                                            <div class="cart-quantity-svg-icon svg-icon-text">
-                                                <svg baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="598 -476.1 1792 1792">
-                                                    <path
-                                                        d="M2198 259.9v192c0 26.7-9.3 49.3-28 68s-41.3 28-68 28H886c-26.7 0-49.3-9.3-68-28s-28-41.3-28-68v-192c0-26.7 9.3-49.3 28-68s41.3-28 68-28h1216c26.7 0 49.3 9.3 68 28s28 41.3 28 68z">
-                                                    </path>
-                                                </svg> </div>
-                                        </button>
-                                        <div class="cart-quantity-input-container d-inline-block pull-left">
-                                            <span class="js-cart-input-spinner cart-item-spinner"
-                                                style="display: none;">
-                                                <svg class="svg-inline--fa fa-spin svg-icon-text"
-                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                                    <path
-                                                        d="M483.515 28.485L431.35 80.65C386.475 35.767 324.485 8 256 8 123.228 8 14.824 112.338 8.31 243.493 7.971 250.311 13.475 256 20.301 256h28.045c6.353 0 11.613-4.952 11.973-11.294C66.161 141.649 151.453 60 256 60c54.163 0 103.157 21.923 138.614 57.386l-54.128 54.129c-7.56 7.56-2.206 20.485 8.485 20.485H492c6.627 0 12-5.373 12-12V36.971c0-10.691-12.926-16.045-20.485-8.486zM491.699 256h-28.045c-6.353 0-11.613 4.952-11.973 11.294C445.839 370.351 360.547 452 256 452c-54.163 0-103.157-21.923-138.614-57.386l54.128-54.129c7.56-7.56 2.206-20.485-8.485-20.485H20c-6.627 0-12 5.373-12 12v143.029c0 10.691 12.926 16.045 20.485 8.485L80.65 431.35C125.525 476.233 187.516 504 256 504c132.773 0 241.176-104.338 247.69-235.493.339-6.818-5.165-12.507-11.991-12.507z">
-                                                    </path>
-                                                </svg> </span>
-                                            <input type="number" name="quantity[237990895]" data-item-id="237990895"
-                                                value="1" class="js-cart-quantity-input cart-quantity-input">
-                                        </div>
-                                        <button type="button"
-                                            class="js-cart-quantity-btn cart-quantity-btn ajax-cart-quantity-btn"
-                                            onclick="LS.plusQuantity(237990895, true)">
-                                            <div class="cart-quantity-svg-icon svg-icon-text">
-                                                <svg baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="598 -476.1 1792 1792">
-                                                    <path
-                                                        d="M2198 259.9v192c0 26.7-9.3 49.3-28 68s-41.3 28-68 28h-416v416c0 26.7-9.3 49.3-28 68s-41.3 28-68 28h-192c-26.7 0-49.3-9.3-68-28s-28-41.3-28-68v-416H886c-26.7 0-49.3-9.3-68-28s-28-41.3-28-68v-192c0-26.7 9.3-49.3 28-68s41.3-28 68-28h416v-416c0-26.7 9.3-49.3 28-68 18.7-18.7 41.3-28 68-28h192c26.7 0 49.3 9.3 68 28 18.7 18.7 28 41.3 28 68v416h416c26.7 0 49.3 9.3 68 28s28 41.3 28 68z">
-                                                    </path>
-                                                </svg> </div>
-                                        </button>
-                                    </div>
-
-                                    <div class="visible-phone cart-item-subtotal h6-xs pull-right">
-                                        <span class="js-cart-item-subtotal"
-                                            data-line-item-id="237990895">$1.322,22</span>
+                                      
+                                        <form id='myform' method='POST' action='#'>
+                                            <input type='button' value='-' class='qtyminus' field='quantity' />
+                                            <input type='text' name='quantity' value='0' class='qty' />
+                                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                                        </form>
                                     </div>
                                 </div>
 
                                 <div
-                                    class="ajax-cart-item-subtotal ajax-cart-item-col cart-item-subtotal h6-xs font-bold text-right hidden-phone">
+                                    class="cart-item-subtotal cart-item-col  font-bold text-right hidden-phone">
                                     <span class="js-cart-item-subtotal" data-line-item-id="237990895">$1.322,22</span>
                                 </div>
 
                                 <div
-                                    class="ajax-cart-item-delete-col cart-delete-container ajax-cart-item-col text-right">
+                                    class="cart-item-delete-col cart-delete-container cart-item-col text-right">
                                     <button type="button"
-                                        class="cart-btn-delete ajax-cart-btn-delete pull-right p-top-none"
-                                        onclick="LS.removeItem(237990895, true)">
+                                        class="cart-btn-delete cart-btn-delete pull-right p-top-none"
+                                        >
                                         <div class="cart-delete-svg-icon svg-icon-text">
                                             <svg class="svg-trash-icon" baseProfile="tiny"
                                                 xmlns="http://www.w3.org/2000/svg" viewBox="598 -476.1 1792 1792">
@@ -137,60 +91,25 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="emptyCart js-empty-ajax-cart text-center alert clear-both" style="display:none;">
-                            El carrito de compras está vacío.
-                        </div>
+                        
 
 
                         <div
-                            class="ajax-cart-total h4 ajax-cart-subtotal cart-subtotal js-visible-on-cart-filled row-fluid pull-left m-bottom-none">
+                            class="cart-total h4 cart-subtotal  row-fluid pull-left m-bottom-none">
                             <span class="pull-left text-left">
                                 Subtotal
-                                <small class="js-subtotal-shipping-wording"> (sin envío)</small>
+                                <small > (sin envío)</small>
                                 :
                             </span>
-                            <span class="js-ajax-cart-total js-cart-subtotal riight pull-right text-right weight-strong"
+                            <span class=" riight pull-right text-right weight-strong"
                                 data-priceraw="132222">$1.322,22</span>
                         </div>
-
-
-                        <div class="js-total-promotions ajax-cart-promotions text-right clear-both h6 m-bottom-half">
-                            <span class="js-promo-title" style="display:none;">Promo</span>
-                            <span class="js-promo-in" style="display:none;">en</span>
-                            <span class="js-promo-all" style="display:none;">todos los productos</span>
-                            <span class="js-promo-buying" style="display:none;"> comprando</span>
-                            <span class="js-promo-units-or-more" style="display:none;"> o más.</span>
-                        </div>
-
-
-
-
-                        <div
-                            class="js-visible-on-cart-filled js-has-new-shipping js-shipping-calculator-container clear-both">
-
-
-                            <div class="js-shipping-method-unavailable alert alert-warning clear-both m-top-half pull-left"
-                                style="display: none;">
-                                <div>
-                                    <strong>El medio de envío que habías elegido ya no se encuentra disponible para este
-                                        carrito. </strong>
-                                </div>
-                                <div>
-                                    ¡No te preocupes! Podés elegir otro.
-                                </div>
-                            </div>
+                   
 
 
                             <div id="cart-shipping-container"
                                 class="shipping-calcuator-container row-fluid m-bottom-half ajax-cart-shipping-calculator"
                                 data-shipping-url="/envio/">
-
-
-                                <span id="cart-selected-shipping-method" data-code="" class="hide"></span>
-
-
 
                                 <div class="row-fluid m-bottom-half p-bottom-quarter">
                                     <div class="shipping-calculator row-fluid  pull-left">
@@ -221,7 +140,7 @@
 
                                             <div
                                                 class="js-shipping-calculator-form shipping-calculator-form full-width transition-up p-absolute  transition-up-active">
-                                                <p class="p-bottom-quarter">
+                                                <p class="cart-envios" >
                                                     <svg class="svg-inline--fa fa-lg m-right-quarter svg-icon-text"
                                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                                         <path
@@ -257,7 +176,7 @@
                                                     placeholder="Tu código postal" aria-label="Tu código postal"
                                                     value="">
                                                 <button
-                                                    class="js-calculate-shipping btn-shipping btn btn-ssecondary btn-small calculate-shipping-button d-inline-block"
+                                                    class="js-calculate-shipping btn-shipping btn-cart btn-ssecondary btn-small calculate-shipping-button d-inline-block"
                                                     aria-label="Calcular envío">
                                                     <span class="js-calculate-shipping-wording">Calcular</span>
                                                     <span class="js-calculating-shipping-wording"
@@ -271,35 +190,19 @@
                                                             </path>
                                                         </svg></span>
                                                 </button>
-                                                <div class="m-top-half">
-                                                    <a class="textt-primary font-small"
+                                                
+                                                    <a class="textt-primary  font-small"
                                                         href="https://www.correoargentino.com.ar/formularios/cpa"
-                                                        target="_blank">No sé mi código postal</a>
-                                                </div>
-                                                <div class="js-ship-calculator-error invalid-zipcode alert alert-danger m-top-quarter text-left"
-                                                    style="display: none;">No encontramos este código postal. ¿Está bien
-                                                    escrito?</div>
-                                                <div class="js-ship-calculator-error js-ship-calculator-common-error alert alert-danger m-top-quarter text-left"
-                                                    style="display: none;">Ocurrió un error al calcular el envío. Por
-                                                    favor
-                                                    intentá de nuevo en unos segundos.</div>
-                                                <div class="js-ship-calculator-error js-ship-calculator-external-error alert alert-danger m-top-quarter text-left"
-                                                    style="display: none;">El calculo falló por un problema con el medio
-                                                    de
-                                                    envío. Por favor intentá de nuevo en unos segundos.</div>
+                                                        target="_blank" style="font-style: italic; text-decoration: underline;">No sé mi código postal</a>
+                                                
                                             </div>
                                         </div>
-                                        <div class="js-shipping-calculator-spinner pull-left full-width transition-soft text-center p-relative"
-                                            style="display: none;">
-                                            <div class="spinner-big"></div>
-                                        </div>
-                                        <div class="js-shipping-calculator-response shipping-calculator-response clear-both m-top "
-                                            style="display: none;"></div>
+  
                                     </div>
                                 </div>
 
 
-                                <div class=" link-module no-border p-top-half p-bottom-half">
+                                <div class=" link-module no-border p-top-half-cart p-bottom-half">
                                     <svg class="svg-inline--fa fa-lg link-module-icon svg-icon-text"
                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 616 512">
                                         <path
@@ -315,11 +218,11 @@
 
 
                                 <ul
-                                    class="js-store-branches-container box-container p-none list-unstyled radio-button-container m-top-half">
+                                    class="box-container p-none list-unstyled radio-button-container ">
 
 
                                     <li class="radio-button-item">
-                                        <label class="js-shipping-radio js-branch-radio radio-button"
+                                        <label class="radio-button"
                                             data-loop="branch-radio-1">
                                             <input class="js-branch-method  shipping-method" data-price="0" type="radio"
                                                 value="branch_78295" data-name="La Casa del Habano - Reconquista 976  CABA
@@ -357,11 +260,9 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                       
 
-
-                        <div
-                            class="js-cart-total-container ajax-cart-total-container cart-total h2 js-visible-on-cart-filled pull-left row-fluid">
+                        <div class="js-cart-total-container ajax-cart-total-container cart-total h2 js-visible-on-cart-filled pull-left row-fluid">
                             <span class="pull-left text-left font-normal">Total:</span>
                             <span class="js-cart-total   pull-right text-right">$1.322,22</span>
                             <div class="total-price hidden">
@@ -370,15 +271,12 @@
 
                         </div>
 
-                        <div class="full-width pull-left ajax-cart-bottom m-top m-bottom js-visible-on-cart-filled">
-                            <div id="error-ajax-stock" class="alert alert-warning" style="display: none;">
-                                ¡Uy! No tenemos más stock de este producto para agregarlo al carrito. Si querés podés
-                                <a href="/productos/" class="btn btn-link p-none">ver otros acá</a>
-                            </div>
-
+                        <div class="pull-left cart-bottom m-bottom " style="width: 100%
+                        ;">
+                         
                             <div class="m-top-half m-bottom-half text-left pull-left hidden-phone">
                                 <a href="/allProducts"
-                                    class="js-toggle-cart js-fullscreen-modal-close btn-link p-none-left p-right-none">Ver
+                                    class="js-toggle-cart js-fullscreen-modal-close cart-btn-link p-none-left p-right-none">Ver
                                     más productos</a>
                             </div>
 
@@ -407,20 +305,78 @@
             </div>
         </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj "
-    crossorigin="anonymous "></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js "
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo "
-    crossorigin="anonymous "></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js "
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI "
-    crossorigin="anonymous "></script>
 
-    
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
+
+     <!-- Footer-->
+
+     <%- include("../partials/footer.ejs") %>
+
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+     crossorigin="anonymous"></script>
+       
+   <!-- Navbar Dropdown - dropright scrip --> 
+       <script>
+         $(function () {
+           $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (event) {
+             event.preventDefault();
+             event.stopPropagation();
+     
+             $(this).parents('.dropdown-submenu').siblings().find('.show').removeClass("show");
+             $(this).siblings().toggleClass("show");
+     
+             //collapse all after nav is closed
+             $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+               $('.dropdown-submenu .show').removeClass("show");
+             });
+           });
+         });
+       </script>   
+       
+       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>
+jQuery(document).ready(function(){
+    // This button will increment the value
+    $('.qtyplus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If is not undefined
+        if (!isNaN(currentVal)) {
+            // Increment
+            $('input[name='+fieldName+']').val(currentVal + 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+    // This button will decrement the value till 0
+    $(".qtyminus").click(function(e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+            // Decrement one
+            $('input[name='+fieldName+']').val(currentVal - 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+});
+
+</script>
+   
 </body>
 
 </html>
