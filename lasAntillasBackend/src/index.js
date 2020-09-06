@@ -10,6 +10,8 @@ const cookies = require('cookie-parser');
 
 const acceso = require('./middlewares/acceso');
 
+
+
 const db = require('./database/models')
 const rols = db.Rol;
 const users = db.User;
@@ -142,6 +144,7 @@ app.use(cookies());
 app.use(acceso);
 
 
+
 //Aca llamo a mi middleware de aplicacion
 //app.use(mantenimiento);
 
@@ -150,11 +153,15 @@ const webRouter = require("./routes/web.js")
 const usuariosRouter = require("./routes/usuarios.js")
 const productosRouter = require("./routes/productos.js")
 const adminRouter = require("./routes/admin.js")
+const carritoRoutes = require('./routes/carritoRoutes');
+
+
 
 app.use(webRouter);
 app.use(usuariosRouter);
 app.use(productosRouter);
 app.use(adminRouter);
+app.use(carritoRoutes);
 //Activar el servidor
 
 app.listen(4000, "localhost", () => console.log("Servidor corriendo en el puerto 4000"));

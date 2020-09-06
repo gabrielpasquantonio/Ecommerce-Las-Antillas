@@ -509,10 +509,10 @@ justify-content: center;
     margin: 20px 0;
 }
 .m-bottom-half {
-    margin-bottom: 10px!important;
+    margin-bottom: 1%
 }
 .m-top-half {
-    margin-top: 10px!important;
+    margin-top: 1%;
 }
 h6, .h6 {
     font-size: 16px;
@@ -656,20 +656,20 @@ a {
         visibility: visible !important;
     }
     .user-content {
-        line-height: 19px;
-        margin: 10px 0 30px 0;
+        height: auto;
+        margin: 1% 0 3% 0;
         max-width: 100%;
     }
     .m-top {
-        margin-top: 20px!important;
+        margin-top: 2%!important;
     }
     .row-fluid .span5 {
         width: 40.05524861878453%;
     }
     .product-form-container {
-        width: 100%;
+        
         float: left;
-        padding-bottom: 15px;
+        padding-bottom: 2%;
     }
     .row-fluid, .row-fluid .span12 {
         width: 100%;
@@ -688,12 +688,8 @@ a {
         text-transform: uppercase;
         line-height: initial;
     }
-    .m-bottom-half {
-        margin-bottom: 10px!important;
-    }
-    .m-top-half {
-        margin-top: 10px!important;
-    }
+    
+   
     .product-price {
         font-size: 22px;
         margin-top: 10px;
@@ -870,7 +866,7 @@ option {
 h5, .h5 {
     font-size: 18px!important;
 }
-.text-primary {
+.text-primaryy {
     color: #a6946a!important;
 }
 .modal, .modal-xs-dialog {
@@ -893,7 +889,7 @@ h5, .h5 {
 }
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 1%!important;
 }
 .quantity-container .quantity input.quantity-input {
     width: 70px;
@@ -1036,7 +1032,10 @@ input[type=text], input[type=password], input[type=number], input[type=email], i
     
 }
 .casinha{position: relative;
-top: 20px;}
+
+top: 70px;
+padding-bottom: 20%;
+}
 .carrinho{position: relative;
     top: 10px;}
     .envios{position: relative;
@@ -1130,6 +1129,7 @@ a {
 .hidden {
     display: none;
 }
+
 .product-fixed-info {
     display: none;
 }
@@ -1157,8 +1157,16 @@ a {
     .ipad{height: 150px!important;}
     .card-img-top
 {
+    
     width: auto!important;
-} 
+} .link-module-text{
+    
+        
+    margin-left: 9%;
+  
+    margin-top: -7%;
+
+}
 .nav-item {
     padding: 2px 0;
     margin-right: 2px;
@@ -1177,7 +1185,13 @@ a {
 .btn-block {
     display: block;
    width: fit-content;
-} }
+} 
+.casinha{position: relative;
+
+    top: 45px;
+    padding-bottom: 20%;
+    }
+}
 .card-img-top
 {
        
@@ -1314,16 +1328,46 @@ h3 {
 
 @media screen and (max-width: 600px) {
     #principal  {
-     
         
-            
             top: 0;
             left: 0;
-            min-width: 100%;
-     
-     
-     
+            min-width: 100%;     
     }
+    .hidden-phonee{
+        display: none!important;
+    }
+    .row-fluid .span9 {
+        width: 100%;
+    }
+    .product-price {
+        font-size: 12px;
+        margin-top: 5px;
+        position: relative;
+        font-weight: bold!important;
+        line-height: 10px!important;
+    }
+    .product-name{
+        font-size: 18px!important;
+        margin-bottom: 1%!important;
+    }
+    .form-control {
+        height: auto;
+        width: 80%!important;
+        padding: 5px!important;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .link-module-text{
+    
+    margin-left: 15%;
+    margin-bottom: 15%;
+    margin-top: -13%;
+    }
+    .casinha{position: relative;
+
+        top: 45px;
+        padding-bottom: 20%;
+        }
   }
   .custom-inner {
     width: 80% !important;
