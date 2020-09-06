@@ -30,7 +30,7 @@
                 <span >/</span>
                 <a class="h6" href="/habanos" title="Cohiba">TIPO HABANOS</a>
                 <span>/</span>
-                <span class="h6">$<%=productoHabano.nombre.value%>
+                <span class="h6"><%=productoHabano.nombre.value%>
                 </span>
             </div>
         </div>
@@ -43,17 +43,17 @@
                                     <div class="p-absolute">
                                             
                                                 <img data-sizes="auto"
-                                                    src="/images/habanos/habano1.png"
-                                                    data-srcset="images/habano1.png 640w"
+                                                    src="/images/habanos/<%=productoHabano.image%> "
+                                                    data-srcset="images/habanos/<%=productoHabano.image%> "
                                                     class="scroller-img"
                                                     alt="Habano X. en internet" sizes="100px"
-                                                    srcset="/images/habanos/habano1.png 480w, /img/habanos/habano1.png 640w">     
+                                                    srcset="/images/habanos/<%=productoHabano.image%>  480w, /images/habanos/<%=productoHabano.image%>  640w">     
                                                 <img data-sizes="auto"
-                                                    src="/images/habanos/habano2.png"
-                                                    data-srcset="images/habanos/habano2.png 480w, img/habanos/habano2.png 640w"
+                                                    src="/images/habanos/<%=productoHabano.image%> "
+                                                    data-srcset="images/habanos/<%=productoHabano.image%>  480w, images/habanos/<%=productoHabano.image%>  640w"
                                                     class="scroller-img"
                                                     alt="Habano X. - Tabaqueria Las Antillas" sizes="100px"
-                                                    srcset="/images/habanos/habano2.png 480w, /img/habanos/habano2.png 640w">
+                                                    srcset="/images/habanos/<%=productoHabano.image%>  480w, /images//habanos/<%=productoHabano.image%>  640w">
                                           
                                      
                                     </div>
@@ -64,7 +64,7 @@
                                         <div class="bx-wrapper" style="max-width: 100%;">
                                             <div style="overflow: hidden; position: relative; height: auto">
                                                 <img data-sizes="auto"
-                                                    src="/images/habanos/habano1.png"
+                                                    src="/images//habanos/<%=productoHabano.image%> "
                                                     >
                                             </div>
                                         </div>
@@ -99,15 +99,15 @@
                         
                     </div>
                     <div class="user-content clear-both hidden-phone pull-left m-top">
-                        <p>Cepo 33</p> 
+                        
+                        
+                        <p>Cepo: <%=productoHabano.cepo.value%> </p> 
 
-                        <p>Largo 126 mm</p>
+                        <p>Largo:<%=productoHabano.largo.value%></p>
 
-                        <p>Vitola de Galera : Seoane&nbsp;</p>
+                        <p>Territorio de Sabor: <%=productoHabano.sabor.value%></p>
 
-                        <p>Territorio de Sabor: Medio a fuerte</p>
-
-                        <p>Presentacion: unidad, petaca de 5 unidades.</p>
+                        
 
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                         <div class="row-fluid">
                             <div class="span12">
                                 <div class="title ">
-                                    <h1 id="product-name" class="product-name h2 h4-xs" itemprop="name">    Habano X</h1>
+                                    <h1 id="product-name" class="product-name h2 h4-xs" itemprop="name"><%=productoHabano.nombre.value%></h1>
                                 </div>
                             
                                     <div class="m-top-half m-bottom-half">                                        <span class="product-price">

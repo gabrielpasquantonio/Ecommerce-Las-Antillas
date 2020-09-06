@@ -1,37 +1,37 @@
 <div class="categoria container-wide container-xs m-bottom m-bottom-quarter-xs m-none-xs row-fluid"> 
-    <div class="span8 left"> 
-        <div class="m-bottom-half m-top-half">
-    <a class="font-body-xs h6" href="/" title="La Casa del Habano">Inicio</a>
-                        <span class="">/</span>
-                            <a class="" href="/tabacosArmar" title="HABANOS">TABACOS ARMAR</a>
-                                <span class="">/</span>
-                                                <h1 class="active breadcrumb-crumb">Tabaco</h1>
-                                        </div>    </div>
-    <div class="hidden-phone sort-by-container text-right">
-        <label for="sort" class="d-inline">Ordenar por:</label>
+  <div class="span8 left"> 
+      <div class="m-bottom-half m-top-half">
+  <a class="font-body-xs h6" href="/" title="La Casa del Habano">Inicio</a>
+                      <span class="">/</span>
+                          <a class="" href="/tabacosArmar" title="HABANOS">TABACOS ARMAR</a>
+                              <span class="">/</span>
+                                              <h1 class="active breadcrumb-crumb">Tabaco</h1>
+                                      </div>    </div>
+  <div class="hidden-phone sort-by-container text-right">
+      <label for="sort" class="d-inline">Ordenar por:</label>
 <select id="sort" class="full-width-xs">
-                                <option value="price-ascending">Precio: Menor a Mayor</option>
-                                        <option value="price-descending">Precio: Mayor a Menor</option>
-                                        <option value="alpha-ascending">A - Z</option>
-                                        <option value="alpha-descending">Z - A</option>
-                                        <option value="created-descending">Más Nuevo al más Viejo</option>
-                                        <option value="created-ascending">Más Viejo al más Nuevo</option>
-                                        <option value="best-selling" selected="">Más Vendidos</option>
-                                </select>
-    </div>
+                              <option value="price-ascending">Precio: Menor a Mayor</option>
+                                      <option value="price-descending">Precio: Mayor a Menor</option>
+                                      <option value="alpha-ascending">A - Z</option>
+                                      <option value="alpha-descending">Z - A</option>
+                                      <option value="created-descending">Más Nuevo al más Viejo</option>
+                                      <option value="created-ascending">Más Viejo al más Nuevo</option>
+                                      <option value="best-selling" selected="">Más Vendidos</option>
+                              </select>
+  </div>
 </div>
 <div class="card-group container-wide span12 grid-row">
-  <% for(let i = 0; i < productoTabacoArmar.length; i++) { %>
+<% for(let i = 0; i < productoTabacoArmar.length; i++) { %>
 
-  <div class="card cartinha ">
-      <a href="productDetailTabaco"><img src="/images/tabacoparaarmar/<%=productoTabacoArmar[i].imagen%>" class="card-img-top " alt="Habano X."></a>
-      <div class="card-body">
-        <a href="productDetailTabaco"><h5 class="card-title"><%=productoTabacoArmar[i].nombre.value%></h5></a>
-        <p class="card-text">$<%=productoTabacoArmar[i].precio.value%></p>
-      </div>
-      <div class="card-footer">
-        <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
-      </div>
+<div class="card cartinha ">
+    <a href="productDetailTabaco"><img src="/images/tabacoparaarmar/<%=productoTabacoArmar[i].imagen%>" class="card-img-top " alt="Habano X."></a>
+    <div class="card-body">
+      <a href="productDetailTabaco"><h5 class="card-title"><%=productoTabacoArmar[i].nombre.value%></h5></a>
+      <p class="card-text">$<%=productoTabacoArmar[i].precio.value%></p>
     </div>
-    <% } %>
+    <div class="card-footer">
+      <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
+    </div>
   </div>
+  <% } %>
+</div>
