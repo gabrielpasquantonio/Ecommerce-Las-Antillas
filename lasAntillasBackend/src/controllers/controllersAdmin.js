@@ -1,140 +1,141 @@
 const path = require("path");
 const fs = require('fs');
+const db = require('../database/models')
+// const rols = db.Rol;
+// const users = db.User;
+// const products = db.Product;
+const categories = db.Category;
+const brands = db.Brand;
+const atributes = db.Atribute;
+const atributeProduct = db.AtributeProduct;
+const brandCategory = db.BrandCategory;
+
+const ProductDao = require('../data/productoDao')
+const atributeDao = require('../data/atributeDao');
 
 module.exports = {
-    indexProductos: (req, res) => {
-     //parametrizando para que la primera letra de files View sea mayuscula                
-    //const resto = req.query.type.slice(1)
-    //const upper = req.query.type[0]
-    //const uppercase = upper.toUpperCase();
-    //const name = uppercase + resto
-    //const fileViewName = `admin${name}.ejs`
-  
-//Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
-let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
-    //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-    res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{todosProductosJson});
+    indexProductos: async (req, res) => {
+      //parametrizando para que la primera letra de files View sea mayuscula                
+      //Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
+      console.log('index,', req.query.type)
+      const todosProductosFromDBByType = await ProductDao.getProductsByCategory(req.query.type)
+      res.render(path.resolve(__dirname, "..", "views", "admin", "adminProductos.ejs"),{todosProductosJson: todosProductosFromDBByType});
+    },
 
-},
+    createProductos: async (req, res) => {
+      //Aca pasamos los datos del archivo Json de Habanos a un Array
+      const parseType = JSON.parse(req.query.type);
 
+      const marcasFromDb = await categories.findOne({
+        include: [
+          {
+            model: brands,
+            attributes: ["name", "id"]
+          },
+        ],
+        where: {
+          id: parseType.id,
+        },
+      });
 
+      const nombreId = parseType.id === 1 ? 1 
+      : parseType.id === 2 || parseType.id === 3 ? 11
+      : 4
+      
+      const priceId = parseType.id === 1 ? 5 
+      : parseType.id === 2 || parseType.id === 3 ? 5
+      : 5
 
-    createProductos: (req, res) => {
-    //Aca pasamos los datos del archivo Json de Habanos a un Array
-    const todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
-   
-    const todasMarcas = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`marcas.json`)));
-    const marcas = todasMarcas.find(marca => marca.tipo === req.query.type).marca
-
-        //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-        res.render(path.resolve(__dirname, "..", "views", "admin", "createProductos.ejs"),{todosProductosJson,marcas},);
-    
-    
-
+      const marcas = marcasFromDb.Brands.map(marca => marca)
+      res.render(path.resolve(__dirname, "..", "views", "admin", "createProductos.ejs"),{productType: parseType, marcas, nameAttributeId: nombreId, priceAttributeId: priceId});
     },
     
-    saveProductos: (req, res) => {
-    //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.body.tipo}.json`)));
+    saveProductos: async (req, res) => {
+      //Aca pasamos los datos del archivo Json de Habanos a un Array
+      const atributeList = ['largo', 'ancho', 'sabor', 'origen', 'cantidad', 'descripcion', 'nombre', 'precio']
+      const productType = JSON.parse(req.body.tipo) 
+      const newProduct = {
+        brand_id: req.body.marca,
+        category_id: productType.id,
+        image: req.files.length > 0 ? req.files[0].filename: "default.jpg",
+      }
 
-    
-        //res.send(req.body);
-        //Aqui indico el formato de como se va a guardar la informacion del producto
-        
-        let nuevoProducto={
-            id: todosProductosJson.length + 1,
-            nombre: req.body.nombre,
-            tipo:req.body.tipo,
-            marca:req.body.marca,
-            descripcion: req.body.descripcion,
-            precio: req.body.precio,
-            imagen: req.files.length>0?req.files[0].filename:"default.jpg",
+      const newProductFromDb = await ProductDao.createProduct(newProduct);
+      const productAtributeType = await ProductDao.getAtributesTypeByCategory(productType.id)
 
-            
-        };
-            //Aquí se agrega al array el nuevo Producto
-            todosProductosJson.push(nuevoProducto);
-            //Aqui convierto el Array en un string y le indico que un producto se guarde abajo del otro gracias a null,2 espacios
-            let nuevoProductoGuardar = JSON.stringify(todosProductosJson,null,2)
-            //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
-            fs.writeFileSync(path.resolve(__dirname,'..','data',`${req.body.tipo}.json`),nuevoProductoGuardar);
-            //Aqui redireccionamos los nuevos productos a la vista administrar
-            res.redirect(`/adminProductos/?type=${req.body.tipo.toLowerCase()}`)
+      console.log('body', req.body)
+      console.log('new product', JSON.stringify(newProduct))
+
+      const attributesKeys =  Object.keys(req.body);
+
+      for (const key of attributesKeys) {
+        if(atributeList.includes(key)) {
+          await atributeProduct.create({
+            atribute_id: req.body[`${key}Id`],
+            product_id: newProductFromDb.id,
+            value: req.body[key]
+          })
+        }
+      }
+
+      console.log('here')
+      res.redirect(`/adminProductos/?type=${productType.id}`)
     },
-    
 
-    showProductos: (req,res) =>{
-    //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
-    console.log(req.query.type)
-        //res.send(req.params.id);
-       //Aca declaro la variable que voy a mandar a la vista 
-       let miProducto;
-       todosProductosJson.forEach(todoProductoJson => {
-           if(todoProductoJson.id == req.params.id){
-            miProducto = todoProductoJson;         
+    showProductos: async (req,res) =>{
+      //Aca pasamos los datos del archivo Json de Habanos a un Array
+      const miProducto = await ProductDao.getProductById(req.params.id);
+      console.log('producto encontrados', JSON.stringify(miProducto, null, 2))//Aca pongo lo que le voy a mandar a la vista  
+      res.render(path.resolve(__dirname, '..','views','admin','detailProductos.ejs'), {miProducto})
+    },
+
+    destroyProductos: async (req, res) => {
+      const product = await ProductDao.deleteById(req.params.id);
+      res.redirect(`/adminProductos/?type=${req.query.type}`);
+    },
+
+    editProductos: async (req,res) => {
+      //Aca pasamos los datos del archivo Json de Habanos a un Array
+      const productoEditar = await ProductDao.getProductById(req.params.id);
+      //Aca pongo lo que le voy c mandar a la vista
+      const marcasFromDb = await categories.findOne({
+        include: [
+          {
+            model: brands,
+            attributes: ["name", "id"]
+          },
+        ],
+        where: {
+          id: productoEditar.tipo.id,
+        },
+      });
+      const marcas = marcasFromDb.Brands.map(marca => marca)
+      res.render(path.resolve(__dirname, '..','views','admin','editProductos.ejs'), {productoEditar, marcas});
+    },
+
+    updateProductos: async (req,res) => {
+      const atributeList = ['largo', 'ancho', 'sabor', 'origen', 'cantidad', 'descripcion', 'nombre', 'precio']
+      Object.keys(req.body).forEach(async key => {
+        if(atributeList.includes(key)) {
+          await atributeProduct.update(
+            {
+              value: req.body[key]
+            },
+            {
+              where: {
+                id: req.body[`${key}Id`]
+              }
             }
-        });
-        
-        //Aca pongo lo que le voy a mandar a la vista 
-        res.render(path.resolve(__dirname, '..','views','admin','detailProductos.ejs'), {miProducto})
-    
-    },
-    destroyProductos:(req, res) => {
-    //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
-        //Esta variable va a guardar el habano que se va a borrar
-        const productoDeleteId = req.params.id;
-        //Aca recorre el array y hago un filtro con los productos que fueron borrados deacuerdo a su id, una vez filtrado ,tengo que generar un nuevo array, que contenga los productos filtrados, osea todos los productos excepto los que se borraron
-        const productosFinal = todosProductosJson.filter(todoProductoJson => todoProductoJson.id != productoDeleteId);
-        //Aqui convierto el Array en un string y le indico que un producto se guarde abajo del otro gracias a null,2 espacios
-        let productosGuardar = JSON.stringify(productosFinal,null,2)
-        //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
-        fs.writeFileSync(path.resolve(__dirname,'..','data',`${req.query.type}.json`),productosGuardar);
-        //Aqui redireccionamos los nuevos productos a la vista administrar
-        res.redirect(`/adminProductos/?type=${req.query.type}`);
-    },
+          )    
+        }
+      })
+      const updatedFields = {
+        image: req.files.length > 0 ? req.files[0].filename: req.body.oldimagen,
+        brand_id: req.body.marca
+      }
 
-    editProductos: (req,res) => {
-    //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.query.type}.json`)));
-    //Como por la ruta esta viajando de manera dinamica un ID hay que guardarla en una variable para poder utilizarla . 
-    const productoId = req.params.id;
-
-    //Luego dentro de la productoHabanos hay que buscar en el registro lo que hay que Editar:
-        let productoEditar= todosProductosJson.find(todoProductoJson => todoProductoJson.id == productoId);
-    //Aca pongo lo que le voy a mandar a la vista 
-    res.render(path.resolve(__dirname, '..','views','admin','editProductos.ejs'), {productoEditar});
-
-    
-
-    },
-
-    updateProductos(req,res){
-        let todosProductosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname,"..", "data",`${req.body.tipo}.json`)));
-        //Como por la ruta esta viajando de manera dinamica un ID hay que guardarla en una variable para poder utilizarla 
-        req.body.id = req.params.id;
-        //Aca usamos un if ternario, si la persona no coloco ninguna imagen nueva , es decir no la edito , tendria que volver la Oldimagen ( ver archivo edit). 
-        //Si me esta llegando una migen nueva en el req.file entonces guardame el nombre de lo que me esta llegando. En caso de que no haya entrado una imagen nueva, y se mantiene la misma entonces guardame la imagen anterior. 
-       // req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
-        //Aca voy a contener el nuevo habano que ya se actualizo
-        let productosUpdate = todosProductosJson.map(todoProductoJson => {
-            if(todoProductoJson.id == req.body.id){
-           
-                req.body.imagen = req.files.length > 0 ? req.files[0].filename:todoProductoJson.imagen
-                return todoProductoJson = req.body;
-            }
-    
-            return todoProductoJson;
-    
-        });
-        let productosActualizar = JSON.stringify(productosUpdate,null,2)
-        //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
-        fs.writeFileSync(path.resolve(__dirname,'..','data',`${req.body.tipo}.json`),productosActualizar);
-        //Aqui redireccionamos los nuevos productos a la vista administrar
-        res.redirect(`/adminProductos/?type=${req.body.tipo.toLowerCase()}`);        
-    
-
+      await ProductDao.updateById(req.params.id, updatedFields)
+      res.redirect(`/adminProductos/?type=${JSON.parse(req.body.tipo).id}`);        
     }           
                     
-                }
+}

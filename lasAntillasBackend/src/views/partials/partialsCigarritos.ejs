@@ -26,8 +26,8 @@
   <div class="card cartinha ">
       <a href="productDetailCigarrito"><img src="/images/cigarritos/<%=productoCigarritos[i].imagen%>" class="card-img-top " alt="Cigarrito X."></a>
       <div class="card-body">
-        <a href="productDetailCigarrito"><h5 class="card-title"><%=productoCigarritos[i].nombre%></h5></a>
-        <p class="card-text">$<%=productoCigarritos[i].precio%></p>
+        <a href="productDetailCigarrito"><h5 class="card-title"><%=productoCigarritos[i].nombre.value%></h5></a>
+        <p class="card-text">$<%=productoCigarritos[i].precio.value%></p>
       </div>
       <div class="card-footer">
         <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>

@@ -15,7 +15,7 @@ INSERT INTO brands VALUES
 SELECT * FROM lasantillas.categories;
 INSERT INTO categories VALUES
     (1,'Habanos','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),
-    (2,'Cigarro','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),
+    (2,'Cigarros','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),
     (3,'Cigarritos','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),
     (4,'TabacoParaPipa','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00'),
     (5,'TabacoParaArmar','0000-00-00 00:00:00','0000-00-00 00:00:00','0000-00-00 00:00:00');
@@ -460,7 +460,7 @@ SELECT * FROM lasantillas.rols;
 INSERT INTO rols VALUES
     (1,9,'administrador'),
     (2,1,'user'),
-     (3,0,'visitor')
+     (3,0,'visitor');
 
 SELECT * FROM lasantillas.users;
 INSERT INTO users VALUES
