@@ -24,9 +24,9 @@
   <% for(let i = 0; i < productoTabacoPipas.length; i++) { %>
 
   <div class="card cartinha ">
-      <a href="productDetailTabaco"><img src="/images/tabacoParaPipa/<%=productoTabacoPipas[i].imagen%>" class="card-img-top " alt="Habano X."></a>
+      <a href="/productDetailTabacoParaPipa/?productId=<%=productoTabacoPipas[i].id%>"><img src="/images/tabacoParaPipa/<%=productoTabacoPipas[i].imagen%>" class="card-img-top " alt="Habano X."></a>
       <div class="card-body">
-        <a href="productDetailTabaco"><h5 class="card-title"><%=productoTabacoPipas[i].nombre.value%></h5></a>
+        <a href="/productDetailTabacoParaPipa/?productId=<%=productoTabacoPipas[i].id%>"><h5 class="card-title"><%=productoTabacoPipas[i].nombre.value%></h5></a>
         <p class="card-text">$<%=productoTabacoPipas[i].precio.value%></p>
       </div>
       <div class="card-footer">
@@ -57,13 +57,13 @@
   </div>
 </div>
 <div class="card-group container-wide span12 grid-row">
-<% for(let i = 0; i < productoTabacoParaPipa.length; i++) { %>
+<% for(let i = 0; i < productoTabacoPipas.length; i++) { %>
 
 <div class="card cartinha ">
-    <a href="/productDetailTabacoParaPipa/?productId=<%=productoTabacoParaPipa[i].id%>"><img src="/images/tabacoParaPipa/<%=productoTabacoParaPipa[i].imagen%>" class="card-img-top " alt="Cigarro X."></a>
+    <a href="/productDetailTabacoParaPipa/?productId=<%=productoTabacoPipas[i].id%>"><img src="/images/tabacoParaPipa/<%=productoTabacoPipas[i].imagen%>" class="card-img-top " alt="Cigarro X."></a>
     <div class="card-body">
-      <a href="/productDetailTabacoParaPipa/?productId=<%=productoTabacoParaPipa[i].id%>"><h5 class="card-title"><%=productoTabacoParaPipa[i].nombre.value%></h5></a>
-      <p class="card-text">$<%=productoTabacoParaPipa[i].precio.value%></p>
+      <a href="/productDetailTabacoParaPipa/?productId=<%=productoTabacoPipas[i].id%>"><h5 class="card-title"><%=productoTabacoPipas[i].nombre.value%></h5></a>
+      <p class="card-text">$<%=productoTabacoPipas[i].precio.value%></p>
     </div>
     <div class="card-footer">
       <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>

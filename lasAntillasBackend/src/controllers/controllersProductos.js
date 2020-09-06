@@ -217,11 +217,14 @@ module.exports = {
         // EL RENDER VA DENTRO DEL .THEN() PARA QUE SE EJECUTE DE MANERA SINCRONICA
         // EL RENDER CONSTA DE DOS PARTES: LA RUTA DE A VISTA A RENDERIZAR Y SEGUNDO LOS DATOS QUE RECIBIRA.
         res.render(
-          path.resolve(_dirname, "..", "views", "productos", "tabacosPipa.ejs"),
-          {productoTabacoPipas}
+          path.resolve(__dirname, "..", "views", "productos", "tabacosPipas.ejs"),
+          { productoTabacoPipas }
         );
       })
-      .catch((error) => res.send(error));
+      .catch((error) => {
+        console.log('Error in tabaco_pipas', error)
+        res.send(error) // AGREGAR UNA PAGINA PARA ERROR (error.ejs)
+      })
   },
   tabaco_armar: (req, res) => {
     // PRODUCTS REPRESENTA AL MODELO.
