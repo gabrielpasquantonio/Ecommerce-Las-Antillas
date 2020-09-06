@@ -84,7 +84,7 @@ module.exports = {
     showProductos: async (req,res) =>{
       //Aca pasamos los datos del archivo Json de Habanos a un Array
       const miProducto = await ProductDao.getProductById(req.params.id);
-      //Aca pongo lo que le voy a mandar a la vista 
+      console.log('producto encontrados', JSON.stringify(miProducto, null, 2))//Aca pongo lo que le voy a mandar a la vista  
       res.render(path.resolve(__dirname, '..','views','admin','detailProductos.ejs'), {miProducto})
     },
 
