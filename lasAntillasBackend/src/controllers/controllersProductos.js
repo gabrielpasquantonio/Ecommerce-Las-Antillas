@@ -353,11 +353,20 @@ module.exports = {
         .then(productoEncontrado => {
           const name = productoEncontrado.Atributes.find(atribute => atribute.name === "VitolaDeGalera").atributeProduct.value;
           const price = productoEncontrado.Atributes.find(atribute => atribute.name === "UnitPrice").atributeProduct.value;
- 
+          const ring = productoEncontrado.Atributes.find(atribute => atribute.name === "UnitPrice").atributeProduct.value;
           const productoHabano = {
             precio: {
               value: price
+            },
+            
+            cepo: {
+              value: ring
+            },
+            
+            nombre: {
+              value: name
             }
+            
           } 
           res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailHabano.ejs"), {productoHabano});
         })
