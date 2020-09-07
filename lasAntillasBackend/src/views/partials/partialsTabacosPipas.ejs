@@ -21,7 +21,7 @@
 <% for(let i = 0; i < productoTabacoPipas.length; i++) { %>
 
 <div class="card cartinha ">
-    <a href="/productDetailTabacoParaPipa/?productId=<%=productoTabacoPipas[i].id%>"><img src="/images/tabacoParaPipa/<%=productoTabacoPipas[i].imagen%>" class="card-img-top " alt="Cigarro X."></a>
+    <a href="/productDetailTabacoParaPipa/?productId=<%=productoTabacoPipas[i].id%>"><img src="/images/tabacoParaPipa/<%=productoTabacoPipas[i].imagen%>" class="card-img-top " style="border: 5px solid #343a40"  alt="Cigarro X."></a>
     <div class="card-body">
       <a href="/productDetailTabacoParaPipa/?productId=<%=productoTabacoPipas[i].id%>"><h5 class="card-title"><%=productoTabacoPipas[i].nombre.value%></h5></a>
       <p class="card-text">$<%=productoTabacoPipas[i].precio.value%></p>
