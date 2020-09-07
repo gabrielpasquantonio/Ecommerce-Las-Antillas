@@ -3,6 +3,10 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 
+const db = require('../database/models')
+const rols = db.Rol;
+const users = db.User;
+
 const {
     check,
     validationResult,
@@ -145,138 +149,151 @@ module.exports = {
     res.redirect("/");
   },
 
-  indexUsers: (req, res) => {
-    //Aca pasamos los datos del archivo Json de los Productos a un Array de una manera parametrizada
-    let todosUsuariosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "usuarios.json"))
-    );
+  indexUsers: async (req, res) => {
+    users.findAll()
+    .then(usersEncontrados => {
+      const allUsers = [];
+      usersEncontrados.forEach(userEncontrado => {
+        allUsers.push(
+          {
+            nombre: userEncontrado.first_name,
+            apellido: userEncontrado.last_name,
+            role: userEncontrado.rol_id,
+            id: userEncontrado.id 
+          }
+        )
+      })
+      res.render(
+        path.resolve(__dirname, "..", "views", "admin", "adminUsers.ejs"),
+        { allUsers }
+      );
+    })
+    .catch(error => {
+      console.log('error index users', error)
+      res.send(error)
+    })
 
-    res.render(
-      path.resolve(__dirname, "..", "views", "admin", "adminUsers.ejs"),
-      { todosUsuariosJson }
-    );
   },
 
   createUser: (req, res) => {
-    const todosUsuariosJson = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "..", "data", "usuarios.json"))
-    );
+    rols.findAll().then(roles => {
+      res.render(
+        path.resolve(__dirname, "..", "views", "admin", "createUser.ejs"),
+        { roles }
+      );
+    })
 
-    res.render(
-      path.resolve(__dirname, "..", "views", "admin", "createUser.ejs"),
-      { todosUsuariosJson }
-    );
   },
 
   saveUsers: (req, res) => {
-    //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let todosUsuariosJson = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "..", "data", "usuarios.json"))
-    );
-
-    //res.send(req.body);
-    //Aqui indico el formato de como se va a guardar la informacion del producto
-
+    
     let nuevoUsuario = {
-      id: todosUsuariosJson.length + 1,
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
+      first_name: req.body.nombre,
+      last_name: req.body.apellido,
+      username: req.body.username,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
-      role: req.body.role,
+      rol_id: req.body.role,
       avatar: req.files.length > 0 ? req.files[0].filename : "default.jpg",
     };
-    //Aquí se agrega al array el nuevo Producto
-    todosUsuariosJson.push(nuevoUsuario);
-    //Aqui convierto el Array en un string y le indico que un producto se guarde abajo del otro gracias a null,2 espacios
-    let nuevoUsuarioGuardar = JSON.stringify(todosUsuariosJson, null, 2);
-    //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
-    fs.writeFileSync(
-      path.resolve(__dirname, "..", "data", "usuarios.json"),
-      nuevoUsuarioGuardar
-    );
-    //Aqui redireccionamos los nuevos productos a la vista administrar
-    res.redirect("/adminUsers");
+
+    users.create(nuevoUsuario)
+    .then(() => res.redirect("/adminUsers"))
+    .catch(error => {
+      console.log('Error guardando usuario', error)
+      res.send(error)
+    })
   },
 
   showUsers: (req, res) => {
-    //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let todosUsuariosJson = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "..", "data", "usuarios.json"))
-    );
-
-    let miUsuario;
-    todosUsuariosJson.forEach((todoUsuarioJson) => {
-      if (todoUsuarioJson.id == req.params.id) {
-        miUsuario = todoUsuarioJson;
+    users.findByPk(req.params.id,
+      {
+        include: {
+          model: rols
+        }
+      })
+    .then(userEncontrado => {
+      const miUsuario = {
+        nombre: userEncontrado.first_name,
+        apellido: userEncontrado.last_name,
+        role: userEncontrado.Rol.label,
+        id: userEncontrado.id,
+        avatar: userEncontrado.avatar,
+        email: userEncontrado.email
       }
-    });
-
-    //Aca pongo lo que le voy a mandar a la vista
-    res.render(
-      path.resolve(__dirname, "..", "views", "admin", "detailUsers.ejs"),
-      { miUsuario }
-    );
+    
+      res.render(
+        path.resolve(__dirname, "..", "views", "admin", "detailUsers.ejs"),
+        { miUsuario }
+      );
+    })
   },
 
   destroyUsers: (req, res) => {
-    //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let todosUsuariosJson = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "..", "data", "usuarios.json"))
-    );
-    //Esta variable va a guardar el habano que se va a borrar
-    const userDeleteId = req.params.id;
-    //Aca recorre el array y hago un filtro con los productos que fueron borrados deacuerdo a su id, una vez filtrado ,tengo que generar un nuevo array, que contenga los productos filtrados, osea todos los productos excepto los que se borraron
-    const usersFinal = todosUsuariosJson.filter(
-      (todoUsuarioJson) => todoUsuarioJson.id != userDeleteId
-    );
-    //Aqui convierto el Array en un string y le indico que un producto se guarde abajo del otro gracias a null,2 espacios
-    let usersGuardar = JSON.stringify(usersFinal, null, 2);
-    //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
-    fs.writeFileSync(
-      path.resolve(__dirname, "..", "data", "usuarios.json"),
-      usersGuardar
-    );
-    //Aqui redireccionamos los nuevos productos a la vista administrar
-    res.redirect("/adminUsers");
+    users.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(() => res.redirect("/adminUsers"))
+    .catch(error => {
+      console.log('error borrando usuario', error)
+      res.send(error)
+    })
   },
 
   editUsers: (req, res) => {
-    //Aca pasamos los datos del archivo Json de Habanos a un Array
-    let todosUsuariosJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "data", "usuarios.json")));
-    //Como por la ruta esta viajando de manera dinamica un ID hay que guardarla en una variable para poder utilizarla .
-    const usuarioId = req.params.id;
 
-    //Luego dentro de la productoHabanos hay que buscar en el registro lo que hay que Editar:
-    let usuarioEditar = todosUsuariosJson.find((todoUsuarioJson) => todoUsuarioJson.id == usuarioId);
-    //Aca pongo lo que le voy a mandar a la vista
-    res.render(
-      path.resolve(__dirname, "..", "views", "admin", "editUsers.ejs"),
-      { usuarioEditar }
-    );
+    users.findByPk(req.params.id,
+      {
+        include: {
+          model: rols
+        }
+      })
+    .then(userEncontrado => {
+      const usuarioEditar = {
+        nombre: userEncontrado.first_name,
+        apellido: userEncontrado.last_name,
+        password: userEncontrado.password,
+        role: {
+          label: userEncontrado.Rol.label,
+          id: userEncontrado.Rol.id
+        },
+        id: userEncontrado.id,
+        avatar: userEncontrado.avatar,
+        email: userEncontrado.email
+      }
+
+      rols.findAll().then(roles => {
+        res.render(
+          path.resolve(__dirname, "..", "views", "admin", "editUsers.ejs"),
+          { usuarioEditar, roles}
+        );
+      })
+    })
   },
 
   updateUsers(req, res) {
-    let todosUsuariosJson = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "..", "data", "usuarios.json")));
-    //Como por la ruta esta viajando de manera dinamica un ID hay que guardarla en una variable para poder utilizarla
-    req.body.id = req.params.id;
-    //Aca usamos un if ternario, si la persona no coloco ninguna imagen nueva , es decir no la edito , tendria que volver la Oldimagen ( ver archivo edit).
-    //Si me esta llegando una migen nueva en el req.file entonces guardame el nombre de lo que me esta llegando. En caso de que no haya entrado una imagen nueva, y se mantiene la misma entonces guardame la imagen anterior.
-    // req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
-    //Aca voy a contener el nuevo habano que ya se actualizo
-    let usersUpdate = todosUsuariosJson.map((todoUsuarioJson) => {
-      if (todoUsuarioJson.id == req.body.id) {
-        req.body.avatar = req.files.length > 0 ? req.files[0].filename : todoUsuarioJson.avatar;
-        return (todoUsuarioJson = req.body);
+    users.update(
+      {
+        rol_id: req.body.role,
+        first_name: req.body.nombre,
+        last_name: req.body.apellido,
+        password: req.body.password,
+        email: req.body.email,
+        avatar: req.files.length > 0 ? req.files[0].filename: req.body.oldimagen,
+      },
+      {
+        where: {
+          id: req.body.id
+        }
       }
-
-      return todoUsuarioJson;
-    });
-    let usersActualizar = JSON.stringify(usersUpdate, null, 2);
-    //Aqui sobre escribo nuestro archivo Json para guardar los nuevos productos
-    fs.writeFileSync( path.resolve(__dirname, "..", "data", "usuarios.json"),usersActualizar);
-    //Aqui redireccionamos los nuevos productos a la vista administrar
-    res.redirect('/adminUsers');
+    ).then(() => res.redirect('/adminUsers'))
+    .catch(error => {
+      console.log('Error updateUsers', error)
+      res.send(error)
+    })
+    
   },
 };
 

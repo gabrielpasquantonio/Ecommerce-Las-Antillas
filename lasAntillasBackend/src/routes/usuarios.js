@@ -29,6 +29,17 @@ const controllersUsuarios = require(path.resolve(__dirname, "..", "controllers",
 
 let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
 
+// Aqui dispongo lo referido al nombre del archivo y donde lo vamos a guardar:
+const storage2 = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.resolve(__dirname,'..','..','public','images','usuarios'));
+  },
+  filename: function (req, file, cb) {
+    cb(null, "usuario" + "-" + req.body.nombre + ' ' + req.body.apellido);
+  }
+})
+ 
+const upload2 = multer({ storage: storage2 });
 
 //Aquí se incorpora lo referido a la carga de la imagen
 
@@ -150,19 +161,6 @@ body('password').custom((value, {req}) =>{
 router.get('/logout', controllersUsuarios.logout);
 
 //-----------------A pertir de aca vamos a hacer las rutas para el CRUD de usuarios------------------------------------
-
-// Aqui dispongo lo referido al nombre del archivo y donde lo vamos a guardar:
-const storage2 = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, path.resolve(__dirname,'..','..','public','images','usuarios'));
-  },
-  filename: function (req, file, cb) {
-    cb(null, "usuario" + "-" + Date.now() + path.extname(file.originalname));
-  }
-})
- 
-const upload2 = multer({ storage2 });
-
 
 
 
