@@ -43,12 +43,16 @@ module.exports = {
               model: atributeProduct,
             },
           },
+          {
+            model: brands,
+            foreignKey: "brand_id"
+          }
         ],
       })
       // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
       .then((productEncontradosDesdeBD) => {
         // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-        // console.log('producto encontrados', JSON.stringify(productEncontradosDesdeBD, null, 2))
+        console.log('producto encontrados', JSON.stringify(productEncontradosDesdeBD, null, 2))
         // Definimos en variables
         const productoHabanos = [];
         // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
@@ -62,6 +66,7 @@ module.exports = {
           ).atributeProduct.value;
           const imagen = productoEncontrado.image;
           const productId = productoEncontrado.id;
+          const brand = productoEncontrado.brand_id;
           productoHabanos.push(
             // REPRESENTA EL MODELO DEL RESULTADO AL QUE QUEREMOS LLEGAR (EL QUE LA VISTA ESPERA RECIBIR)
             {
@@ -74,6 +79,7 @@ module.exports = {
               },
               imagen: imagen,
               id: productId,
+              marca: brand,
             }
           );
         });
@@ -161,7 +167,7 @@ module.exports = {
     // EL WHERE ES EL METODO QUE UTILIZAMOS DENTRO DEL FINDALL PARA HACER EL FILTRO (IGUAL QUE SQL)
     // CATEGORY_ID REPRESENTA UNA COLUMNA DEL MODELO PRODUCTS
     // EL REQ.QUERY.TYPE ES LA INFO QUE VIENE DESDE LA VISTA DE NAVBAR (QUE USAMOS QUERY PARA MANDAR LOS DATOS)
-    console.log('valor/es que viene del front (nav bar "/tabacoPipa/?type=X&brand=X") por query',req.query);
+    console.log('valor/es que viene del front (nav bar "/tabacoPipa/?type=X&brand=X") por query', req.query);
     products
       .findAll({
         where: {
@@ -232,7 +238,7 @@ module.exports = {
     // EL WHERE ES EL METODO QUE UTILIZAMOS DENTRO DEL FINDALL PARA HACER EL FILTRO (IGUAL QUE SQL)
     // CATEGORY_ID REPRESENTA UNA COLUMNA DEL MODELO PRODUCTS
     // EL REQ.QUERY.TYPE ES LA INFO QUE VIENE DESDE LA VISTA DE NAVBAR (QUE USAMOS QUERY PARA MANDAR LOS DATOS)
-    console.log('valor/es que viene del front (nav bar "/tabacoPipa/?type=X&brand=X") por query',req.query);
+    console.log('valor/es que viene del front (nav bar "/tabacoPipa/?type=X&brand=X") por query', req.query);
     products
       .findAll({
         where: {
@@ -633,7 +639,7 @@ module.exports = {
           imagen: image,
         };
 
-        res.render(path.resolve(__dirname,"..","views","productos","productDetailTabacoParaPipa.ejs"),{ productoTabacoParaPipa });
+        res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailTabacoParaPipa.ejs"), { productoTabacoParaPipa });
       });
   },
 
@@ -680,7 +686,7 @@ module.exports = {
             value: taste,
           },
           descripcion: {
-           value: description,
+            value: description,
           },
           origen: {
             value: origin,
@@ -689,7 +695,7 @@ module.exports = {
           imagen: image,
         };
 
-        res.render(path.resolve(__dirname,"..","views","productos","productDetailTabacoParaArmar.ejs"),{ productoTabacoParaArmar });
+        res.render(path.resolve(__dirname, "..", "views", "productos", "productDetailTabacoParaArmar.ejs"), { productoTabacoParaArmar });
       });
   },
 
@@ -702,16 +708,134 @@ module.exports = {
       path.resolve(__dirname, "..", "views", "productos", "carrito.ejs")
     );
   },
+  
   allProducts: (req, res) => {
-    res.render(
-      path.resolve(__dirname, "..", "views", "productos", "allProducts.ejs"),
-      {
-        productoHabanos,
-        productoCigarros,
-        productoCigarritos,
-        productoTabacoArmar,
-        productoTabacoPipas,
-      }
-    );
-  },
-};
+    //-------------------------------Aca esta toda la funcion que trae los habanos  ----------------------------
+     
+    products.findAll({
+      where: {
+        category_id: 1,
+        
+      },
+      // Atravez del include vinculamos al modelo productos con el modelo atributos a traves de atributeProduct
+      // la key include tiene como value un array (en este caso de objetos)
+      include: [
+        {
+          model: atributes,
+          through: {
+            model: atributeProduct,
+          },
+        },
+          
+      ],
+    })
+      // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
+      .then((productEncontradosDesdeBD) => {
+        // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
+        console.log('producto encontrados', JSON.stringify(productEncontradosDesdeBD, null, 2))
+        // Definimos en variables
+        const productoHabanos = [];
+        // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
+        productEncontradosDesdeBD.forEach((productoEncontrado) => {
+          // BUSCAS UN VALOR DENTRO DE LOS RESULTADOS ENCONTRADOS EN BASE A UN FILTRO
+          const name = productoEncontrado.Atributes.find((atribute) => atribute.name === "VitolaDeGalera"
+          ).atributeProduct.value;
+          const price = productoEncontrado.Atributes.find(
+            (atribute) => atribute.name === "UnitPrice"
+          ).atributeProduct.value;
+          const imagen = productoEncontrado.image;
+          const productId = productoEncontrado.id;
+          
+          productoHabanos.push(
+            // REPRESENTA EL MODELO DEL RESULTADO AL QUE QUEREMOS LLEGAR (EL QUE LA VISTA ESPERA RECIBIR)
+            {
+              // NOMBRE, PRECIO E IMAGEN SON KEYS QUE COINCIDEN CON LA VISTA
+              nombre: {
+                value: name,
+              },
+              precio: {
+                value: price,
+              },
+              imagen: imagen,
+              id: productId,
+              
+            }
+          );
+        });
+        //-------------------------------Aca esta la funcion que trae los cigarros--------------------------------
+        products
+          .findAll({
+            where: {
+              category_id: 2,
+          
+            },
+            // Atravez del include vinculamos al modelo productos con el modelo atributos a traves de atributeProduct
+            // la key include tiene como value un array (en este caso de objetos)
+            include: [
+              {
+                model: atributes,
+                through: {
+                  model: atributeProduct,
+                },
+              },
+            ],
+          })
+          // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
+          .then((productEncontradosDesdeBD2) => {
+            // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
+            console.log(
+              "producto encontrados",
+              JSON.stringify(productEncontradosDesdeBD2, null, 2)
+            );
+            // Definimos en variables
+            const productoCigarros = [];
+            // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
+            productEncontradosDesdeBD2.forEach((productoEncontrado2) => {
+              // BUSCAS UN VALOR DENTRO DE LOS RESULTADOS ENCONTRADOS EN BASE A UN FILTRO
+              const name = productoEncontrado2.Atributes.find(
+                (atribute) => atribute.name === "Vitola"
+              ).atributeProduct.value;
+              const price = productoEncontrado2.Atributes.find(
+                (atribute) => atribute.name === "UnitPrice"
+              ).atributeProduct.value;
+              const imagen = productoEncontrado2.image;
+              const productId2 = productoEncontrado2.id;
+              productoCigarros.push(
+                // REPRESENTA EL MODELO DEL RESULTADO AL QUE QUEREMOS LLEGAR (EL QUE LA VISTA ESPERA RECIBIR)
+                {
+                  // NOMBRE, PRECIO E IMAGEN SON KEYS QUE COINCIDEN CON LA VISTA
+                  nombre: {
+                    value: name,
+                  },
+                  precio: {
+                    value: price,
+                  },
+                  imagen: imagen,
+                  id: productId2,
+                }
+              );
+            });
+        // ----------------------------------------Aca empieza la tercera funcion-------------------------------
+            
+            
+            
+            
+            
+            
+            
+            // EL RENDER VA DENTRO DEL .THEN() PARA QUE SE EJECUTE DE MANERA SINCRONICA
+            // EL RENDER CONSTA DE DOS PARTES: LA RUTA DE A VISTA A RENDERIZAR Y SEGUNDO LOS DATOS QUE RECIBIRA.
+  
+            res.render(
+              path.resolve(__dirname, "..", "views", "productos", "allProducts.ejs"),
+              { productoHabanos, productoCigarros }
+            );
+  
+//Aca cierra el segundo foreach
+          });
+    
+     
+      })
+        
+  }
+}
