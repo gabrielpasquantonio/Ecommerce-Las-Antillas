@@ -1,12 +1,9 @@
-  <div class="categoria container-wide container-xs m-bottom m-bottom-quarter-xs m-none-xs row-fluid"> 
-  <div class="span8 left"> 
-      <div class="m-bottom-half m-top-half">
-  <a class="font-body-xs h6" href="/" title="La Casa del Habano">Inicio</a>
-                      <span class="">/</span>
-                          <a class="" href="/tabacoParaPipa" title="tabacoParaPipa">TABACO PARA PIPA</a>
-                              <span class="">/</span>
-                                              <h1 class="active breadcrumb-crumb">Tabaco Para Pipas</h1>
-                                      </div>    </div>
+<div  class="categoria container-wide container-xs m-bottom m-bottom-quarter-xs m-none-xs fluid">
+<div class="span8 left"> 
+  <div class="m-bottom-half m-top-half">
+    <h1 class="active breadcrumb-crumb">Tabaco Para Pipa</h1>
+  </div>    </div> 
+  
   <div class="hidden-phone sort-by-container text-right">
       <label for="sort" class="d-inline">Ordenar por:</label>
 <select id="sort" class="full-width-xs">
@@ -30,7 +27,7 @@
       <p class="card-text">$<%=productoTabacoPipas[i].precio.value%></p>
     </div>
     <div class="card-footer">
-      <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
+      <a href="/productDetailTabacoParaPipa/?productId=<%=productoTabacoPipas[i].id%>"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">VER DETALLE</button></a>
     </div>
   </div>
   <% } %>

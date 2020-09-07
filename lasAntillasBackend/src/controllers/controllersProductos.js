@@ -152,6 +152,7 @@ module.exports = {
             }
           );
         });
+        
         // EL RENDER VA DENTRO DEL .THEN() PARA QUE SE EJECUTE DE MANERA SINCRONICA
         // EL RENDER CONSTA DE DOS PARTES: LA RUTA DE A VISTA A RENDERIZAR Y SEGUNDO LOS DATOS QUE RECIBIRA.
         res.render(
@@ -815,27 +816,200 @@ module.exports = {
                 }
               );
             });
-        // ----------------------------------------Aca empieza la tercera funcion-------------------------------
-            
-            
-            
-            
-            
-            
-            
-            // EL RENDER VA DENTRO DEL .THEN() PARA QUE SE EJECUTE DE MANERA SINCRONICA
-            // EL RENDER CONSTA DE DOS PARTES: LA RUTA DE A VISTA A RENDERIZAR Y SEGUNDO LOS DATOS QUE RECIBIRA.
+        // ----------------------------------------Aca empieza la tercera funcion de cigarritos-------------------------------
+            products
+              .findAll({
+                where: {
+                  category_id: 3,
+                  
+                },
+                // Atravez del include vinculamos al modelo productos con el modelo atributos a traves de atributeProduct
+                // la key include tiene como value un array (en este caso de objetos)
+                include: [
+                  {
+                    model: atributes,
+                    through: {
+                      model: atributeProduct,
+                    },
+                  },
+                ],
+              })
+              // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
+              .then((productEncontradosDesdeBD3) => {
+                // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
+                console.log(
+                  "producto encontrados",
+                  JSON.stringify(productEncontradosDesdeBD3, null, 2)
+                );
+                // Definimos en variables
+                const productoCigarritos = [];
+                // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
+                productEncontradosDesdeBD3.forEach((productoEncontrado3) => {
+                  // BUSCAS UN VALOR DENTRO DE LOS RESULTADOS ENCONTRADOS EN BASE A UN FILTRO
+                  const name = productoEncontrado3.Atributes.find(
+                    (atribute) => atribute.name === "Vitola"
+                  ).atributeProduct.value;
+                  const price = productoEncontrado3.Atributes.find(
+                    (atribute) => atribute.name === "PricePerBox"
+                  ).atributeProduct.value;
+                  const imagen = productoEncontrado3.image;
+                  const productId3 = productoEncontrado3.id;
+                  productoCigarritos.push(
+                    // REPRESENTA EL MODELO DEL RESULTADO AL QUE QUEREMOS LLEGAR (EL QUE LA VISTA ESPERA RECIBIR)
+                    {
+                      // NOMBRE, PRECIO E IMAGEN SON KEYS QUE COINCIDEN CON LA VISTA
+                      nombre: {
+                        value: name,
+                      },
+                      precio: {
+                        value: price,
+                      },
+                      imagen: imagen,
+                      id: productId3,
+                    }
+                  );
+                });
+//----------------------------------Aca empieza la cuarta funcion ------------------------------------------------------------
+products
+  .findAll({
+    where: {
+      category_id: 4,
+      
+    },
+    // Atravez del include vinculamos al modelo productos con el modelo atributos a traves de atributeProduct
+    // la key include tiene como value un array (en este caso de objetos)
+    include: [
+      {
+        model: atributes,
+        through: {
+          model: atributeProduct,
+        },
+      },
+    ],
+  })
+  // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
+  .then((productEncontradosDesdeBD4) => {
+    // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
+    console.log(
+      "producto encontrados",
+      JSON.stringify(productEncontradosDesdeBD4, null, 2)
+    );
+    // Definimos en variables
+    const productoTabacoPipas = [];
+    // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
+    productEncontradosDesdeBD4.forEach((productoEncontrado4) => {
+      // BUSCAS UN VALOR DENTRO DE LOS RESULTADOS ENCONTRADOS EN BASE A UN FILTRO
+      const name = productoEncontrado4.Atributes.find(
+        (atribute) => atribute.name === "Taste"
+      ).atributeProduct.value;
+      const price = productoEncontrado4.Atributes.find(
+        (atribute) => atribute.name === "UnitPrice"
+      ).atributeProduct.value;
+      const imagen = productoEncontrado4.image;
+      const productId4 = productoEncontrado4.id;
+      productoTabacoPipas.push(
+        // REPRESENTA EL MODELO DEL RESULTADO AL QUE QUEREMOS LLEGAR (EL QUE LA VISTA ESPERA RECIBIR)
+        {
+          // NOMBRE, PRECIO E IMAGEN SON KEYS QUE COINCIDEN CON LA VISTA
+          nombre: {
+            value: name,
+          },
+          precio: {
+            value: price,
+          },
+          imagen: imagen,
+          id: productId4,
+        }
+      );
+    });
+    
+
+products
+  .findAll({
+    where: {
+      category_id: 5,
+      
+    },
+    // Atravez del include vinculamos al modelo productos con el modelo atributos a traves de atributeProduct
+    // la key include tiene como value un array (en este caso de objetos)
+    include: [
+      {
+        model: atributes,
+        through: {
+          model: atributeProduct,
+        },
+      },
+    ],
+  })
+  // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
+  .then((productEncontradosDesdeBD5) => {
+    // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
+    console.log(
+      "producto encontrados",
+      JSON.stringify(productEncontradosDesdeBD5, null, 2)
+    );
+    // Definimos en variables
+    const productoTabacoArmar = [];
+    // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
+    productEncontradosDesdeBD5.forEach((productoEncontrado5) => {
+      // BUSCAS UN VALOR DENTRO DE LOS RESULTADOS ENCONTRADOS EN BASE A UN FILTRO
+      const name = productoEncontrado5.Atributes.find(
+        (atribute) => atribute.name === "Taste"
+      ).atributeProduct.value;
+      const price = productoEncontrado5.Atributes.find(
+        (atribute) => atribute.name === "UnitPrice"
+      ).atributeProduct.value;
+      const imagen = productoEncontrado5.image;
+      const productId5 = productoEncontrado5.id;
+      productoTabacoArmar.push(
+        // REPRESENTA EL MODELO DEL RESULTADO AL QUE QUEREMOS LLEGAR (EL QUE LA VISTA ESPERA RECIBIR)
+        {
+          // NOMBRE, PRECIO E IMAGEN SON KEYS QUE COINCIDEN CON LA VISTA
+          nombre: {
+            value: name,
+          },
+          precio: {
+            value: price,
+          },
+          imagen: imagen,
+          id: productId5,
+        }
+      );
+    });
+    // EL RENDER VA DENTRO DEL .THEN() PARA QUE SE EJECUTE DE MANERA SINCRONICA
+    // EL RENDER CONSTA DE DOS PARTES: LA RUTA DE A VISTA A RENDERIZAR Y SEGUNDO LOS DATOS QUE RECIBIRA.
+
+    // EL RENDER VA DENTRO DEL .THEN() PARA QUE SE EJECUTE DE MANERA SINCRONICA
+    // EL RENDER CONSTA DE DOS PARTES: LA RUTA DE A VISTA A RENDERIZAR Y SEGUNDO LOS DATOS QUE RECIBIRA.
+
+    res.render(
+      path.resolve(__dirname, "..", "views", "productos", "allProducts.ejs"),
+      {
+        productoHabanos,
+        productoCigarros,
+        productoCigarritos,
+        productoTabacoPipas,
+        productoTabacoArmar,
+      }
+    );
   
-            res.render(
-              path.resolve(__dirname, "..", "views", "productos", "allProducts.ejs"),
-              { productoHabanos, productoCigarros }
-            );
-  
-//Aca cierra el segundo foreach
+  //Aca cierra el 5to then
+  });
+
+
+  //Aca cierra el cuarto then
+                  });
+    
+              //Aca cierra el tercer then
+              });
+                
+                
+//Aca cierra el segundo then
           });
     
-     
+     //Aca cierra el primer then
       })
-        
+  
+      //Aca cierra la funcion AllProducts
   }
 }
