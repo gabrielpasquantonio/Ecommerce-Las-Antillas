@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: false,
     },
-    user_name: {
+    username: {
       type: DataTypes.STRING,
       primaryKey: false,
       allowNull: false,
