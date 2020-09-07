@@ -18,6 +18,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: false,
     },
+    value: {
+      type: DataTypes.INTEGER,
+      primaryKey: false,
+      allowNull: false,
+      autoIncrement: false,
+    },
   };
 
   //Dentro del config, se coloca toda la informacion que queremos poner si no cumplimos los estandares para crear los modelos. Esto se usa cuando nosotros no seguimos los estandares.
