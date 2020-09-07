@@ -13,6 +13,8 @@ router.get("/productDetailHabano", controllersProductos.productDetailHabano);
 router.get("/productDetailCigarro", controllersProductos.productDetailCigarro);
 router.get("/productDetailCigarrito", controllersProductos.productDetailCigarrito);
 router.get("/productDetailTabacoParaPipa", controllersProductos.productDetailTabacoParaPipa);
+router.get("/productDetailTabacoParaArmar", controllersProductos.productDetailTabacoParaArmar);
+//router.get("/productDetailTabacoParaCigarro", controllersProductos.productDetailTabacoParaCigarro);
 router.get("/habanos", controllersProductos.habanos);
 router.get("/cigarros", controllersProductos.cigarros);
 router.get("/cigarritos", controllersProductos.cigarritos);
