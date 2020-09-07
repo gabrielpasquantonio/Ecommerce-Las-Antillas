@@ -12,14 +12,14 @@ const acceso = require('./middlewares/acceso');
 
 
 
-const db = require('./database/models')
-const rols = db.Rol;
-const users = db.User;
-const products = db.Product;
-const categories = db.Category;
-const brands = db.Brand;
-const atributes = db.Atribute;
-const atributeProduct = db.AtributeProduct;
+// const db = require('./database/models')
+// const rols = db.Rol;
+// const users = db.User;
+// const products = db.Product;
+// const categories = db.Category;
+// const brands = db.Brand;
+// const atributes = db.Atribute;
+// const atributeProduct = db.AtributeProduct;
 //Aca esta el codigo que nos va a servir para los usuarios
 // users.findAll(
 //   {
@@ -34,53 +34,53 @@ const atributeProduct = db.AtributeProduct;
 //----------------------------------------------------------
 
 //Aca esta el codigo que nos va a servir para traer todos los productos con sus categorias brands y atributos
-products.findAll(
-  {
-    // include: [categories, brands, atributes],
-    // raw: true,
-    include: [
-      {
-        model: categories,
-        attributes: ['name']
-      },
-      {
-        model: brands,
-        attributes: ['name']
-      },
-      {
-        model: atributes,
-        attributes: ['name'],
-        through: {
-          // This block of code allows you to retrieve the properties of the join table
-        model: atributeProduct,
-        attributes: ['value'],
-        }
-      }    
-    ],
-    attributes: ['id', 'image'],
-    limit: 1,
-    where: {
-      category_id: 1
-    },
-  }
-)
-.then(products => { 
-  const newObject = products.map(product => {
-    const precio = product.Atributes.find(atribute => atribute.name === "UnitPrice" || atribute.name === "PricePerBox").atributeProduct.value
-    const mapProduct = {
-      id: product.id,
-      marca: product.Brand.name,
-      nombre: 'VITOLA',
-      tipo: product.Category.name,
-      description: "DESCRIPTION",
-      precio,
-      descuento: '20%',
-      oldImagen: product.image,
-      imagen: product.image
-    }
-  })
-})     
-.catch(error => console.log('error', error)) 
+// products.findAll(
+//   {
+//     // include: [categories, brands, atributes],
+//     // raw: true,
+//     include: [
+//       {
+//         model: categories,
+//         attributes: ['name']
+//       },
+//       {
+//         model: brands,
+//         attributes: ['name']
+//       },
+//       {
+//         model: atributes,
+//         attributes: ['name'],
+//         through: {
+//           // This block of code allows you to retrieve the properties of the join table
+//         model: atributeProduct,
+//         attributes: ['value'],
+//         }
+//       }    
+//     ],
+//     attributes: ['id', 'image'],
+//     limit: 1,
+//     where: {
+//       category_id: 1
+//     },
+//   }
+// )
+// .then(products => { 
+//   const newObject = products.map(product => {
+//     const precio = product.Atributes.find(atribute => atribute.name === "UnitPrice" || atribute.name === "PricePerBox").atributeProduct.value
+//     const mapProduct = {
+//       id: product.id,
+//       marca: product.Brand.name,
+//       nombre: 'VITOLA',
+//       tipo: product.Category.name,
+//       description: "DESCRIPTION",
+//       precio,
+//       descuento: '20%',
+//       oldImagen: product.image,
+//       imagen: product.image
+//     }
+//   })
+// })     
+// .catch(error => console.log('error', error)) 
 
 
 

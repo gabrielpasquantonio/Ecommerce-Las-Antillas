@@ -52,11 +52,16 @@
                         <form id="formulario" action="/registro" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <!--Noten aqui en los input estoy persistiendo los datos si el usuario coloca algunos datos  buenos, pero otros no. Esto quiere decir que si el usuario escribio su nombre pero no el apellido y el formulario le pidio que escriba de nuevo el apellido , el formulario conservara el dato del nombre ya escrito. Aca estamos usando un if ternario . Las variables estan definidos en el controlador. "old" son los datos que el usuario tipeo-->                                  
-                                <input type="text" class="form-control" name="first_name" placeholder="Nombre" value="<%= typeof old != 'undefined' ? old.first_name : '' %>">
+                                <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="<%= typeof old != 'undefined' ? old.first_name : '' %>">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="last_name" placeholder="Apellido" value="<%= typeof old != 'undefined' ? old.last_name : '' %>">
-                            </div>  
+                                <input type="text" class="form-control" name="apellido" placeholder="Apellido" value="<%= typeof old != 'undefined' ? old.last_name : '' %>">
+                            </div>
+                            
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="username" placeholder="Nombre de usuario" required="required"  value="">
+                            </div>
+                            
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" placeholder="Email" value="<%= typeof old != 'undefined' ? old.email : '' %>">
                             </div>
@@ -66,12 +71,12 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" name="confirm_password" placeholder="Confirma Contraseña" >
                             </div>        
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="provincias">Provincia</label>
                                 <select class="form-control" id="provincias" name="provincias">
                                   <option value="#" disabled selected>Seleccione su provincia</option>
                                 </select>
-                            </div>
+                            </div> -->
 
                             <div class="custom-file">
                               <input type="file"   name="avatar"  placeholder="Debes eligir tu avatar...">

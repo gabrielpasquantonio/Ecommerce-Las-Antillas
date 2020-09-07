@@ -1,15 +1,10 @@
 <div
-  class="categoria container-wide container-xs m-bottom m-bottom-quarter-xs m-none-xs fluid"
->
-  <div class="span8 left row-fluid">
-    <div class="m-bottom-half m-top-half">
-      <a class="font-body-xs h6" href="/" title="La Casa del Habano">Inicio</a>
-      <span class="">/</span>
-      <a class="" href="/habanos" title="HABANOS">HABANOS</a>
-      <span class="">/</span>
-      <h1 class="active breadcrumb-crumb">Habanos</h1>
-    </div>
-  </div>
+  class="categoria container-wide container-xs m-bottom m-bottom-quarter-xs m-none-xs fluid">
+<div class="span8 left"> 
+  <div class="m-bottom-half m-top-half">
+    <h1 class="active breadcrumb-crumb">Habanos</h1>
+  </div>    </div>
+
   <div class="hidden-phone sort-by-container text-right">
     <label for="sort" class="d-inline">Ordenar por:</label>
     <select id="sort" class="full-width-xs">
@@ -32,6 +27,7 @@
         src="/images/habanos/<%= productoHabanos[i].imagen%>"
         class="card-img-top"
         alt="Habano X."
+        style="border: 5px solid #343a40"
     /></a>
     <div class="card-body">
       <a href="/productDetailHabano/?productId=<%=productoHabanos[i].id%>"
@@ -40,12 +36,12 @@
       <p class="card-text">$<%=productoHabanos[i].precio.value%></p>
     </div>
     <div class="card-footer">
-      <a href="/carrito"
+      <a href="/productDetailHabano/?productId=<%=productoHabanos[i].id%>"
         ><button
           type="submit"
           class="btn btn-dark btn-lg btn-block agregarcarrito"
         >
-          AGREGAR AL CARRITO
+          VER DETALLE
         </button></a
       >
     </div>
