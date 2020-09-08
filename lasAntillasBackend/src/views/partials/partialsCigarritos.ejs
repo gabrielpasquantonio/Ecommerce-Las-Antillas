@@ -20,15 +20,13 @@
 <div class="card-group container-wide span12 grid-row">
   <% for(let i = 0; i < productoCigarritos.length; i++) { %>
 
-  <div class="card cartinha ">
+  <div class="card card1 cartinha ">
       <a href="productDetailCigarrito/?productId=<%=productoCigarritos[i].id%>"><img src="/images/cigarritos/<%= productoCigarritos[i].imagen%>" class="card-img-top " style="border: 5px solid #343a40" alt="Cigarrito X."></a>
       <div class="card-body">
         <a href="productDetailCigarrito/?productId=<%=productoCigarritos[i].id%>"><h5 class="card-title"><%=productoCigarritos[i].nombre.value%></h5></a>
         <p class="card-text">$<%=productoCigarritos[i].precio.value%></p>
       </div>
-      <div class="card-footer">
-        <a href="productDetailCigarrito/?productId=<%=productoCigarritos[i].id%>"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">VER DETALLE</button></a>
-      </div>
+     
     </div>
     <% } %>
   </div>

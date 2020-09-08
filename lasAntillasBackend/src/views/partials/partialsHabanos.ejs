@@ -19,9 +19,10 @@
   </div>
 </div>
 
-<div class="card-group container-wide span12 grid-row">
+<div class="card-group container-wide span12 grid-row ">
   <% for(let i = 0; i < productoHabanos.length; i++) { %>
-  <div class="card cartinha">
+
+    <div class="card card1 cartinha ">
     <a href="/productDetailHabano/?productId=<%=productoHabanos[i].id%>"
       ><img
         src="/images/habanos/<%= productoHabanos[i].imagen%>"
@@ -35,16 +36,7 @@
       >
       <p class="card-text">$<%=productoHabanos[i].precio.value%></p>
     </div>
-    <div class="card-footer">
-      <a href="/productDetailHabano/?productId=<%=productoHabanos[i].id%>"
-        ><button
-          type="submit"
-          class="btn btn-dark btn-lg btn-block agregarcarrito"
-        >
-          VER DETALLE
-        </button></a
-      >
-    </div>
+
   </div>
   <% } %>
 </div>
