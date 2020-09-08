@@ -1,56 +1,73 @@
 const path = require('path');
 const {validationResult} = require('express-validator');
-const {Product, Item, User, Cart } = require('../database/models'); 
+const {Product, CartProduct, User, Cart } = require('../database/models'); 
 
 module.exports = {
     addCart: (req,res) =>{ 
         //return res.send(req.body)
+
+        console.log(req.session)
         const errores = validationResult(req);
         if(errores.isEmpty()){
-            Product.findByPk(req.body.product_id,{
-               include: ['Category']
-             })
-             .then((producto)=>{
-                 //return res.send(producto)
-                 let price = Number(producto.price)
-                 let salePrice = (price - ((price * producto.discount) / 100))  
-                 //console.log(salePrice + '====================================')
-                 return Item.create({    // colocar os nomes iguais da base de dados
-                     salePrice: salePrice, 
+            Cart.findOne({
+               where: { 
+                   state_id : 1,
+                   user_id: req.session.usuario.id
+                 }
+            })
+                            
+             .then((cart)=>{
+                console.log('console log ',cart,!cart) //return res.send(producto)
+                 if (!cart){
+                     console.log('aca esta ')
+                     Cart.create({
+                         user_id: req.session.usuario.id,
+                         state_id: 1,
+                         total:0
+                     })
+                     .then((createdCart)=>{
+                        console.log('aca e  sta ')
+                         CartProduct.create({
+                            
+                            quantity: req.body.cantidad,
+                            subtotal: req.body.precio * req.body.cantidad,
+                            user_id: req.session.usuario.id,
+                            product_id: req.body.product_id,
+                            cart_id: createdCart.id
+                         })
+                     })
+                 }else{
+                     CartProduct.create({        
                      quantity: req.body.cantidad,
-                     subtotal: salePrice * req.body.cantidad,
+                     subtotal: req.body.precio * req.body.cantidad,
                      state: 1,
                      userId: req.session.usuario.id,
-                     productId: producto.id,
-                     cartId: null
-                 })
+                     product_id: req.body.product_id,
+                     cart_id: cart.id
+                     })                   
+                 //console.log(salePrice + '====================================')
                  .then(()=> res.redirect('/carrito')) //mandar para o carrinho
                  .catch(error => console.log(error))
-             })
-     }else{
-         //Hay errores
-         Dish.findByPk(req.body.productId,{
-                 include: ['ategory']
-             })
-             .then((platoComida)=>{
-                 return res.render(path.resolve(__dirname, '../views/productos/productDetailHabano'), {
-                     errors: errors.errors, platoComida})
-             })
-          }
+                 }
+            })
+        }
     },
     cart : (req,res) =>{
-        Item.findAll({
-            where:{ //buscar o usuario que esta logado
-                userId : req.session.usuario.id,
-                state: 1
-            },
+        Cart.findOne({
+            where: { 
+                state_id : 1,
+                user_id: req.session.usuario.id
+              },
             include:{
-                all: true, //traz todas as relacoes 
-                nested: true // traz as relacoes dessas associacoes com outros modelos
+                model: Product,
+                through: {
+                  // This block of code allows you to retrieve the properties of the join table
+                  model: CartProduct,
+                },
             }
         })
         .then((cartProducto)=>{
-            //return res.send(cartProducto)
+            console.long('elseeee',JSON.stringify(cartProducto,null,2))
             let total = cartProducto.reduce((total, item)=>(total = total + (Number(item.subtotal))),0)
             return res.render(path.resolve(__dirname, '../views/productos/carrito'), {
                 cartProducto, total})
@@ -66,10 +83,4 @@ module.exports = {
         .then(()=> res.redirect('/carrito'))
         .catch(error => console.log(error))
     }
-
-
-
-
-
 } 
-

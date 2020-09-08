@@ -59,6 +59,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: false,
       uniqueIndex: true,
     },
+    
   };
   //Dentro del config, se coloca toda la informacion que queremos poner si no cumplimos los estandares para crear los modelos. Esto se usa cuando nosotros no seguimos los estandares.
   /*  let config = {
@@ -75,6 +76,12 @@ module.exports = (sequelize, DataTypes) => {
         // as : 'rol',
         foreignKey: 'rol_id'
       }
-    )};
+    );
+    User.hasMany(models.Cart, 
+      {
+      // as: "atributes",
+      foreignKey: "user_id",
+      
+    })};
     return User;
   };
