@@ -21,5 +21,5 @@ router.get("/cigarritos", controllersProductos.cigarritos);
 router.get("/tabacosPipas", controllersProductos.tabaco_pipas);
 router.get("/tabacosArmar", controllersProductos.tabaco_armar);
 router.get("/allProducts", controllersProductos.allProducts);
-router.get("/carrito", controllersProductos.carrito);
+// router.get("/carrito", controllersProductos.carrito);
 module.exports = router;

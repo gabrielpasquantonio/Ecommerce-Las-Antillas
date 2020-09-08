@@ -12,6 +12,8 @@ const carritoController = require('../controllers/carritoController');
 
 router.post('/carrito/adicionarAlCarrito', authMiddleware, validador.addCart, carritoController.addCart);
 router.get('/carrito', authMiddleware, carritoController.cart);
+// router.post('/carrito/adicionarAlCarrito', validador.addCart, carritoController.addCart);
+// router.get('/carrito', carritoController.cart);
 router.post('/carrito/borrarElementoCarrito', authMiddleware, carritoController.deleteCart);
 //router.post('/carrito/compra', authMiddleware, carritoController.shop);
 //router.get('/carrito/historialCompra', authMiddleware, carritoController.history);

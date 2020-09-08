@@ -78,7 +78,6 @@ router.post('/registro', upload.single('avatar'),[
 
   //Aquí valido si el usuario ya está registrado en nuestro archivo JSON, esta es una forma
   body('email').custom( async value => {
-    console.log('here')
     return users.findOne({
       where: {
         email: value

@@ -120,10 +120,10 @@ module.exports = {
       // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
       .then((productEncontradosDesdeBD2) => {
         // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-        console.log(
-          "producto encontrados",
-          JSON.stringify(productEncontradosDesdeBD2, null, 2)
-        );
+        // console.log(
+        //   "producto encontrados",
+        //   JSON.stringify(productEncontradosDesdeBD2, null, 2)
+        // );
         // Definimos en variables
         const productoCigarros = [];
         // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
@@ -168,7 +168,7 @@ module.exports = {
     // EL WHERE ES EL METODO QUE UTILIZAMOS DENTRO DEL FINDALL PARA HACER EL FILTRO (IGUAL QUE SQL)
     // CATEGORY_ID REPRESENTA UNA COLUMNA DEL MODELO PRODUCTS
     // EL REQ.QUERY.TYPE ES LA INFO QUE VIENE DESDE LA VISTA DE NAVBAR (QUE USAMOS QUERY PARA MANDAR LOS DATOS)
-    console.log('valor/es que viene del front (nav bar "/tabacoPipa/?type=X&brand=X") por query', req.query);
+    // console.log('valor/es que viene del front (nav bar "/tabacoPipa/?type=X&brand=X") por query', req.query);
     products
       .findAll({
         where: {
@@ -189,10 +189,10 @@ module.exports = {
       // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
       .then((productEncontradosDesdeBD4) => {
         // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-        console.log(
-          "producto encontrados",
-          JSON.stringify(productEncontradosDesdeBD4, null, 2)
-        );
+        // console.log(
+        //   "producto encontrados",
+        //   JSON.stringify(productEncontradosDesdeBD4, null, 2)
+        // );
         // Definimos en variables
         const productoTabacoPipas = [];
         // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
@@ -260,10 +260,10 @@ module.exports = {
       // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
       .then((productEncontradosDesdeBD5) => {
         // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-        console.log(
-          "producto encontrados",
-          JSON.stringify(productEncontradosDesdeBD5, null, 2)
-        );
+        // console.log(
+        //   "producto encontrados",
+        //   JSON.stringify(productEncontradosDesdeBD5, null, 2)
+        // );
         // Definimos en variables
         const productoTabacoArmar = [];
         // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
@@ -310,10 +310,10 @@ module.exports = {
     // EL WHERE ES EL METODO QUE UTILIZAMOS DENTRO DEL FINDALL PARA HACER EL FILTRO (IGUAL QUE SQL)
     // CATEGORY_ID REPRESENTA UNA COLUMNA DEL MODELO PRODUCTS
     // EL REQ.QUERY.TYPE ES LA INFO QUE VIENE DESDE LA VISTA DE NAVBAR (QUE USAMOS QUERY PARA MANDAR LOS DATOS)
-    console.log(
-      'valor/es que viene del front (nav bar "/cigarritos/?type=X&brand=X") por query',
-      req.query
-    );
+    // console.log(
+    //   'valor/es que viene del front (nav bar "/cigarritos/?type=X&brand=X") por query',
+    //   req.query
+    // );
     products
       .findAll({
         where: {
@@ -334,10 +334,10 @@ module.exports = {
       // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
       .then((productEncontradosDesdeBD3) => {
         // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-        console.log(
-          "producto encontrados",
-          JSON.stringify(productEncontradosDesdeBD3, null, 2)
-        );
+        // console.log(
+        //   "producto encontrados",
+        //   JSON.stringify(productEncontradosDesdeBD3, null, 2)
+        // );
         // Definimos en variables
         const productoCigarritos = [];
         // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
@@ -378,7 +378,6 @@ module.exports = {
 
   productDetailHabano: (req, res) => {
     //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-    console.log("este es el id", req.query.productId);
     products
       .findByPk(req.query.productId, {
         include: [
@@ -409,6 +408,7 @@ module.exports = {
         const image = productoEncontrado.image;
 
         const productoHabano = {
+          id: productoEncontrado.id,
           precio: {
             value: price,
           },
@@ -445,7 +445,6 @@ module.exports = {
   },
   productDetailCigarro: (req, res) => {
     //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-    console.log("este es el id", req.query.productId);
     products
       .findByPk(req.query.productId, {
         include: [
@@ -479,6 +478,7 @@ module.exports = {
         const image = productoEncontrado2.image;
 
         const productoCigarros = {
+          id: productoEncontrado2.id,
           precio: {
             value: price,
           },
@@ -519,7 +519,6 @@ module.exports = {
 
   productDetailCigarrito: (req, res) => {
     //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-    console.log("este es el id", req.query.productId);
     products
       .findByPk(req.query.productId, {
         include: [
@@ -553,6 +552,7 @@ module.exports = {
         const image = productoEncontrado3.image;
 
         const productoCigarritos = {
+          id: productoEncontrado3.id,
           precio: {
             value: price,
           },
@@ -593,7 +593,6 @@ module.exports = {
 
   productDetailTabacoParaPipa: (req, res) => {
     //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-    console.log("este es el id", req.query.productId);
     products
       .findByPk(req.query.productId, {
         include: [
@@ -615,6 +614,7 @@ module.exports = {
         const image = productoEncontrado4.image;
 
         const productoTabacoParaPipa = {
+          id: productoEncontrado4.id,
           precio: {
             value: price,
           },
@@ -649,7 +649,6 @@ module.exports = {
   // res.render(path.resolve(__dirname, "..", "views", "productos", "tabacos.ejs"));
   productDetailTabacoParaArmar: (req, res) => {
     //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
-    console.log("este es el id", req.query.productId);
     products
       .findByPk(req.query.productId, {
         include: [
@@ -671,6 +670,7 @@ module.exports = {
         const image = productoEncontrado5.image;
 
         const productoTabacoParaArmar = {
+          id: productoEncontrado5.id,
           precio: {
             value: price,
           },
@@ -784,10 +784,10 @@ module.exports = {
           // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
           .then((productEncontradosDesdeBD2) => {
             // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-            console.log(
-              "producto encontrados",
-              JSON.stringify(productEncontradosDesdeBD2, null, 2)
-            );
+            // console.log(
+            //   "producto encontrados",
+            //   JSON.stringify(productEncontradosDesdeBD2, null, 2)
+            // );
             // Definimos en variables
             const productoCigarros = [];
             // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
@@ -837,10 +837,10 @@ module.exports = {
               // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
               .then((productEncontradosDesdeBD3) => {
                 // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-                console.log(
-                  "producto encontrados",
-                  JSON.stringify(productEncontradosDesdeBD3, null, 2)
-                );
+                // console.log(
+                //   "producto encontrados",
+                //   JSON.stringify(productEncontradosDesdeBD3, null, 2)
+                // );
                 // Definimos en variables
                 const productoCigarritos = [];
                 // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
@@ -890,10 +890,10 @@ products
   // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
   .then((productEncontradosDesdeBD4) => {
     // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-    console.log(
-      "producto encontrados",
-      JSON.stringify(productEncontradosDesdeBD4, null, 2)
-    );
+    // console.log(
+    //   "producto encontrados",
+    //   JSON.stringify(productEncontradosDesdeBD4, null, 2)
+    // );
     // Definimos en variables
     const productoTabacoPipas = [];
     // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
@@ -944,10 +944,10 @@ products
   // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
   .then((productEncontradosDesdeBD5) => {
     // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-    console.log(
-      "producto encontrados",
-      JSON.stringify(productEncontradosDesdeBD5, null, 2)
-    );
+    // console.log(
+    //   "producto encontrados",
+    //   JSON.stringify(productEncontradosDesdeBD5, null, 2)
+    // );
     // Definimos en variables
     const productoTabacoArmar = [];
     // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS

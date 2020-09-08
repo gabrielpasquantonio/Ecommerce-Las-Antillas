@@ -13,7 +13,8 @@
 
 <body>
 
-    <%- include("../partials/navbar.ejs") %>   
+    <%- include("../partials/navbar.ejs") %>
+
     <div class=" ">
         <form class=" ">
 
@@ -41,59 +42,62 @@
                             </div>
                         </div>
 
-                       
-                            <div class="cart-item" data-item-id="237990895">
-
-
+                        <% carrito.productos.forEach(producto => {                                 %>
+                            <div class="cart-item">
                                 <div class="cart-item-image-col cart-item-col">
-                                    <img src="/images/habanos/habano1.png">
+                                    <img src="/images/<%= producto.tipo.name.toLowerCase()%>/<%=producto.imagen%>">
                                 </div>
                                 <div class="cart-item-desc-col border-box cart-item-col">
 
                                     <div class="cart-item-name ">
-                                        <a class="h6-xs" href="/productDetailHabano">
-                                            Habano x.
+                                        <p class="h6-xs" >
+                                            <%=producto.nombre%>
                                             <small>(Unidad)</small>
-                                        </a>
+                                        </p>
 
                                     </div>
 
                                     <div class="cart-item-unit-price hiden-phone">
-                                        $1.322,22
+                                        <%=producto.precio%>
                                     </div>
 
                                     <div class="pull-left m-top-quarter erro ">
-                                      
+                                        
                                         <form id='myform' method='POST' action='#'>
-                                            <input type='button' value='-' class='qtyminus' field='quantity' />
-                                            <input type='text' name='quantity' value='0' class='qty' />
-                                            <input type='button' value='+' class='qtyplus' field='quantity' />
+                                            <input type='button' value='-' class='qtyminus' field='quantity' id='qtyminus-<%= producto.id%>' />
+                                            <input type='text' id="quantity-<%= producto.id%>" name='quantity' value='<%= producto.cantidad%>' class='qty' />
+                                            <input type='button' value='+' class='qtyplus' field='quantity' id='qtyplus-<%= producto.id%>'/>
                                         </form>
                                     </div>
                                 </div>
 
                                 <div
                                     class="cart-item-subtotal cart-item-col  font-bold text-right hidden-phone">
-                                    <span class="js-cart-item-subtotal" data-line-item-id="237990895">$1.322,22</span>
+                                    <span class="js-cart-item-subtotal" id="producto-subtotal-<%= producto.id%>" name="producto-subtotal"><%=producto.precio * producto.cantidad%></span>
                                 </div>
 
                                 <div
                                     class="cart-item-delete-col cart-delete-container cart-item-col text-right">
-                                    <button type="button"
-                                        class="cart-btn-delete cart-btn-delete pull-right p-top-none"
-                                        >
-                                        <div class="cart-delete-svg-icon svg-icon-text">
-                                            <svg class="svg-trash-icon" baseProfile="tiny"
-                                                xmlns="http://www.w3.org/2000/svg" viewBox="598 -476.1 1792 1792">
-                                                <path
-                                                    d="M1302 260v576c0 9.2-3 17-9 23s-13.7 9-23 9h-64c-9.3 0-17-3-23-9s-9-13.8-9-23V260c0-9.4 3-17 9-23s13.7-9 23-9h64c9.3 0 17 3 23 9s9 13.6 9 23zm256 0v576c0 9.2-3 17-9 23s-13.7 9-23 9h-64c-9.3 0-17-3-23-9s-9-13.8-9-23V260c0-9.4 3-17 9-23s13.7-9 23-9h64c9.3 0 17 3 23 9s9 13.6 9 23zm256 0v576c0 9.2-3 17-9 23s-13.7 9-23 9h-64c-9.3 0-17-3-23-9s-9-13.8-9-23V260c0-9.4 3-17 9-23s13.7-9 23-9h64c9.3 0 17 3 23 9s9 13.6 9 23zm128 724V36h-896v948c0 14.6 2.3 28 7 40.4s9.5 21.3 14.5 27 8.5 8.5 10.5 8.5h832c2 0 5.5-3 10.5-8.6s9.8-14.7 14.5-27 7-25.8 7-40.5zM1270-92h448l-48-117c-4.7-6-10.3-9.8-17-11h-317c-6.7 1.2-12.3 5-17 11l-49 117zm928 32V4c0 9.2-3 17-9 23s-13.7 9-23 9h-96v948c0 55.2-15.7 103-47 143.4-31.3 40.3-69 60.5-113 60.5h-832c-44 0-81.7-19.6-113-58.6s-47-86.2-47-141.5V36h-96c-9.3 0-17-3-23-9s-9-13.8-9-23v-64c0-9.4 3-17 9-23s13.7-9 23-9h309l70-167c10-24.8 28-45.8 54-63 26-17.4 52.3-26 79-26h320c26.7 0 53 8.6 79 26 26 17.2 44 38.2 54 63l70 167h309c9.3 0 17 3 23 9s9 13.6 9 23z">
-                                                </path>
-                                            </svg> </div>
-                                    </button>
+                                    <form action="/carrito/borrarElementoCarrito" method="POST"  >
+                                        <button type="submit" id="button-delete-<%= producto.id%>"
+                                            class="cart-btn-delete cart-btn-delete pull-right p-top-none"
+                                            >
+                                            <div class="cart-delete-svg-icon svg-icon-text">
+                                                <svg class="svg-trash-icon" baseProfile="tiny"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="598 -476.1 1792 1792">
+                                                    <path
+                                                        d="M1302 260v576c0 9.2-3 17-9 23s-13.7 9-23 9h-64c-9.3 0-17-3-23-9s-9-13.8-9-23V260c0-9.4 3-17 9-23s13.7-9 23-9h64c9.3 0 17 3 23 9s9 13.6 9 23zm256 0v576c0 9.2-3 17-9 23s-13.7 9-23 9h-64c-9.3 0-17-3-23-9s-9-13.8-9-23V260c0-9.4 3-17 9-23s13.7-9 23-9h64c9.3 0 17 3 23 9s9 13.6 9 23zm256 0v576c0 9.2-3 17-9 23s-13.7 9-23 9h-64c-9.3 0-17-3-23-9s-9-13.8-9-23V260c0-9.4 3-17 9-23s13.7-9 23-9h64c9.3 0 17 3 23 9s9 13.6 9 23zm128 724V36h-896v948c0 14.6 2.3 28 7 40.4s9.5 21.3 14.5 27 8.5 8.5 10.5 8.5h832c2 0 5.5-3 10.5-8.6s9.8-14.7 14.5-27 7-25.8 7-40.5zM1270-92h448l-48-117c-4.7-6-10.3-9.8-17-11h-317c-6.7 1.2-12.3 5-17 11l-49 117zm928 32V4c0 9.2-3 17-9 23s-13.7 9-23 9h-96v948c0 55.2-15.7 103-47 143.4-31.3 40.3-69 60.5-113 60.5h-832c-44 0-81.7-19.6-113-58.6s-47-86.2-47-141.5V36h-96c-9.3 0-17-3-23-9s-9-13.8-9-23v-64c0-9.4 3-17 9-23s13.7-9 23-9h309l70-167c10-24.8 28-45.8 54-63 26-17.4 52.3-26 79-26h320c26.7 0 53 8.6 79 26 26 17.2 44 38.2 54 63l70 167h309c9.3 0 17 3 23 9s9 13.6 9 23z">
+                                                    </path>
+                                                </svg> </div>
+                                        </button>
+                                        <input type="hidden" class="form-control" name="productoId" value="<%= producto.id%>">
+                                        <input type="hidden" class="form-control" name="carritoId" value="<%= carrito.id%>">
+                                        <input type="hidden" class="form-control" name="productoCantidad" value="<%= producto.cantidad%>">
+                                        <input type="hidden" class="form-control" name="productoPrecio" value="<%= producto.precio%>">
+                                    </form>
                                 </div>
                             </div>
-                        
-
+                        <% }); %>
 
                         <div
                             class="cart-total h4 cart-subtotal  row-fluid pull-left m-bottom-none">
@@ -103,7 +107,7 @@
                                 :
                             </span>
                             <span class=" riight pull-right text-right weight-strong"
-                                data-priceraw="132222">$1.322,22</span>
+                                id="subtotal"><%=carrito.total%></span>
                         </div>
                    
 
@@ -265,15 +269,10 @@
 
                         <div class="js-cart-total-container ajax-cart-total-container cart-total h2 js-visible-on-cart-filled pull-left row-fluid">
                             <span class="pull-left text-left font-normal">Total:</span>
-                            <span class="js-cart-total   pull-right text-right">$1.322,22</span>
-                            <div class="total-price hidden">
-                                Total: $1.322,22
-                            </div>
-
+                            <span class="js-cart-total   pull-right text-right" id="total"><%=carrito.total%></span>
                         </div>
 
-                        <div class="pull-left cart-bottom m-bottom " style="width: 100%
-                        ;">
+                        <div class="pull-left cart-bottom m-bottom " style="width: 100%;">
                          
                             <div class="m-top-half m-bottom-half text-left pull-left hidden-phone">
                                 <a href="/allProducts"
@@ -338,45 +337,56 @@
        </script>   
        
        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script>
-jQuery(document).ready(function(){
-    // This button will increment the value
-    $('.qtyplus').click(function(e){
-        // Stop acting like a button
-        e.preventDefault();
-        // Get the field name
-        fieldName = $(this).attr('field');
-        // Get its current value
-        var currentVal = parseInt($('input[name='+fieldName+']').val());
-        // If is not undefined
-        if (!isNaN(currentVal)) {
-            // Increment
-            $('input[name='+fieldName+']').val(currentVal + 1);
-        } else {
-            // Otherwise put a 0 there
-            $('input[name='+fieldName+']').val(0);
-        }
-    });
-    // This button will decrement the value till 0
-    $(".qtyminus").click(function(e) {
-        // Stop acting like a button
-        e.preventDefault();
-        // Get the field name
-        fieldName = $(this).attr('field');
-        // Get its current value
-        var currentVal = parseInt($('input[name='+fieldName+']').val());
-        // If it isn't undefined or its greater than 0
-        if (!isNaN(currentVal) && currentVal > 0) {
-            // Decrement one
-            $('input[name='+fieldName+']').val(currentVal - 1);
-        } else {
-            // Otherwise put a 0 there
-            $('input[name='+fieldName+']').val(0);
-        }
-    });
-});
+       
+        <script>
+            const productos =  <%- JSON.stringify(carrito.productos) %>
+            jQuery(document).ready(function(){
+                productos.forEach(producto => {
+                    $(`#qtyplus-${producto.id}`).click(function(e){
+                        const productoId = e.target.id.split('-')[1]
+                        // Stop acting like a button
+                        e.preventDefault();
+                        const currentVal = parseInt($(`input[id=quantity-${productoId}]`).val());
+                        const producto = productos.find(producto => productoId.toString() === producto.id.toString())
+                        if (!isNaN(currentVal)) {
+                            $(`input[id=quantity-${productoId}]`).val(currentVal + 1);
+                            const productoSubtotal = Number(producto.precio) * (currentVal + 1)
+                            $(`span[id=producto-subtotal-${productoId}`).text(productoSubtotal)
+                            let subTotal = 0
+                            $('span[name=producto-subtotal]').each(function(index, el) {
+                                subTotal += Number($(this).text())
+                            });
+                            $(`span[id=subtotal]`).text(subTotal);
+                            $(`span[id=total]`).text(subTotal);
+                        } else {
+                            $(`input[id=quantity-${productoId}]`).val(0);
+                        }
+                    });
+                    // This button will decrement the value till 0
+                    $(`#qtyminus-${producto.id}`).click(function(e) {
+                        const productoId = e.target.id.split('-')[1]
+                        const producto = productos.find(producto => productoId.toString() === producto.id.toString())
+                        e.preventDefault();
+                        const currentVal = parseInt($(`input[id=quantity-${productoId}]`).val());
+                        if (!isNaN(currentVal) && (currentVal - 1) > 0) {
+                            $(`input[id=quantity-${productoId}]`).val(currentVal - 1);
+                            const productoSubtotal = Number(producto.precio) * (currentVal - 1)
+                            $(`span[id=producto-subtotal-${productoId}`).text(productoSubtotal)
+                            let subTotal = 0
+                            $('span[name=producto-subtotal]').each(function(index, el) {
+                                subTotal += Number($(this).text())
+                            });
+                            $(`span[id=subtotal]`).text(subTotal);
+                            $(`span[id=total]`).text(subTotal);
+                        } else {
+                            $(`input[id=quantity-${productoId}]`).val(1);
+                        }
+                    });
+                })
 
-</script>
+            });
+            
+        </script>
    
 </body>
 
