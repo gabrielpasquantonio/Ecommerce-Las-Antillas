@@ -6,7 +6,10 @@
     margin-block-end: 1em;
     margin-inline-end: 0px;
 }
-
+#myform{
+    border: none!important;
+    margin: 0%!important;
+}
 .container-fluid {
     width: 100%;
     padding-right: 10px;
@@ -455,6 +458,7 @@ justify-content: center;
 .Footer {
     color: #000000;
     background: rgba(0, 0, 0, 0.1);
+    padding-top: 3%;
 }
 
 .Payment-logos {
@@ -471,6 +475,7 @@ justify-content: center;
 .Last-footer {
     background: #000000;
     color: #FFFFFF;
+    text-align: center;
 }
 
 #form {
@@ -527,12 +532,7 @@ a {
 .row-fluid .span3 {
     width: 22.92817679558011%;
 }
-.scroller {
-    position: relative;
-    width: 100%;
-    height: 362px;
-    overflow: hidden;
-}
+
 .p-absolute {
     position: absolute!important;
 }
@@ -1179,10 +1179,49 @@ a {
   .cartinha
   {max-width: 20%;
       margin: 2%;
-margin-left: 2%!important;
+
       width: 100%;   
   } 
+  .scroller {
+    position: relative;
+    width: 100%;
+    height: 562px;
+    overflow: hidden;
+    margin-left:3%
+}
+.rregistro{
+    margin-right: 0px!important; 
+    margin-left: 0px!important;
+    padding-right: 0px!important;
+padding-left: 0px!important;
+}
 @media (min-width: 700px) and (max-width: 768px) { 
+    .product-buy-container{
+        width:80%!important;
+    }
+    .scroller {
+        position: relative;
+        width: 100%;
+        height: 362px;
+        overflow: hidden;
+    }
+    
+    #responsivee{
+        margin-left: 1%!important;
+    }
+    .rregistro{
+        margin-right: 0px!important; 
+        margin-left: 0px!important;
+        padding-right: 0px!important;
+    padding-left: 0px!important;
+    }
+    #form {
+        margin-right: 14%!important;
+        margin-left: 14%!important;
+    }
+    
+    .asset { flex-direction: column!important; }
+    
     .ipad{height: 150px!important;}
     .btn-floating {
         padding: 5px 7px;
@@ -1392,12 +1431,41 @@ h3 {
 }
 
 @media screen and (max-width: 600px) {
+    .product-buy-container{
+        width:80%!important;
+    }
+    .maring{
+        padding-left:2%
+    }
+    .user-content{
+        padding-left: 3%;
+    }
+    .product-responsive{
+max-width:100%!important ;
+    }
+    #responsivee{
+        margin-left: 1%!important;
+    }
+    #form {
+        margin-right: 1%!important;
+        margin-left: 1%!important;
+    }
+    .rregistro{
+        margin-right: 0px!important; 
+        margin-left: 0px!important;
+        padding-right: 0px!important;
+    padding-left: 0px!important;
+    }
+    .mx-auto{
+        margin-right: 1%!important;
+        margin-left: 1%!important;
+    }
     
-  
+
     .cartinha{
         padding: 5%;
         max-width: 100%;
-      margin: 0%;
+      margin: 0%!important;
       width: 100%;   
   } 
     
@@ -1419,6 +1487,9 @@ h3 {
             top: 0;
             left: 0;
             min-width: 100%;     
+    }
+    #product-shipping-container{
+        display: none;
     }
     .hidden-phonee{
         display: none!important;
@@ -1446,9 +1517,9 @@ h3 {
     }
     .link-module-text{
     
-    margin-left: 15%;
-    margin-bottom: 15%;
-    margin-top: -13%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    margin-top: 1%;
     }
     .casinha{position: relative;
 
@@ -1653,6 +1724,14 @@ h3 {
     transition-delay:.2s;
     }
 
+   
+    .scroller-img{
+    height: 100%;
+    max-height: 100%;
+    border: 5px solid #343a40;
+    margin-bottom: 3%;
+    }
+
     .descuento {
         right: 15px;
         top: 20px;
@@ -1660,4 +1739,5 @@ h3 {
         width: 20%;
     }
 
-   
+    
+

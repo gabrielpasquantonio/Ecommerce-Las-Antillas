@@ -52,7 +52,7 @@ module.exports = {
       // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
       .then((productEncontradosDesdeBD) => {
         // //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-        console.log('producto encontrados', JSON.stringify(productEncontradosDesdeBD, null, 2))
+        //console.log('producto encontrados', JSON.stringify(productEncontradosDesdeBD, null, 2))
         // Definimos en variables
         const productoHabanos = [];
         // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
@@ -239,7 +239,7 @@ module.exports = {
     // EL WHERE ES EL METODO QUE UTILIZAMOS DENTRO DEL FINDALL PARA HACER EL FILTRO (IGUAL QUE SQL)
     // CATEGORY_ID REPRESENTA UNA COLUMNA DEL MODELO PRODUCTS
     // EL REQ.QUERY.TYPE ES LA INFO QUE VIENE DESDE LA VISTA DE NAVBAR (QUE USAMOS QUERY PARA MANDAR LOS DATOS)
-    console.log('valor/es que viene del front (nav bar "/tabacoPipa/?type=X&brand=X") por query', req.query);
+    //console.log('valor/es que viene del front (nav bar "/tabacoPipa/?type=X&brand=X") por query', req.query);
     products
       .findAll({
         where: {

@@ -50,7 +50,7 @@ module.exports = {
                         })
                         .catch(error => console.log(error))
                     }else {
-                        console.log('producto id', req.body.product_id)
+                        
                         CartProduct.findOne({
                             where: {
                                 product_id: req.body.product_id,

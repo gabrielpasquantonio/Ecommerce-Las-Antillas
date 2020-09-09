@@ -39,10 +39,10 @@ module.exports = {
           .then((productEncontradosConDescuento) => {
              const nameAttribute = ["VitolaDeGalera", "Vitola", "Taste"];
              const priceAttribute = ["UnitPrice", "PricePerBox"];// //JSON STRINGIFY ES PARA MOSTRAR DE UNA MANERA MAS AMIGABLE LA RESPUESTA DE SEQUELIZE
-              console.log(
-                "producto encontrados",
-                JSON.stringify(productEncontradosConDescuento, null, 2)
-              );
+              //console.log(
+                //"producto encontrados",
+                //JSON.stringify(productEncontradosConDescuento, null, 2)
+             // );
              //Definimos en variables
             const productoConDescuento = [];
             // HACEMOS UN FOREACH PARA RECORRER EL ARRAY CON LOS RESULTADOS ENCONTRADOS
