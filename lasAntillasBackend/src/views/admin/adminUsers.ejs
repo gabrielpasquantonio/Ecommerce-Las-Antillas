@@ -46,7 +46,9 @@
           <td><%= user.role%> </td>
           <td><a href="/detailUsers/<%= user.id%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
           <td><a href="/editUsers/<%= user.id%>%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
-          <td><a href="/deleteUsers/<%= user.id%>/"><ion-icon name="trash-outline"></ion-icon></a></td>
+          <% if(locals.usuario.id !== user.id ) { %>
+              <td><a href="/deleteUsers/<%= user.id%>/"><ion-icon name="trash-outline"></ion-icon></a></td>
+          <% } %>
         </tr>
         <% }); %>
       </tbody>

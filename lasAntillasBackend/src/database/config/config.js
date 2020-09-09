@@ -3,7 +3,7 @@
       username: "root",
       //password: 'admin',
       password: null,
-      database: "lasantillas",
+      database: "lasantillas3",
       host: "localhost",
       dialect: "mysql",
       port: 3306,
