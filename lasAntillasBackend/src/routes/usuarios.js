@@ -4,15 +4,12 @@ const router = express.Router();
 const path = require("path");
 const bcrypt = require('bcryptjs');
 
-//Requiero fs ya que debo leer el archivo json de usuarios y verificar si el usuario que se está reistrando existe o no
-const fs = require('fs');
-
 //Requiero Multer, ya que voy a permitir que el usuario que se registre suba su avatar
 const multer = require('multer');
 
 const db = require('../database/models')
 const users = db.User;
-
+const adminAuthMiddleware = require("../middlewares/adminAuth");
 
 //Requiero el paquete express-validator que ya habiamos instalado. Como a esta constante le vamos a pasar mas de un parametro lo hacemos dentro de un objeto literal
 const {
@@ -59,6 +56,12 @@ router.get('/registro', controllersUsuarios.registro);
 
 //------------------------------------------------------------------------------------------
 
+module.exports = (req, res, next) => {
+  if (!req.session.usuario || req.session.usuario.role !== 9) {
+    return res.redirect('/login');
+  }
+  return next();
+}
 
 //Aqui en esta ruta envio al controlador todo el registro del usuario así como las respectivas validaciones
 
@@ -159,13 +162,13 @@ router.get('/logout', controllersUsuarios.logout);
 
 
 //Armo mis rutas
-router.get("/adminUsers", controllersUsuarios.indexUsers);
-router.get("/createUser", controllersUsuarios.createUser);
-router.post("/createUser", upload2.any("avatar"),controllersUsuarios.saveUsers);
-router.get("/detailUsers/:id", controllersUsuarios.showUsers);
-router.get("/deleteUsers/:id", controllersUsuarios.destroyUsers);
-router.get("/editUsers/:id", controllersUsuarios.editUsers);
-router.put("/editUsers/:id",upload2.any("avatar"),controllersUsuarios.updateUsers);
+router.get("/adminUsers",adminAuthMiddleware, controllersUsuarios.indexUsers);
+router.get("/createUser",adminAuthMiddleware, controllersUsuarios.createUser);
+router.post("/createUser",adminAuthMiddleware, upload2.any("avatar"),controllersUsuarios.saveUsers);
+router.get("/detailUsers/:id",adminAuthMiddleware, controllersUsuarios.showUsers);
+router.get("/deleteUsers/:id",adminAuthMiddleware, controllersUsuarios.destroyUsers);
+router.get("/editUsers/:id", adminAuthMiddleware,controllersUsuarios.editUsers);
+router.put("/editUsers/:id",adminAuthMiddleware,upload2.any("avatar"),controllersUsuarios.updateUsers);
 
 
 module.exports = router;

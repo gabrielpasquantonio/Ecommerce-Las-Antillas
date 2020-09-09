@@ -9,25 +9,26 @@ window.addEventListener('load', function () {
 
   //  console.log(formulario.elements.nombre.value);
   // Este console log muestra el input que estariamos trayendo. (.elements --> significa que trae todos los inputs del formulario.) (.'nombre' representa lo que esta incluido en el atributo name del formulario  )
-    formButton.addEventListener('click', function (evento) {
+    
 //  let selectProvincias = document.querySelector("#provincias");
 
   //  console.log(formulario.elements.nombre.value);
   // Este console log muestra el input que estariamos trayendo. (.elements --> significa que trae todos los inputs del formulario.) (.'nombre' representa lo que esta incluido en el atributo name del formulario  )
 
-  formularios.addEventListener("submit", function (evento) {
-    if (!validaciones(evento)) {
-      return evento.preventDefault();
-    }
-    return formularios.submit();
-  });
-  console.log(formularios);
+      formButton.addEventListener("click", function (evento) {
+        
+        if (!validaciones(evento)) {
+          return evento.preventDefault();
+        }
+        return formularios.submit();
+      });
+ 
   function validaciones(evento) {
     //Asi se ralizaba el registro de variables antes de ECMA-6
     //let nombre = formulario.elements.nombre.value;
     //let apellido = formulario.elements.apellido.value;
     //let email = formulario.elements.email.value;
-
+    
     //Aca hago Destructuring de código, para que podamos declarar multiples variables en una linea de codigos.
     //NOTA: ES en esta parte donde nos tenemos que asegurar de que los nombres de las variables coincidan con lo que teniamos declarados en los 'name' de nuestro formulario.
     let {
@@ -162,9 +163,3 @@ window.addEventListener('load', function () {
   //     .catch((error) => console.error(error));
   // }
 });
-
-
-
-  
-
-

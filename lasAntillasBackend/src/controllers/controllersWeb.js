@@ -103,5 +103,14 @@ module.exports = {
           .catch((error) => console.log(error));
 
 
+    },
+    mantenimiento: (req, res) => {
+      return res.render(
+        path.resolve(__dirname,
+          "..",
+          "views",
+          "web",
+          "mantenimiento.ejs"
+        ))
     }
 }

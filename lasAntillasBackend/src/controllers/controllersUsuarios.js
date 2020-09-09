@@ -27,7 +27,6 @@ module.exports = {
     let errors = validationResult(req);
     // En este caso si la variable 'errors' esta vacia , quiere decir que no hay errores. Entonces se empieza a ejecutar las lineas subsiguientes y se guarda la informacion del usuario.
     //Nota: toda la informacion vino viajando a traves del metodo 'Post' por el formulario es por eso que las recibimos con el.body.  A su vez todos los campos vienen de los atributos 'name' que estaban indicados en el formulario.
-    console.log('error')
     if (errors.isEmpty()) {
       let nuevoUsuario = {
         first_name: req.body.nombre,

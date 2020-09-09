@@ -33,19 +33,20 @@ module.exports = (req,res,next) =>{
             }
           })
           .then(userEncontrado => {
-            const usuarioLogueado = {
-              nombre: userEncontrado.first_name,
-              apellido: userEncontrado.last_name,
-              role: userEncontrado.Rol.value,
-              id: userEncontrado.id,
-              avatar: userEncontrado.avatar,
-              email: userEncontrado.email
-            }
-            // En esta linea se busca al usuario ( que no esta logueado pero si tiene una cookie), y se toma el valor que tiene en la cookie y se pasa ese valor a la vista como si fuera una sesion, para que automaticamente en la vista sepamos que vamos a mostrar.  
-            req.session.usuario = usuarioLogueado;
-            // Aca tengo que mandar adicionalmente esto a la vista.
-            res.locals.usuario = usuarioLogueado;
-            // Luego una vez logueado voy  a mandar al usuario a la vista del home.
+            if (userEncontrado) {
+              const usuarioLogueado = {
+                nombre: userEncontrado.first_name,
+                apellido: userEncontrado.last_name,
+                role: userEncontrado.Rol.value,
+                id: userEncontrado.id,
+                avatar: userEncontrado.avatar,
+                email: userEncontrado.email
+              }
+              // En esta linea se busca al usuario ( que no esta logueado pero si tiene una cookie), y se toma el valor que tiene en la cookie y se pasa ese valor a la vista como si fuera una sesion, para que automaticamente en la vista sepamos que vamos a mostrar.  
+              req.session.usuario = usuarioLogueado;
+              // Aca tengo que mandar adicionalmente esto a la vista.
+              res.locals.usuario = usuarioLogueado;
+            }// Luego una vez logueado voy  a mandar al usuario a la vista del home.
             return next();
           })
     }else{
