@@ -2,67 +2,43 @@
   class="categoria container-wide container-xs m-bottom m-bottom-quarter-xs m-none-xs fluid">
 <div class="span12 "> 
   <div class="m-bottom-half m-top-half">
-    <h1 class="active breadcrumb-crumb">Produtos Destacados </h1>
+    <h1 class="active breadcrumb-crumb">Productos Destacados </h1>
   </div>    </div>
 </div>
 
+
 <div class="card-group container-wide span12 grid-row ">
-  
+  <% for(let i = 0; i < productoConDescuento.length; i++) { %>
 
     <div class="card card1 cartinha ">
     <a href="/productDetailHabano/?productId=1>"
       ><img
-        src="/images/habanos/cohiba_esplendidos.jpg"
+        src="/images/habanos/<%= productoConDescuento[i].imagen%>"
         class="card-img-top"
         alt="Habano X."
         style="border: 5px solid #343a40"
     /></a>
+    <% if (productoConDescuento[i].descuento.value === "10%") { %>
+                  <img class="descuento" src="/img/icons/10.png" alt="Descuento 30%">  
+                <% }else if(productoConDescuento[i].descuento.value == "20%" ){ %>
+                  <img class="descuento" src="/img/icons/10.png" alt="Descuento 30%">
+                <% } %>
+
     <div class="card-body">
       <a href="/productDetailHabano/?productId=1"
-        ><h5 class="card-title">Habano x</h5></a
+        ><h5 class="card-title"><%= productoConDescuento[i].nombre.value%></h5></a
       >
-      <p class="card-text">$3000</p>
+      <p class="card-text">$<%=productoConDescuento[i].precio.value%></p>
+      <p class="card-text"><%=productoConDescuento[i].descuento.value%></p>
     </div>
 
   </div> 
 
-    <div class="card card1 cartinha ">
-    <a href="/productDetailHabano/?productId=1>"
-      ><img
-        src="/images/habanos/cohiba_esplendidos.jpg"
-        class="card-img-top"
-        alt="Habano X."
-        style="border: 5px solid #343a40"
-    /></a>
-    <div class="card-body">
-      <a href="/productDetailHabano/?productId=1"
-        ><h5 class="card-title">Habano x</h5></a
-      >
-      <p class="card-text">$3000</p>
-    </div>
-
-  </div>
- 
+ <% } %>
 
 
   
 
-    <div class="card card1 cartinha ">
-    <a href="/productDetailHabano/?productId=1>"
-      ><img
-        src="/images/habanos/cohiba_esplendidos.jpg"
-        class="card-img-top"
-        alt="Habano X."
-        style="border: 5px solid #343a40"
-    /></a>
-    <div class="card-body">
-      <a href="/productDetailHabano/?productId=1"
-        ><h5 class="card-title">Habano x</h5></a
-      >
-      <p class="card-text">$3000</p>
-    </div>
-
-  </div>
  
 </div>
 
