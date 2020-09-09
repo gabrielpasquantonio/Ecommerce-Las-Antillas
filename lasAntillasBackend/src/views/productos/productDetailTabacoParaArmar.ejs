@@ -19,21 +19,9 @@
 
 
 
-    <div class="container">
-    <div class="row-fluid container-wide  m-section-half">
-        <div class=" span12">
-            <div class="m-bottom-half m-top-half">
-                <a class="h6" href="/"
-                    title="Tabaqueria Las Antillas">Inicio</a>
-                <span>/</span>
-                <a class="h6" href="/tabacosArmar" title="Tabaco Para Armar">Tabaco Para Armar</a>
-                <span >/</span>
-                <a class="h6" href="/tabacosArmar" title="Cohiba">TIPO Tabaco Para Armar</a>
-                <span>/</span>
-                <span class="h6"><%=productoTabacoParaArmar.nombre.value%>
-                </span>
-            </div>
-        </div>
+    
+    <div class="row-fluid container-wide  m-section-half" style="padding-top: 3%">
+        
        
             <div>
                 <div class="span7">
@@ -59,10 +47,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class=" span9 ">
+                            <div class=" span9 hovereffect ">
                                 <div class="p-relative text-center">
                                         <div class="bx-wrapper" style="max-width: 100%;">
-                                            <div style="overflow: hidden; position: relative; height: auto">
+                                            <div style="overflow: hidden; position: relative; height: auto; border: 5px solid #343a40">
                                                 <img data-sizes="auto"
                                                     src="/images/tabacoparaarmar/<%=productoTabacoParaArmar.imagen%> "
                                                     >
@@ -113,7 +101,7 @@
                     </div>
                 </div>
                 <div class="span5">
-                    <div class="product-form-container">
+                    <div class="product-form-container product-responsive">
                         <div class="row-fluid">
                             <div class="span12">
                                 <div class="title ">
@@ -141,7 +129,7 @@
                                     <div class="product-buy-container span12"> 
                                                <input type="submit"
                                             class="btn btn-primary span12 cart carrinho"
-                                            value="Agregar al carrito">
+                                            value="Add to cart">
                                     </div>
                                 </div>
                             </form> 
@@ -230,7 +218,7 @@
                 </div>
             </div>
         
-    </div>
+  
 
 <!-- Footer-->
 <%- include("../partials/footer.ejs") %>
