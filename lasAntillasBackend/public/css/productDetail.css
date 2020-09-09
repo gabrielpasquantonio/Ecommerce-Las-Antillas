@@ -1652,4 +1652,12 @@ h3 {
     -webkit-transition-delay:.2s;
     transition-delay:.2s;
     }
+
+    .descuento {
+        right: 15px;
+        top: 20px;
+        position: absolute;
+        width: 20%;
+    }
+
    

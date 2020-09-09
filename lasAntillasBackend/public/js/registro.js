@@ -4,19 +4,30 @@ window.addEventListener('load', function () {
 
   let formularios = document.getElementById("formulario");
   let ulErrores = document.getElementById("errores");
-  let selectProvincias = document.querySelector("#provincias");
+  // let selectProvincias = document.querySelector("#provincias");
   let formButton = document.querySelector("#form-register-button");
 
   //  console.log(formulario.elements.nombre.value);
   // Este console log muestra el input que estariamos trayendo. (.elements --> significa que trae todos los inputs del formulario.) (.'nombre' representa lo que esta incluido en el atributo name del formulario  )
     formButton.addEventListener('click', function (evento) {
+//  let selectProvincias = document.querySelector("#provincias");
+
+  //  console.log(formulario.elements.nombre.value);
+  // Este console log muestra el input que estariamos trayendo. (.elements --> significa que trae todos los inputs del formulario.) (.'nombre' representa lo que esta incluido en el atributo name del formulario  )
+
+  formularios.addEventListener("submit", function (evento) {
     if (!validaciones(evento)) {
       return evento.preventDefault();
     }
-    return formulario.submit();
+    return formularios.submit();
   });
-
+  console.log(formularios);
   function validaciones(evento) {
+    //Asi se ralizaba el registro de variables antes de ECMA-6
+    //let nombre = formulario.elements.nombre.value;
+    //let apellido = formulario.elements.apellido.value;
+    //let email = formulario.elements.email.value;
+
     //Aca hago Destructuring de código, para que podamos declarar multiples variables en una linea de codigos.
     //NOTA: ES en esta parte donde nos tenemos que asegurar de que los nombres de las variables coincidan con lo que teniamos declarados en los 'name' de nuestro formulario.
     let {
@@ -28,7 +39,6 @@ window.addEventListener('load', function () {
       confirm_password,
       avatar,
     } = formularios.elements;
-
     let errores = [];
     //Esto le agrega color rojo a los errores cuando vayan apareciendo
     ulErrores.classList.add("alert-danger");
@@ -117,34 +127,40 @@ window.addEventListener('load', function () {
       return true;
     }
   }
+  
   //-------------------------------A partir de aqui vamos a consumir la API para cargar las provincias-----------------------
 
   //Aquí vamos a trabajar con el consumo de API
   //Debemos llamar a la función
-  cargarProvincias();
-//A continuacion esta la funcion para poder cargar de manera dinamica las provincias
-  function cargarProvincias() {
-    //Primero tenemos que ir contra el url de la appi que queremos consumir , y traerlo mediante el metodo fetch. Como  esta funcion va a trabajar de forma asincrona , vamos a usar promesas   
-    fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
-      .then(function (respuesta) {
-    //IMPORTANTE : como la info que viene desde la api viene en formato Json hay que usar ese metodo para poder trabajarla.
-        return respuesta.json();
-      })
-      .then(function (datosProvincias) {
-        //Aca hacemos un  console.log(datosProvincias) para ver que es lo que esta llegando. La informacion que nos interesa esta contenida en el key "provincias".
-        for (const opcionProvincia of datosProvincias.provincias) {
-        //En estas lineas a continuacion vamos a crear las opciones mediante el metodo "create element"
-          let opcionesProvincias = document.createElement("option");
-        //Aca le estamos asignando a cada provincia un atributo (mediante un setAttribute) y el valor de ese atributo va a ser el id.  
-          opcionesProvincias.setAttribute("value", opcionProvincia.id);
-          //Aca le estamos asignando el nombre de esa provincia
-          opcionesProvincias.innerHTML = opcionProvincia.nombre;
-          //aca estamos agregando al select,  cargando los elementos y las opciones que creamos en las lineas anteriores. 
-          selectProvincias.appendChild(opcionesProvincias);
-        }
-      })
-      .catch((error) => console.error(error));
-  }
+ 
+  // cargarProvincias();
+
+  // //A continuacion esta la funcion para poder cargar de manera dinamica las provincias
+
+  // function cargarProvincias() {
+
+  //   //Primero tenemos que ir contra el url de la appi que queremos consumir , y traerlo mediante el metodo fetch. Como  esta funcion va a trabajar de forma asincrona , vamos a usar promesas
+
+  //   fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
+  //     .then(function (respuesta) {
+  //   //IMPORTANTE : como la info que viene desde la api viene en formato Json hay que usar ese metodo para poder trabajarla.
+  //       return respuesta.json();
+  //     })
+  //     .then(function (datosProvincias) {
+  //       //Aca hacemos un  console.log(datosProvincias) para ver que es lo que esta llegando. La informacion que nos interesa esta contenida en el key "provincias".
+  //       for (const opcionProvincia of datosProvincias.provincias) {
+  //       //En estas lineas a continuacion vamos a crear las opciones mediante el metodo "create element"
+  //         let opcionesProvincias = document.createElement("option");
+  //       //Aca le estamos asignando a cada provincia un atributo (mediante un setAttribute) y el valor de ese atributo va a ser el id.  
+  //         opcionesProvincias.setAttribute("value", opcionProvincia.id);
+  //         //Aca le estamos asignando el nombre de esa provincia
+  //         opcionesProvincias.innerHTML = opcionProvincia.nombre;
+  //         //aca estamos agregando al select,  cargando los elementos y las opciones que creamos en las lineas anteriores. 
+  //         selectProvincias.appendChild(opcionesProvincias);
+  //       }
+  //     })
+  //     .catch((error) => console.error(error));
+  // }
 });
 
 
