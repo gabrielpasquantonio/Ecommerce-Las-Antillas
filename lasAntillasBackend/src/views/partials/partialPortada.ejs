@@ -11,9 +11,10 @@
   <% for(let i = 0; i < productoConDescuento.length; i++) { %>
 
     <div class="card card1 cartinha ">
-    <a href="/productDetailHabano/?productId=1>"
+      
+    <a href="/productDetail<%=productoConDescuento[i].categoria.slice(0,-1)%>/?productId=<%=productoConDescuento[i].id%>"
       ><img
-        src="/images/habanos/<%= productoConDescuento[i].imagen%>"
+      src="/images/<%= productoConDescuento[i].categoria.toLowerCase()%>/<%=productoConDescuento[i].imagen%>"
         class="card-img-top"
         alt="Habano X."
         style="border: 5px solid #343a40"
@@ -25,11 +26,12 @@
                 <% } %>
 
     <div class="card-body">
-      <a href="/productDetailHabano/?productId=1"
-        ><h5 class="card-title"><%= productoConDescuento[i].nombre.value%></h5></a
-      >
-      <p class="card-text">$<%=productoConDescuento[i].precio.value%></p>
-      <p class="card-text"><%=productoConDescuento[i].descuento.value%></p>
+      <a href="/productDetail<%=productoConDescuento[i].categoria.slice(0,-1)%>/?productId=<%=productoConDescuento[i].id%>">
+        <h3 class="card-title"><%= productoConDescuento[i].categoria%></h3>
+        <h4 class="card-title"><%= productoConDescuento[i].marca%></h4>
+        <h5 class="card-title"><%= productoConDescuento[i].nombre.value%></h5></a>
+      <h6 class="card-text">$<%=productoConDescuento[i].precio.value%></h6>
+      
     </div>
 
   </div> 

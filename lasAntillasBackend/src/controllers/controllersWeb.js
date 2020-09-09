@@ -16,9 +16,7 @@ module.exports = {
         //res.render(path.resolve(__dirname, "..", "views", "web", "index.ejs"));
         products
           .findAll({
-            where: {
-                id: 1
-            },
+         
             // Atravez del include vinculamos al modelo productos con el modelo atributos a traves de atributeProduct
             // la key include tiene como value un array (en este caso de objetos)
             include: [
@@ -28,7 +26,13 @@ module.exports = {
                     model: atributeProduct,
                     
                 },
-              },
+                },
+                {
+                    model: brands,
+                },
+                {
+                    model: categories
+                }
             ],
           })
           // PRODUCTOS ENCONTRADOS ES EL RESULTADO DEL FIND ALL CON LOS FILTROS CORRESPONDIENTES
@@ -74,6 +78,8 @@ module.exports = {
                       },
                       imagen: imagen,
                       id: productId2,
+                      categoria: productoEncontradoConDescuento.Category.name,
+                      marca: productoEncontradoConDescuento.Brand.name,
                     }
                   );
                 }
