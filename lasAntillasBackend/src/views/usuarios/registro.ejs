@@ -15,7 +15,7 @@
     <article class="col-12  card " >
             <div class="card-body container-fluid">
               <h2 class="card-title text-white  bg-dark  text-center display-4 ">Registrate</h2>
-              <h4 class="text-center display-6" >Crea tu cuenta, sólo te tomara unos minutos.</h4>
+              <h4 class="text-center display-6" >Cea tu cuenta, sólo te tomara unos minutos.</h4>
             </div>
     </article>
 </section>
@@ -79,10 +79,11 @@
                             </div> -->
 
                             <div class="custom-file">
-                              <input type="file"   name="avatar"  placeholder="Debes eligir tu avatar...">
-                          </div>                                
+                              <input type="file" name="avatar" placeholder="Debes eligir tu avatar...">
+                              <span id="avatar-error-message" style="display: none; color: red">Por favor elija una image</span>
+                            </div>                                
                           <div class="form-group">
-                              <button type="submit" class="btn btn btn-dark">Registrarse</button>
+                              <button id="form-register-button" type="submit" class="btn btn btn-dark">Registrarse</button>
                           </div>
                         </form>
                         <div class="text-center my-3">Ya tengo una cuenta? <a href="/login">Inicia sesión</a></div>

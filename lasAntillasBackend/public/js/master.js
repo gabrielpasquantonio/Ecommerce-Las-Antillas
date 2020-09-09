@@ -3,11 +3,11 @@ window.addEventListener("load", function () {
   let activar = () => {
     setTimeout(function () {
       Swal.fire(
-        "Tenemos las mejores marcas y modelos!!!",
+        " Los mejores Habanos !!!",
         "Esperemos te gusten...",
         "success"
       );
-    }, 100);
+    }, 1000);
   };
 
   /*  let password = document.querySelector('.js_password');
