@@ -1,37 +1,22 @@
-<div class="categoria container-wide container-xs m-bottom m-bottom-quarter-xs m-none-xs row-fluid"> 
-    <div class="span8 left"> 
-        <div class="m-bottom-half m-top-half">
-    <a class="font-body-xs h6" href="/" title="La Casa del Habano">Inicio</a>
-                        <span class="">/</span>
-                            <a class="" href="/cigarritos" title="HABANOS">CIGARRITOS</a>
-                                <span class="">/</span>
-                                                <h1 class="active breadcrumb-crumb">Cigarrito</h1>
-                                        </div>    </div>
-    <div class="hidden-phone sort-by-container text-right">
-        <label for="sort" class="d-inline">Ordenar por:</label>
-<select id="sort" class="full-width-xs">
-                                <option value="price-ascending">Precio: Menor a Mayor</option>
-                                        <option value="price-descending">Precio: Mayor a Menor</option>
-                                        <option value="alpha-ascending">A - Z</option>
-                                        <option value="alpha-descending">Z - A</option>
-                                        <option value="created-descending">Más Nuevo al más Viejo</option>
-                                        <option value="created-ascending">Más Viejo al más Nuevo</option>
-                                        <option value="best-selling" selected="">Más Vendidos</option>
-                                </select>
-    </div>
+<div
+  class="categoria container-wide container-xs m-bottom m-bottom-quarter-xs m-none-xs fluid">
+<div class="span8 left"> 
+  <div class="m-bottom-half m-top-half">
+    <h1 class="active breadcrumb-crumb">Cigarritos</h1>
+  </div>    </div>
+   
 </div>
 <div class="card-group container-wide span12 grid-row">
   <% for(let i = 0; i < productoCigarritos.length; i++) { %>
 
-  <div class="card cartinha ">
-      <a href="productDetailCigarrito"><img src="/images/cigarritos/<%=productoCigarritos[i].imagen%>" class="card-img-top " alt="Cigarrito X."></a>
+  <div class="card card1 cartinha ">
+      <a href="productDetailCigarrito/?productId=<%=productoCigarritos[i].id%>"><img src="/images/cigarritos/<%= productoCigarritos[i].imagen%>" class="card-img-top " style="border: 5px solid #343a40" alt="Cigarrito X."></a>
       <div class="card-body">
-        <a href="productDetailCigarrito"><h5 class="card-title"><%=productoCigarritos[i].nombre%></h5></a>
-        <p class="card-text">$<%=productoCigarritos[i].precio%></p>
+        <a href="productDetailCigarrito/?productId=<%=productoCigarritos[i].id%>"><h5 class="card-title"><%=productoCigarritos[i].nombre.value%></h5></a>
+        <h6 class="card-text" style= "font-weight: bold;">$<%=productoCigarritos[i].precio.value%></h6>
       </div>
-      <div class="card-footer">
-        <a href="/carrito"><button type="submit" class="btn btn-dark btn-lg btn-block agregarcarrito">AGREGAR AL CARRITO</button></a>
-      </div>
+     
     </div>
     <% } %>
   </div>
+

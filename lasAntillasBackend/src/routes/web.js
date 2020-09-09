@@ -9,4 +9,5 @@ const controllersWeb = require(path.resolve(__dirname, "..", "controllers", "con
 
 //Armo mis rutas
 router.get("/", controllersWeb.index);
+router.get("/mantenimiento", controllersWeb.mantenimiento);
 module.exports = router;

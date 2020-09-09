@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto Pipa</title>
+    <link rel="stylesheet" href="/css/productDetail.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- NavBar-->
+    <%- include("../partials/navbar.ejs") %>
+
+
+
+
+
+
+    
+    <div class="row-fluid container-wide  m-section-half" style="padding-top: 3%;">
+      
+       
+            <div>
+                <div class="span7">
+                    <div class="product-img-col">
+                            <div class="span3 hidden-phonee">
+                                <div class="scroller ">
+                                    <div class="p-absolute">
+                                            
+                                                <img data-sizes="auto"
+                                                    src="/images/tabacoParaPipa/<%=productoTabacoParaPipa.imagen%> "
+                                                    data-srcset="/images/tabacoParaPipa/<%=productoTabacoParaPipa.imagen%> "
+                                                    class="scroller-img"
+                                                    alt="Habano X. en internet" sizes="100px"
+                                                    srcset="/images/tabacoParaPipa/<%=productoTabacoParaPipa.imagen%>  480w, /images/tabacoParaPipa/<%=productoTabacoParaPipa.imagen%>  640w">     
+                                                <img data-sizes="auto"
+                                                    src="/images/tabacoParaPipa/<%=productoTabacoParaPipa.imagen%> "
+                                                    data-srcset="/images/tabacoParaPipa/<%=productoTabacoParaPipa.imagen%> 480w, /images/tabacoParaPipa/<%=productoTabacoParaPipa.imagen%>  640w"
+                                                    class="scroller-img"
+                                                    alt="Habano X. - Tabaqueria Las Antillas" sizes="100px"
+                                                    srcset="/images/tabacoParaPipa/<%=productoTabacoParaPipa.imagen%>  480w, /images/tabacoParaPipa/<%=productoTabacoParaPipa.imagen%>  640w">
+                                          
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" span9 hovereffect">
+                                <div class="p-relative text-center">
+                                        <div class="bx-wrapper" style="max-width: 100%;">
+                                            <div style="overflow: hidden; position: relative; height: auto">
+                                                <img data-sizes="auto"
+                                                    src="/images/tabacoParaPipa/<%=productoTabacoParaPipa.imagen%> "
+                                                    >
+                                            </div>
+                                        </div>
+                                   
+                                </div>
+                               
+                                    <div class="text-center">
+                                        <a class=" btn-social-mobile btn-social-mobile_facebook product-share-button btn-circle bg-facebook d-inline-block m-all-half"
+                                            data-network="facebook" target="_blank"
+                                            href="https://www.facebook.com/sharer/sharer.php?u=#"
+                                            title="Share on Facebook">
+                                            <svg class="svg-inline--fa fa-lg svg-icon-text"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 512">
+                                                <path
+                                                    d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229">
+                                                </path>
+                                            </svg> </a>
+                                        <a class=" btn-social-mobile btn-social-mobile_twitter product-share-button btn-circle bg-twitter d-inline-block m-all-half"
+                                            data-network="twitter" target="_blank"
+                                            href="https://twitter.com/share?url=#"
+                                            title="Share on Twitter">
+                                            <svg class="svg-inline--fa fa-lg svg-icon-text"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path
+                                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                                                </path>
+                                            </svg> </a>
+                                                                              
+                                    </div>
+                              
+                            </div>
+                        
+                    </div>
+                    <div class="user-content clear-both hidden-phone pull-left m-top">
+                        
+                        <p>Origen: <%=productoTabacoParaPipa.origen.value%> </p> 
+
+                        <p>Cantidad: <%=productoTabacoParaPipa.cantidad.value%> </p> 
+
+                        <p>Descripcion:<%=productoTabacoParaPipa.descripcion.value%></p>
+
+                        <p>Territorio de Sabor: <%=productoTabacoParaPipa.sabor.value%></p>
+
+                        
+
+                    </div>
+                </div>
+                <div class="span5">
+                    <div class="product-form-container">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <div class="title ">
+                                    <h1 id="product-name" class="product-name h2 h4-xs" itemprop="name"><%=productoTabacoParaPipa.nombre.value%></h1>
+                                </div>
+                            
+                                    <div class="m-top-half m-bottom-half">                                        <span class="product-price">
+                                                $<%=productoTabacoParaPipa.precio.value%>
+                                        </span>
+                                    </div>
+                             
+                            </div>
+                        </div>
+                           <form action="/carrito/adicionarAlCarrito" method="post" class="form-inline js-product-quantity-container row-fluid quantity-container border-bottom-none-xs m-bottom-none">
+                                <div class="quantity span3">
+                                    <label for="cantidad" class="quantity-label">
+                                        Cantidad
+                                    </label>
+                                    <input id="quantity"
+                                        class=" " style="width: 100%;"  value="1"
+                                        type="number" name="cantidad">
+                                </div>
+                                <input type="hidden"  name="product_id" value="<%=productoTabacoParaPipa.id%>">
+                                <div class="row-fluid">
+                                    <div class="product-buy-container span12"> 
+                                               <input type="submit"
+                                            class="btn btn-primary span12 cart carrinho"
+                                            value="Add to cart">
+                                    </div>
+                                </div>
+                            </form> 
+                            <form>
+                            <div id="product-shipping-container"
+                                class="row-fluid"
+                                data-shipping-url="/envio/">
+                               <div class="row-fluid m-bottom-half p-bottom-quarter">
+                                    <div class="shipping-calculator row-fluid  product-shipping-calculator  pull-left">
+                                        <div class="js-shipping-calculator-head shipping-calculator-head p-relative transition-soft with-form ">
+
+                                            <div
+                                                class="js-shipping-calculator-form shipping-calculator-form full-width transition-up p-absolute  transition-up-active">
+                                                <p class="p-bottom-quarter envios">
+                                                    <svg class="svg-inline--fa fa-lg m-right-quarter svg-icon-text"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                                        <path
+                                                            d="M624 368h-16V251.9c0-19-7.7-37.5-21.1-50.9L503 117.1C489.6 103.7 471 96 452.1 96H416V56c0-30.9-25.1-56-56-56H56C25.1 0 0 25.1 0 56v304c0 30.9 25.1 56 56 56h8c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16zm-464 96c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm208-96H242.7c-16.6-28.6-47.2-48-82.7-48s-66.1 19.4-82.7 48H56c-4.4 0-8-3.6-8-8V56c0-4.4 3.6-8 8-8h304c4.4 0 8 3.6 8 8v312zm48-224h36.1c6.3 0 12.5 2.6 17 7l73 73H416v-80zm64 320c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-100.9c-17.2-25.9-46.6-43.1-80-43.1-24.7 0-47 9.6-64 24.9V272h144v91.1z">
+                                                        </path>
+                                                    </svg> <span>
+
+                                                        <span class=" " >
+
+
+                                                            Medios de envío
+                                                        </span>
+                                                    </span>
+                                                </p>
+                                                <input type="tel" name="zipcode"
+                                                    class="form-control border-box input-shipping js-shipping-input shipping-zipcode d-inline-block pull-left m-right-quarter"
+                                                    placeholder="Tu código postal" aria-label="Tu código postal"
+                                                    value="">
+                                                 <button style="margin-top: 1%"
+                                                    class=" btn-shipping btn btn-secondary   d-inline-block" 
+                                                    aria-label="Calcular envío">
+                                                    <span class="js-calculate-shipping-wording">Calcular</span>
+                                                    </span>
+                                                </button>
+                                                <div class="m-top-half" >
+                                                    <a class="text-primaryy font-small"
+                                                        href="https://www.correoargentino.com.ar/formularios/cpa"
+                                                        target="_blank">No sé mi código postal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="casinha link-module no-border p-top-half p-bottom-half" style="padding-bottom: 20%">
+                                    <svg class="svg-inline--fa fa-lg link-module-icon svg-icon-text"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 616 512">
+                                        <path
+                                            d="M602 118.6L537.1 15C531.3 5.7 521 0 510 0H106C95 0 84.7 5.7 78.9 15L14 118.6c-29.6 47.2-10 110.6 38 130.8v227.4c0 19.4 14.3 35.2 32 35.2h448c17.7 0 32-15.8 32-35.2V249.4c48-20.2 67.6-83.6 38-130.8zM516 464H100v-96h416v96zm0-144.2H100v-64.7c24-3.3 45.1-15.2 60.3-32.2 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 15.3 17 36.3 28.9 60.3 32.2v64.7zm47.7-133c-3.2 6.8-10.9 18.6-27 20.8-2.4.3-4.8.5-7.2.5-14.7 0-28.2-6.1-38.1-17.2L455.7 151 420 190.8c-9.9 11.1-23.5 17.2-38.1 17.2s-28.2-6.1-38.1-17.2L308 151l-35.7 39.8c-9.9 11.1-23.5 17.2-38.1 17.2-14.7 0-28.2-6.1-38.1-17.2L160.3 151l-35.7 39.8c-9.9 11.1-23.5 17.2-38.1 17.2-2.5 0-4.9-.2-7.2-.5-16-2.2-23.8-13.9-27-20.8-5-10.8-7.1-27.6 2.3-42.6L114.8 48h386.3l60.2 96.1c9.5 15.1 7.5 31.9 2.4 42.7z">
+                                        </path>
+                                    </svg> <span class="link-module-content">
+                                        <div class="link-module-text">
+                                            Nuestro local
+                                        </div>
+                                    </span>
+                                </div>
+
+
+                                <ul class="box-container p-none list-readonly m-top-half">
+                                    <li class="list-item">
+                                        <span class="row-fluid d-flex">
+                                            <div class="span9 col-xs-9-custom pull-left pull-left-xs">
+                                                <p class="shipping-method-name">
+                                                    Tabaqueria Las Antillas <span class="m-left-quarter">Reconquista 976 CABA
+                                                        Lunes a Viernes de 11 a 16hs
+                                                        Exclusivo pick up durante la cuarentena.</span>
+                                                </p>
+                                            </div>
+                                            <div class="span3 col-xs-3-custom pull-right-xs h6 text-right">
+                                                <strong class="shipping-method-price text-primaryy">
+                                                    Gratis
+                                                </strong>
+                                            </div>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+<!-- Footer-->
+<%- include("../partials/footer.ejs") %>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+      
+    <!-- Navbar Dropdown - dropright scrip --> 
+      <script>
+        $(function () {
+          $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+    
+            $(this).parents('.dropdown-submenu').siblings().find('.show').removeClass("show");
+            $(this).siblings().toggleClass("show");
+    
+            //collapse all after nav is closed
+            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+              $('.dropdown-submenu .show').removeClass("show");
+            });
+          });
+        });
+      </script>
+</body>
+
+</html>

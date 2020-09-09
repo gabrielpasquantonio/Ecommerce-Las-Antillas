@@ -38,15 +38,17 @@
         </tr>
       </thead>
       <tbody>
-        <% todosUsuariosJson.forEach(todoUsuarioJson => { %>
+        <% allUsers.forEach(user => { %>
         <tr>
-          <td><%= todoUsuarioJson.id%> </td>
-          <td><%= todoUsuarioJson.nombre%> </td>
-          <td><%= todoUsuarioJson.apellido%> </td>
-          <td><%= todoUsuarioJson.role%> </td>
-          <td><a href="/detailUsers/<%= todoUsuarioJson.id%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
-          <td><a href="/editUsers/<%= todoUsuarioJson.id%>%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
-          <td><a href="/deleteUsers/<%= todoUsuarioJson.id%>/"><ion-icon name="trash-outline"></ion-icon></a></td>
+          <td><%= user.id%> </td>
+          <td><%= user.nombre%> </td>
+          <td><%= user.apellido%> </td>
+          <td><%= user.role%> </td>
+          <td><a href="/detailUsers/<%= user.id%>"> <ion-icon name="eye-outline"></ion-icon></a></td>
+          <td><a href="/editUsers/<%= user.id%>%>"> <ion-icon name="pencil-outline"></ion-icon></a></td>
+          <% if(locals.usuario.id !== user.id ) { %>
+              <td><a href="/deleteUsers/<%= user.id%>/"><ion-icon name="trash-outline"></ion-icon></a></td>
+          <% } %>
         </tr>
         <% }); %>
       </tbody>

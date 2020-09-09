@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Create <%= todosProductosJson[0].tipo%></title>
+    <title>Admin Create <%= productType.name%></title>
     <link rel="stylesheet" href="/css/productDetail.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -18,7 +18,7 @@
      <section class="row">
       <article class="col-12  card pt-5" >
               <div class="card-body">
-                <h1 class="card-title text-center">Crear un Producto <%= todosProductosJson[0].tipo%></h1>
+                <h1 class="card-title text-center">Crear un Producto <%= productType.name%></h1>
               </div>
       </article>
   </section>
@@ -31,32 +31,77 @@
                         <form action="/createProductos" method="POST" enctype="multipart/form-data" >
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto" required="required" value="">
+                                <input type="hidden" class="form-control" name="nombreId" value="<%=nameAttributeId%>">
                             </div>
                             <div class="form-group">
-                              <input type="hidden" class="form-control" name="tipo" placeholder="Tipo del Producto" required="required"  value="<%= todosProductosJson[0].tipo%>">
+                              <input type="hidden" class="form-control" name="tipo" placeholder="Tipo del Producto" required="required"  value="<%= JSON.stringify(productType)%>">
                           </div>
                             <div class="form-group ">
                               <select  name="marca"  class="custom-select" data-toggle="dropdown" id="validationCustom04" placeholder="Elija su Marca" required>
                                 <option selected disabled value="#">Elija su marca</option>
                                 <% marcas.forEach(marca => { %>
-                                <option   value="<%=marca%>"><%=marca%></option>  
+                                <option value="<%=marca.id%>"><%=marca.name%></option>  
                                 <% }); %>
                               </select>
                           </div>
                             	
+
+                          <% if (productType.id === 1 || productType.id === 2 || productType.id === 3 ) { %>
+
                             <div class="form-group">
-                                <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" required="required" value="">
+                                  <input type="text" class="form-control" name="largo" placeholder="Indique el Largo" required="required" value="">
+                                  <input type="hidden" class="form-control" name="largoId" value="2">
                             </div>
+
                             <div class="form-group">
-                                <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required" value="">
+                                  <input type="text" class="form-control" name="ancho" placeholder="Indique el Ancho" required="required" value="">
+                                  <input type="hidden" class="form-control" name="anchoId" value="3">
                             </div>
+                            
                             <div class="form-group">
-                                <select  name="descuento" class="custom-select" id="validationCustom04" required>
-                                  <option selected disabled value="#">Elija su descuento</option>
-                                  <option value="0">Sin descuento</option>
-                                  <option value="10">10%</option>
-                                </select>
+                                  <input type="text" class="form-control" name="sabor" placeholder="Indique el Sabor" required="required" value="">
+                                  <input type="hidden" class="form-control" name="saborId" value="4">
                             </div>
+
+                          <% }  %>
+
+                              
+                          <% if (productType.id === 2 || productType.id === 3 || productType.id === 4 || productType.id === 5 ) { %>
+
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="origen" placeholder="Indique el Origen" required="required" value="">
+                              <input type="hidden" class="form-control" name="origenId" placeholder="Indique el Origen"  value="8">
+                            </div>
+
+                          <% }  %>
+
+                          <% if (productType.id === 4) { %>
+                          
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="descripcion" placeholder="Descripción del producto" required value="">
+                              <input type="hidden" class="form-control" name="descripcionId" value="10">
+                            </div>                        
+                          
+                          <% }  %>
+
+                          <% if (productType.id === 3 || productType.id === 4 || productType.id === 5) { %>                          
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="cantidad" placeholder="Indique la cantidad" required value="">
+                              <input type="hidden" class="form-control" name="cantidadId" value="<%=cantidadAttributeId%>">
+                            </div>                        
+                          <% }  %>
+
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required" value="">
+                            <input type="hidden" class="form-control" name="precioId" value="<%=priceAttributeId%>">
+                        </div>
+                        <div class="form-group d-none">
+                            <select  name="descuento" class="custom-select" id="validationCustom04" required>
+                              <option selected disabled value="#">Elija su descuento</option>
+                              <option value="0">Sin descuento</option>
+                              <option value="10">10%</option>
+                            </select>
+                        </div>
                         <!--Aqui solicito la imagen al usuario-->
                         <div class="custom-file">
                           <input type="file" name="imagen" multiple>
@@ -65,7 +110,7 @@
                         </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn btn-dark">Guardar</button>
-                                <a href="/adminProductos/<%= todosProductosJson[0].tipo%>" class="btn btn-dark">Volver</a>
+                                <a href="/adminProductos/?type=<%=productType.id%>" class="btn btn-dark">Volver</a>
                             </div>
                             
                         </form>
