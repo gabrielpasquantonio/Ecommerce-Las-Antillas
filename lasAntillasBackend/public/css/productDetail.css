@@ -1196,6 +1196,11 @@ a {
 padding-left: 0px!important;
 }
 @media (min-width: 700px) and (max-width: 768px) { 
+    .Footer {
+        height: 768px;
+        max-height: fit-content;
+    }
+    
     .product-buy-container{
         width:80%!important;
     }
