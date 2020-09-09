@@ -5,11 +5,11 @@ window.addEventListener('load', function () {
   let formularios = document.getElementById("formulario");
   let ulErrores = document.getElementById("errores");
   let selectProvincias = document.querySelector("#provincias");
+  let formButton = document.querySelector("#form-register-button");
 
-  //  console.log(formulario.elements.first_name.value);
-  // Este console log muestra el input que estariamos trayendo. (.elements --> significa que trae todos los inputs del formulario.) (.'first_name' representa lo que esta incluido en el atributo name del formulario  )
-
-  formulario.addEventListener("submit", function (evento) {
+  //  console.log(formulario.elements.nombre.value);
+  // Este console log muestra el input que estariamos trayendo. (.elements --> significa que trae todos los inputs del formulario.) (.'nombre' representa lo que esta incluido en el atributo name del formulario  )
+    formButton.addEventListener('click', function (evento) {
     if (!validaciones(evento)) {
       return evento.preventDefault();
     }
@@ -17,44 +17,41 @@ window.addEventListener('load', function () {
   });
 
   function validaciones(evento) {
-    //Asi se ralizaba el registro de variables antes de ECMA-6
-    //let first_name = formulario.elements.first_name.value;
-    //let last_name = formulario.elements.last_name.value;
-    //let email = formulario.elements.email.value;
-
     //Aca hago Destructuring de código, para que podamos declarar multiples variables en una linea de codigos.
     //NOTA: ES en esta parte donde nos tenemos que asegurar de que los nombres de las variables coincidan con lo que teniamos declarados en los 'name' de nuestro formulario.
     let {
-      first_name,
-      last_name,
+      nombre,
+      apellido,
       email,
+      username,
       password,
       confirm_password,
       avatar,
-    } = formulario.elements;
+    } = formularios.elements;
+
     let errores = [];
     //Esto le agrega color rojo a los errores cuando vayan apareciendo
     ulErrores.classList.add("alert-danger");
 
-    //Validacion del nombre. Aca verifico que pasa si el campo first_name este vacio
-    if (first_name.value == "") {
+    //Validacion del nombre. Aca verifico que pasa si el campo nombre este vacio
+    if (nombre.value == "") {
       errores.push("El campo nombre no puede estar vacio...");
       //Las siguientes lineas sirven para agregar el borde de color rojo de error a los campos que presenten problemas y ponerlos de color verde cuando superen las pruebas de validacion
-      first_name.classList.add("is-invalid");
-      first_name.classList.remove("is-valid");
+      nombre.classList.add("is-invalid");
+      nombre.classList.remove("is-valid");
     } else {
-      first_name.classList.add("is-valid");
-      first_name.classList.remove("is-invalid");
+      nombre.classList.add("is-valid");
+      nombre.classList.remove("is-invalid");
     }
 
     //Validacion de  apellidos
-    if (last_name.value == "") {
+    if (apellido.value == "") {
       errores.push("El campo apellido no puede estar vacio...");
-      last_name.classList.add("is-invalid");
-      last_name.classList.remove("is-valid");
+      apellido.classList.add("is-invalid");
+      apellido.classList.remove("is-valid");
     } else {
-      last_name.classList.add("is-valid");
-      last_name.classList.remove("is-invalid");
+      apellido.classList.add("is-valid");
+      apellido.classList.remove("is-invalid");
     }
 
     //Validacion  del email  -  usando  (Expresiones Regulares)
@@ -80,6 +77,15 @@ window.addEventListener('load', function () {
       password.classList.remove("is-invalid");
     }
 
+    if (username.value == "") {
+      errores.push("El campo contraseña no puede estar vacio");
+      username.classList.add("is-invalid");
+      username.classList.remove("is-valid");
+    } else {
+      username.classList.add("is-valid");
+      username.classList.remove("is-invalid");
+    }
+
     //Validacion de  Confirmacion de password
     if (confirm_password.value == "") {
       errores.push("Este campo no puede estar vacio");
@@ -89,6 +95,15 @@ window.addEventListener('load', function () {
       confirm_password.classList.add("is-valid");
       confirm_password.classList.remove("is-invalid");
     }
+
+    if (avatar.value == "") {
+      let avatarErrorMessage = document.getElementById("avatar-error-message");
+      errores.push("Este campo no puede estar vacio");
+      avatarErrorMessage.style.display = "inline-block"
+      avatarErrorMessage.style.color = "red"
+    } else {
+      avatarErrorMessage.style.display = "none"
+      }
 
     //Aquí es cuando yo controlo si hay o no errores para enviar o no al usuario
     if (errores.length > 0) {
