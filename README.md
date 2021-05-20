@@ -8,7 +8,8 @@ ___
 ## 🛠️ Technologies
 
 <ul>
-    <h1>FRONT END</h1>
+    <h3>FRONT END</h3>
+     ![Captura](/README/front.png)
   <li><a href="https://www.javascript.com/">Java Script</a></li>
   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
    <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
@@ -17,7 +18,14 @@ ___
 </ul>
 
 
-
+<ul>
+    <h3>BACK END</h3>
+  <li><a href="https://www.javascript.com/">Java Script</a></li>
+  <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+    
+</ul>
 
 
 
