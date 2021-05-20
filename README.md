@@ -28,6 +28,7 @@ ___
   <li><a href="https://sequelize.org/">Seequilize</a></li>    
 </ul>
 
+
 ## Features
 
 <b>Main Features</b>
@@ -38,6 +39,8 @@ ___
 | Client Managment | &#10004; | Administrator has the Ability of Edit and Creat new user's into the Data Base  |
 | Real Time Database | &#10004; | Connection to a database of products and users |
 | Authentication  | &#10004; | It Has Frontend and Backend Authentication Features |
+
+
 <b>Products Features</b>
 
 | Feature  |  Coded?       | Description  |
@@ -57,7 +60,7 @@ ___
 | Remove a Cart | &#10004; | Ability of Remove a Cart |
 | Add Item | &#10004; | Ability of add a new Item on the Cart |
 | Remove a Item | &#10004; | Ability of Remove a Item from the Cart |
-| Checkout | &#10004; | Ability to Checkout |
+| Checkout | &#10004; | Ability to  Proceed to Checkout |
 
 
 
