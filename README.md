@@ -1,4 +1,4 @@
-# E-commerce project: Tobacco Shop - "Las Antillas"
+# E-commerce Project: Tobacco Shop - "Las Antillas"
 
 ![Captura](/README/home.png)
 ![Captura](/README/cart.png)
