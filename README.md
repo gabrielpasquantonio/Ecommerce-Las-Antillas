@@ -5,12 +5,10 @@
 ___
 
 
-## 🛠️ Technologies
-
+## 🛠️ Technologies 
+<img src="/README/front.png>
 <ul>
-    <h3>FRONT END</h3>
-     <img src="./README/front.png>
-               (/README/front.png)
+    <h3>FRONT END</h3>      
                
   <li><a href="https://www.javascript.com/">Java Script</a></li>
   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
