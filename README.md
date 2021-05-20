@@ -6,7 +6,7 @@ ___
 
 
 ## 🛠️ Technologies 
-![Captura](/README/foto1.png)
+![Captura](/README/front.png)
         ```
 <ul>
     <h3>FRONT END</h3>      
