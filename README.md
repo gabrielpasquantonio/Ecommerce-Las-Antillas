@@ -1,12 +1,9 @@
 # E-commerce project: Tobacco Shop - "Las Antillas"
 + ## ___About___
     ```
-    The purpose of this work is the development of an e-commerce website for a tobacco shop called 'Las Antillas'. This company sells cigarettes, tobacco products and accessories.
+    This is the <a href="https://www.digitalhouse.com/br/curso/desenvolvimento-web-full-stack?gclid=Cj0KCQjwkZiFBhD9ARIsAGxFX8CK3KoZyKCnO3H_8vXK4p6Pcor-hjlhC6hnJmms6LG81hbZ7OfiJi0aApMlEALw_wcB">Digital House  Full Stack Web Developer's</a> final project. The purpose of this work is the development of an e-commerce website for a tobacco shop called 'Las Antillas'. This company sells cigarettes, tobacco products and accessories. It is a collaborative project made by <a href="https://github.com/cneme23">Carlos Daniel Neme </a> and <a href="https://github.com/gabrielpasquantonio">Gabriel Pasquantonio </a>
 ___
-+ ## ___Target Audience___
-    ```
-    People over 18 years old. Smokers who have a refined and sophisticated taste.  
-___
+
 + ## ___Main Features___
     ```
     A- Visualization of all local products in a responsive, attractive and easy way, in order meet the exact  customers needs , taking into account the requirements for an exemplary User Experience.
@@ -64,75 +61,6 @@ ___
     ```
     [Trello link](https://trello.com/b/9lrgI7dS/las-antillas)
     
-___
-
-# Proyecto de E-commerce: Tabaqueria -"Las Antillas"
-+ ## ___Acerca de___
-    ```
-    El presente trabajo tiene por objeto el desarrollo de una sitio web de e-commerce para la tabaqueria, Las Antillas. Se trata de una empresa dedicada a comercializar los siguientes productos: Habanos, cigarrillos para armar y accesorios varios del rubro.
-___
-+ ## ___Publico Objetivo___
-    ```
-    Personas mayores de 18 años. Fumadores que tengan un gusto refinado y sofisticado.  
-___
-+ ## ___Caracteristicas Principales___
-    ```
-    A- Visualizacion de todos los productos del local de una manera responsive,atractiva y práctica para el usuario. Teniendo en cuenta los parámetros de calidad del User Experience.
-
-    B- Mostrar la información necesaria para que el usuario pueda contar con elementos suficientes para tomar su decisión a la hora de realizar la compra.
-
-    C- El sitio contará con la tecnología necesaria para que el usuario pueda llevar adelante todos los procesos de compra y seguimiento de envío de su producto.
-___
-+ ## ___Integrantes___
-    - __Gabriel Pasquantonio:__
-
-        ```
-        Abogado especialista en impuestos internacionales trabaja para IBM.
-    ___
-
-    - __Carlos Neme__
-
-        ```
-        29 años, Abogado en  búsqueda de una reinvención  profesional y entusiasmado por adentrarme en el mundo de la tecnología. 
-___
-
-+ ## ___Paginas Web Referentes___
-    - [___La casa del Habano___](http://lacasadelhabano.com.ar/)
-        ![Captura](/README/foto1.png)
-        ```
-        Seleccionada por su diseño simple e intuitivo. Muy util, la forma en como se caracteriza cada producto.
-    ___
-
-    - [___Luigi Bosca___](https://shop.luigibosca.com/?ref=tiendanube.com)
-        ![Captura](/README/foto2.png)
-        ```
-        Los colores y estilo de la marca eran similares a la marca de nuestro de cliente. Nos gusto el despliegue de sus productos destacados.
-    ___  
-
-    - [___Becka Store___](https://becka-store-demo.myshopify.com/#header-topbar)
-        ![Captura](/README/foto3.jpg)
-        ```
-        El diseño y la forma en como esto organizado visualmente el sitio nos parecio muy elegante y practico.
-    ___
-
-    - [___Plamen___](https://plamen.qodeinteractive.com/wide-home/)
-        ![Captura](/README/foto4.png)
-        ```
-        El efecto de transision de las imagenes de fondo nos parecieron muy llamativos.
-    ___
-
-    - [___Plamen2___](https://plamen.qodeinteractive.com/four-columns/)
-        ![Captura](/README/foto5.png)
-        ```
-        La estetica del sitio es muy buena y sobre todo la forma en como estan dispuestos sus productos. 
-    ___
-
-
-+ ## ___Link de Trello___
-    ```
-    [Link de trello](https://trello.com/b/9lrgI7dS/las-antillas)
-
-
 ___
 
 
