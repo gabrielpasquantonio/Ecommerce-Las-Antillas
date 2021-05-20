@@ -7,8 +7,8 @@ ___
 
 ## 🛠️ Technologies 
 <img src="./README/front.png>
-          <img src="./README/front.png>
-         <a> <img src="./README/front.png></a>
+          <img src="/README/front.png>
+         <a> <img src="/README/front.png></a>
 <ul>
     <h3>FRONT END</h3>      
                
