@@ -84,13 +84,13 @@ ___
 ## 🚀 Installation
 
 ```
-$ git clone https://github.com/gabrielpasquantonio/React-TodoApp.git
-$ cd react-todolist
+$ git clone https://github.com/gabrielpasquantonio/Ecommerce-Las-Antillas.git
+$ cd lasAntillasBackend/src
 $ npm install
 $ npm test
 ```
 
-The application will open in the browser on http://localhost:3000
+The application will open in the browser on http://localhost:4000
 
 
 
