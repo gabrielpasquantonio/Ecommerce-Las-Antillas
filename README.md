@@ -1,4 +1,4 @@
-![](/README/logo.png)# E-commerce project: Tobacco Shop - "Las Antillas"
+# E-commerce project: Tobacco Shop - "Las Antillas"
 + ## ___About___
 
     This is the <a href="https://www.digitalhouse.com/br/curso/desenvolvimento-web-full-stack?gclid=Cj0KCQjwkZiFBhD9ARIsAGxFX8CK3KoZyKCnO3H_8vXK4p6Pcor-hjlhC6hnJmms6LG81hbZ7OfiJi0aApMlEALw_wcB">Digital House  Full Stack Web Developer's</a> final project. The purpose of this work is the development of an e-commerce website for a tobacco shop called 'Las Antillas'. This company sells cigarettes, tobacco products and accessories. It is a collaborative project made by <a href="https://github.com/cneme23">Carlos Daniel Neme </a> and <a href="https://github.com/gabrielpasquantonio">Gabriel Pasquantonio </a>
