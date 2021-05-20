@@ -8,6 +8,7 @@ ___
 ## 🛠️ Technologies
 
 <ul>
+    <h1>FRONT END</h1>
   <li><a href="https://www.javascript.com/">Java Script</a></li>
   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
    <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
@@ -19,7 +20,7 @@ ___
 
 
 
-{"A?":"B","a":5,"d":"B","h":"www.canva.com","c":"DAEGST-64zw","i":"ZNiyQSYjTPHP0pFBT2prQw","b":1621543746342,"A":[{"A?":"I","A":767.6282774033454,"B":-2.842170943040401e-14,"D":483.6671572168846,"C":229.7106362246607,"a":{"B":{"A":{"A":"MAEHO8d_O6E","B":1},"B":{"A":-30.08995756048853,"B":-5.684341886080802e-14,"D":517.5991959337084,"C":272.156996571595}}}}],"B":1920,"C":1080}
+
 
 
 
