@@ -9,12 +9,12 @@ ___
 ![Captura](/README/front1.png)
         ```
 <ul>
-    <h3>FRONT END</h3>      
+    <h3>FRONT END</h3>                                                                   <h3>FRONT END</h3>      
                
-  <li><a href="https://www.javascript.com/">Java Script</a></li>
-  <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
-   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
-   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+  <li><a href="https://www.javascript.com/">Java Script</a></li>           <li><a href="https://www.javascript.com/">Java Script</a></li>
+  <li><a href="https://getbootstrap.com/">Bootstrap</a></li>               <li><a href="https://www.javascript.com/">Java Script</a></li>
+   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>              <li><a href="https://www.javascript.com/">Java Script</a></li>
+   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>              <li><a href="https://www.javascript.com/">Java Script</a></li>
     
 </ul>
 
