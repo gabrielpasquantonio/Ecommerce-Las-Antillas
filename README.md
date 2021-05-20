@@ -6,9 +6,8 @@ ___
 
 
 ## 🛠️ Technologies 
-<img src="./front.png>
-          <img src="/front.png>
-         <a> <img src="/front.png></a>
+![Captura](/README/foto1.png)
+        ```
 <ul>
     <h3>FRONT END</h3>      
                
