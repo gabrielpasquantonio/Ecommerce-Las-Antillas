@@ -12,20 +12,20 @@ ___
     <h3>FRONT END</h3>                                                                   
                
   <li><a href="https://www.javascript.com/">Java Script</a></li>           
-  <li><a href="https://getbootstrap.com/">Bootstrap</a>                                                <a href="https://getbootstrap.com/">Bootstrap</a></li>               
-   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>              
-   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>             
+  <li><a href="https://getbootstrap.com/">Bootstrap</a></li>               
+  <li><a href="https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5">HTML5</a></li>              
+  <li><a href="https://www.w3schools.com/css/">CSS</a></li>             
     
 </ul>
-
-
 <ul>
     <h3>BACK END</h3>
-  <li><a href="https://www.javascript.com/">Java Script</a></li>
-  <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
-   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
-   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
-    
+  <li><a href="http://expressjs.com/">Express</a></li>
+  <li><a href="https://nodejs.org/en/m/">Node JS</a></li>    
+</ul>
+<ul>
+    <h3>Data Base</h3>
+  <li><a href="https://www.mysql.com/">My SQL</a></li>
+  <li><a href="https://sequelize.org/">Seequilize</a></li>    
 </ul>
 
 
