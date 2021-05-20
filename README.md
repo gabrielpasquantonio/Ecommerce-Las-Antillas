@@ -9,7 +9,7 @@ ___
 ![Captura](/README/front1.png)
         ```
 <ul>
-    <h3>FRONT END</h3>                                                                   
+    <h3>FRONTEND</h3>                                                                   
                
   <li><a href="https://www.javascript.com/">Java Script</a></li>           
   <li><a href="https://getbootstrap.com/">Bootstrap</a></li>               
@@ -18,7 +18,7 @@ ___
     
 </ul>
 <ul>
-    <h3>BACK END</h3>
+    <h3>BACKEND</h3>
   <li><a href="http://expressjs.com/">Express</a></li>
   <li><a href="https://nodejs.org/en/m/">Node JS</a></li>    
 </ul>
@@ -30,6 +30,14 @@ ___
 
 ## Features
 
+<b>Main Features</b>
+
+| Feature  |  Coded?       | Description  |
+|----------|:-------------:|:-------------|
+| Responsive Site | &#10004; | Ability for a website to adapt the disposal of its content according to the reader’s device |
+| Client Managment | &#10004; | Administrator has the Ability of Edit and Creat new user's into the Data Base  |
+| Real Time Database | &#10004; | Connection to a database of products and users |
+| Authentication  | &#10004; | It Has Frontend and Backend Authentication Features |
 <b>Products Features</b>
 
 | Feature  |  Coded?       | Description  |
