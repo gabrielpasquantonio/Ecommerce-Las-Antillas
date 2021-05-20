@@ -73,7 +73,24 @@ ___
 
 
 
+## ⚙️ Requirements
 
+<ul>
+  <li><a href="https://git-scm.com/">Git</a></li>
+  <li><a href="https://nodejs.org/en/">Node.js</a></li>
+  <li><a href="https://www.npmjs.com/">NPM</a></li>
+</ul>
+
+## 🚀 Installation
+
+```
+$ git clone https://github.com/gabrielpasquantonio/React-TodoApp.git
+$ cd react-todolist
+$ npm install
+$ npm test
+```
+
+The application will open in the browser on http://localhost:3000
 
 
 
